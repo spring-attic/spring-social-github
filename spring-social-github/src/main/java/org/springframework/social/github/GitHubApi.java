@@ -26,7 +26,7 @@ package org.springframework.social.github;
  * 
  * @author Craig Walls
  */
-public interface GitHubOperations {
+public interface GitHubApi {
 
 	/**
 	 * Retrieves the user's GitHub profile ID.
