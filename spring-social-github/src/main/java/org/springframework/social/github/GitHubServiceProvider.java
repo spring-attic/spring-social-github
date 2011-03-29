@@ -13,24 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.social.github.connect;
+package org.springframework.social.github;
 
-import org.springframework.social.connect.oauth2.AbstractOAuth2ServiceProvider;
-import org.springframework.social.connect.support.ConnectionRepository;
-import org.springframework.social.github.GitHubApi;
-import org.springframework.social.github.GitHubTemplate;
+import org.springframework.social.oauth2.AbstractOAuth2ServiceProvider;
 import org.springframework.social.oauth2.OAuth2Template;
 
 public class GitHubServiceProvider extends AbstractOAuth2ServiceProvider<GitHubApi> {
 
-	public GitHubServiceProvider(String clientId, String clientSecret, ConnectionRepository connectionRepository) {
-		super("github", connectionRepository, new OAuth2Template(clientId, clientSecret,
-				"https://github.com/login/oauth/authorize?client_id={client_id}&redirect_uri={redirect_uri}&scope={scope}",
-				"https://github.com/login/oauth/access_token"));
+	public GitHubServiceProvider(String clientId, String clientSecret) {
+		super(clientId, clientSecret, new OAuth2Template(clientId, clientSecret,
+			"https://github.com/login/oauth/authorize?client_id={client_id}&redirect_uri={redirect_uri}&scope={scope}",
+			"https://github.com/login/oauth/access_token"));
 	}
 
-	protected GitHubApi getApi(String accessToken) {
+	public GitHubApi getServiceApi(String accessToken) {
 		return new GitHubTemplate(accessToken);
-	}
+	} 
 
 }
