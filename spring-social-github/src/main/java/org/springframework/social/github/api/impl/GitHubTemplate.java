@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.social.github;
+package org.springframework.social.github.api.impl;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -22,6 +22,8 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.Map;
 
+import org.springframework.social.github.api.GitHubApi;
+import org.springframework.social.github.api.GitHubUserProfile;
 import org.springframework.social.oauth2.ProtectedResourceClientFactory;
 import org.springframework.web.client.RestTemplate;
 

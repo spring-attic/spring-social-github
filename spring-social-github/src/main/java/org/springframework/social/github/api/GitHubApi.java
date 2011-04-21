@@ -13,7 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.social.github;
+package org.springframework.social.github.api;
+
+import org.springframework.social.github.api.impl.GitHubTemplate;
 
 /**
  * Interface specifying a basic set of operations for interacting with GitHub.

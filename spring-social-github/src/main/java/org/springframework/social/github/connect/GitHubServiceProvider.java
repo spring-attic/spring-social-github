@@ -13,8 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.social.github;
+package org.springframework.social.github.connect;
 
+import org.springframework.social.github.api.GitHubApi;
+import org.springframework.social.github.api.impl.GitHubTemplate;
 import org.springframework.social.oauth2.AbstractOAuth2ServiceProvider;
 import org.springframework.social.oauth2.OAuth2Template;
 

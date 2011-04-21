@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.social.github;
+package org.springframework.social.github.api.impl;
 
 import static org.junit.Assert.*;
 import static org.springframework.http.HttpMethod.*;
@@ -25,6 +25,8 @@ import org.junit.Test;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
+import org.springframework.social.github.api.GitHubUserProfile;
+import org.springframework.social.github.api.impl.GitHubTemplate;
 import org.springframework.social.test.client.MockRestServiceServer;
 
 /**
