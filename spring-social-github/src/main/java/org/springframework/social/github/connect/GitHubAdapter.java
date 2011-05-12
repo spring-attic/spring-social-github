@@ -27,11 +27,11 @@ import org.springframework.web.client.HttpClientErrorException;
  * Github ApiAdapter implementation.
  * @author Keith Donald
  */
-public class GitHubApiAdapter implements ApiAdapter<GitHub> {
+public class GitHubAdapter implements ApiAdapter<GitHub> {
 
-	public boolean test(GitHub api) {
+	public boolean test(GitHub github) {
 		try {
-			api.getUserProfile();
+			github.getUserProfile();
 			return true;
 		} catch (HttpClientErrorException e) {
 			// TODO : Beef up GitHub's error handling and trigger off of a more specific exception
@@ -39,20 +39,20 @@ public class GitHubApiAdapter implements ApiAdapter<GitHub> {
 		}
 	}
 
-	public void setConnectionValues(GitHub api, ConnectionValues values) {
-		GitHubUserProfile profile = api.getUserProfile();
+	public void setConnectionValues(GitHub github, ConnectionValues values) {
+		GitHubUserProfile profile = github.getUserProfile();
 		values.setProviderUserId(String.valueOf(profile.getId()));		
 		values.setDisplayName(profile.getUsername());
 		values.setProfileUrl("https://github.com/" + profile.getId());
 		values.setImageUrl(profile.getProfileImageUrl());
 	}
 
-	public UserProfile fetchUserProfile(GitHub api) {
-		GitHubUserProfile profile = api.getUserProfile();
+	public UserProfile fetchUserProfile(GitHub github) {
+		GitHubUserProfile profile = github.getUserProfile();
 		return new UserProfileBuilder().setName(profile.getName()).setEmail(profile.getEmail()).setUsername(profile.getUsername()).build();
 	}
 	
-	public void updateStatus(GitHub api, String message) {
+	public void updateStatus(GitHub github, String message) {
 		// not supported
 	}
 	
