@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xmlns="http://docbook.org/ns/docbook" version="5.0" xml:id="apis" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>GitHub API Binding</title>
+  	
+	<para>
+		Spring Social GitHub's <interfacename>GitHub</interfacename> interface and its implementation, <classname>GitHubTemplate</classname>, offer an API binding to GitHub's REST API.
+	</para>
+	
+	<para>
+		To obtain an instance of <classname>GitHubTemplate</classname>, you can instantiate it by passing an authorized access token to its constructor:
+	</para>
+	
+	<programlisting language="java"><![CDATA[
+String accessToken = "f8FX29g..."; // access token received from GitHub after OAuth authorization
+GitHub github = new GitHubTemplate(accessToken);]]>
+	</programlisting>
+		
+	<para>
+		If you are using Spring Social's <ulink url="http://static.springsource.org/spring-social/docs/1.0.x/reference/html/serviceprovider.html">service provider framework</ulink>, you can get an instance of <interfacename>GitHub</interfacename> from a <interfacename>Connection</interfacename>. 
+		For example, the following snippet calls <methodname>getApi()</methodname> on a connection to retrieve a <interfacename>GitHub</interfacename>:
+	</para>				
+	
+	<programlisting language="java"><![CDATA[
+Connection<GitHub> connection = connectionRepository.findPrimaryConnectionToApi(GitHub.class);
+GitHub github = connection.getApi();]]>
+	</programlisting>
+	
+	<para>
+		Here, <interfacename>ConnectionRepository</interfacename> is being asked for the primary connections that the current user has with GitHub.
+		From that connection, it retrieves a <interfacename>GitHub</interfacename> instance that is configured with the connection details received when the connection was first established.
+	</para>
+	
+	<para>
+		With a <interfacename>GitHub</interfacename> in hand, there are a handful of operations it provides to interact with GitHub on behalf of the user. 
+		These will be covered in the following sections.
+	</para>
+
+	<section id="github-profile">
+		<title>Retrieving a GitHub user's profile</title>
+
+		<para>
+			To get the currently authenticated user's GitHub profile data, call <interfacename>GitHub</interfacename>'s <methodname>getUserProfile()</methodname> method:
+		</para>
+		
+		<programlisting language="java"><![CDATA[
+GitHubUserProfile profile = github.getUserProfile();]]>
+		</programlisting>
+		
+		<para>
+			The <classname>GitHubUserProfile</classname> returned from <methodname>getUserProfile()</methodname> includes several useful pieces of information about the user, including their...
+		</para>
+		
+		<itemizedlist>
+			<listitem><para>Name</para></listitem>
+			<listitem><para>Username (ie, login name)</para></listitem>
+			<listitem><para>Company</para></listitem>
+			<listitem><para>Email address</para></listitem>
+			<listitem><para>Location</para></listitem>
+			<listitem><para>Blog URL</para></listitem>
+			<listitem><para>Date they joined GitHub</para></listitem>
+		</itemizedlist>
+		
+		<para>
+			If all you need is the user's GitHub username, you can get that by calling the <methodname>getProfileId()</methodname> method:
+		</para>
+		
+		<programlisting language="java"><![CDATA[
+String username = github.getProfileId();]]>
+		</programlisting>
+		
+		<para>
+			And if you need a URL to the user's GitHub profile page, you can use the <methodname>getProfileUrl()</methodname> method:
+		</para>
+		
+		<programlisting language="java"><![CDATA[
+String profileUrl = github.getProfileUrl();]]>
+		</programlisting>
+
+	</section>
+
+</chapter>
