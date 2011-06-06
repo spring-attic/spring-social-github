@@ -1,4 +1,4 @@
-Spring Social GitHub 1.0.0 Milestone 4 (May ??, 2011)
+Spring Social GitHub 1.0.0 Milestone 4 (June 7, 2011)
 =====================================================
-Extracted Spring Social GitHub module from core Spring Social project into
-its own project.
+ - Extracted Spring Social GitHub module from core Spring Social project.
+ - Renamed GitHubApi to GitHub.
