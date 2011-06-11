@@ -15,6 +15,7 @@
  */
 package org.springframework.social.github.api;
 
+import org.springframework.social.ApiBinding;
 import org.springframework.social.github.api.impl.GitHubTemplate;
 
 /**
@@ -27,7 +28,7 @@ import org.springframework.social.github.api.impl.GitHubTemplate;
  * 
  * @author Craig Walls
  */
-public interface GitHub {
+public interface GitHub extends ApiBinding {
 
 	/**
 	 * Retrieves the user's GitHub profile ID.

@@ -24,7 +24,7 @@ import java.util.Map;
 
 import org.springframework.social.github.api.GitHub;
 import org.springframework.social.github.api.GitHubUserProfile;
-import org.springframework.social.oauth2.AbstractOAuth2ApiTemplate;
+import org.springframework.social.oauth2.AbstractOAuth2ApiBinding;
 import org.springframework.social.oauth2.OAuth2Version;
 
 /**
@@ -38,7 +38,7 @@ import org.springframework.social.oauth2.OAuth2Version;
  * </p>
  * @author Craig Walls
  */
-public class GitHubTemplate extends AbstractOAuth2ApiTemplate implements GitHub {
+public class GitHubTemplate extends AbstractOAuth2ApiBinding implements GitHub {
 
 	/**
 	 * Constructs a GitHubTemplate with the minimal amount of information
