@@ -21,13 +21,17 @@ GitHub github = new GitHubTemplate(accessToken);]]>
 	</para>				
 	
 	<programlisting language="java"><![CDATA[
-Connection<GitHub> connection = connectionRepository.findPrimaryConnectionToApi(GitHub.class);
-GitHub github = connection.getApi();]]>
+Connection<GitHub> connection = connectionRepository().findPrimaryConnection(GitHub.class);
+if (connection != null) {
+    GitHub github = connection.getApi();
+
+    // ... use GitHub API binding
+}]]>
 	</programlisting>
 	
 	<para>
-		Here, <interfacename>ConnectionRepository</interfacename> is being asked for the primary connections that the current user has with GitHub.
-		From that connection, it retrieves a <interfacename>GitHub</interfacename> instance that is configured with the connection details received when the connection was first established.
+		Here, <interfacename>ConnectionRepository</interfacename> is being asked for the primary connection that the current user has with GitHub.
+		If a connection with GitHub is found, it retrieves a <interfacename>GitHub</interfacename> instance that is configured with the connection details received when the connection was first established.
 	</para>
 	
 	<para>
