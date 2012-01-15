@@ -18,15 +18,13 @@ package org.springframework.social.github.api.impl;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
 import java.util.Date;
-import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
 import org.springframework.social.github.api.GitHub;
 import org.springframework.social.github.api.GitHubUserProfile;
-import org.springframework.social.github.api.GitHubUser;
+import org.springframework.social.github.api.RepoOperations;
 import org.springframework.social.oauth2.AbstractOAuth2ApiBinding;
 import org.springframework.social.oauth2.OAuth2Version;
 
@@ -38,6 +36,7 @@ import org.springframework.social.oauth2.OAuth2Version;
  * @author Willie Wheeler (willie.wheeler@gmail.com)
  */
 public class GitHubTemplate extends AbstractOAuth2ApiBinding implements GitHub {
+	private RepoOperations repoOperations;
 	
 	/**
 	 * No-arg constructor to support cases in which you want to call the GitHub
@@ -45,6 +44,8 @@ public class GitHubTemplate extends AbstractOAuth2ApiBinding implements GitHub {
 	 * such as getting the list of watchers for a public repository.
 	 */
 	public GitHubTemplate() {
+		super();
+		initSubApis();
 	}
 	
 	/**
@@ -58,6 +59,7 @@ public class GitHubTemplate extends AbstractOAuth2ApiBinding implements GitHub {
 	 */
 	public GitHubTemplate(String accessToken) {
 		super(accessToken);
+		initSubApis();
 	}
 
 	/* (non-Javadoc)
@@ -106,27 +108,17 @@ public class GitHubTemplate extends AbstractOAuth2ApiBinding implements GitHub {
 	}
 	
 	/* (non-Javadoc)
-	 * @see org.springframework.social.github.api.GitHub#getRepoCollaborators(java.lang.String, java.lang.String)
+	 * @see org.springframework.social.github.api.GitHub#repoOperations()
 	 */
 	@Override
-	public List<GitHubUser> getRepoCollaborators(String user, String repo) {
-		GitHubUser[] collaborators =
-			getRestTemplate().getForObject(REPO_COLLABORATORS_URL, GitHubUser[].class, user, repo);
-		return Arrays.asList(collaborators);
-	}
-	
-	/* (non-Javadoc)
-	 * @see org.springframework.social.github.api.GitHub#getRepoWatchers(java.lang.String, java.lang.String)
-	 */
-	@Override
-	public List<GitHubUser> getRepoWatchers(String user, String repo) {
-		GitHubUser[] watchers =
-			getRestTemplate().getForObject(REPO_WATCHERS_URL, GitHubUser[].class, user, repo);
-		return Arrays.asList(watchers);
-	}
+	public RepoOperations repoOperations() { return repoOperations; }
 	
 	// internal helpers
-
+	
+	private void initSubApis() {
+		this.repoOperations = new RepoTemplate(getRestTemplate(), isAuthorized());
+	}
+	
 	private Date toDate(String dateString, DateFormat dateFormat) {
 		try {
 			return dateFormat.parse(dateString);
@@ -137,11 +129,6 @@ public class GitHubTemplate extends AbstractOAuth2ApiBinding implements GitHub {
 
 	private DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss Z", Locale.ENGLISH);
 	
-	// FIXME Update to GitHub API v3? [WLW]
+	// FIXME Move to UsersTemplate, and update to GitHub API v3 [WLW]
 	static final String PROFILE_URL = "https://github.com/api/v2/json/user/show";
-	
-	// Using GitHub API v3 here. I assume that's what we want to do. [WLW]
-	static final String V3_BASE_URL = "https://api.github.com";
-	static final String REPO_COLLABORATORS_URL = V3_BASE_URL + "/repos/{user}/{repo}/collaborators";
-	static final String REPO_WATCHERS_URL = V3_BASE_URL + "/repos/{user}/{repo}/watchers";
 }

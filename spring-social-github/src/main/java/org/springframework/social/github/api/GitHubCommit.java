@@ -18,44 +18,41 @@ package org.springframework.social.github.api;
 import java.io.Serializable;
 
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
-import org.codehaus.jackson.annotate.JsonProperty;
 
 /**
- * A GitHub repository user.
+ * A GitHub repository commit.
  * 
  * @author Willie Wheeler (willie.wheeler@gmail.com)
  */
 @SuppressWarnings("serial")
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class GitHubUser implements Serializable {
-	private Long id;
+public class GitHubCommit implements Serializable {
+	private String sha;
 	private String url;
-	private String login;
-	private String avatarUrl;
-	private String gravatarId;
+	private GitHubUser committer;
+	private GitHubUser author;
 	
-	public Long getId() { return id; }
+	public String getSha() { return sha; }
 	
-	public void setId(Long id) { this.id = id; }
+	public void setSha(String sha) { this.sha = sha; }
 	
 	public String getUrl() { return url; }
 	
 	public void setUrl(String url) { this.url = url; }
 	
 	/**
-	 * @return watcher's GitHub login
+	 * @return user who committed the patch, perhaps on behalf of a separate
+	 *         author (e.g., Willie authors code, issues a pull request, and
+	 *         Craig commits it)
 	 */
-	public String getLogin() { return login; }
+	public GitHubUser getCommitter() { return committer; }
 	
-	public void setLogin(String login) { this.login = login; }
+	public void setCommitter(GitHubUser committer) { this.committer = committer; }
 	
-	@JsonProperty("avatar_url")
-	public String getAvatarUrl() { return avatarUrl; }
+	public GitHubUser getAuthor() { return author; }
 	
-	public void setAvatarUrl(String avatarUrl) { this.avatarUrl = avatarUrl; }
-	
-	@JsonProperty("gravatar_id")
-	public String getGravatarId() { return gravatarId; }
-	
-	public void setGravatarId(String gravatarId) { this.gravatarId = gravatarId; }
+	/**
+	 * @param author user who wrote the patch
+	 */
+	public void setAuthor(GitHubUser author) { this.author = author; }
 }
