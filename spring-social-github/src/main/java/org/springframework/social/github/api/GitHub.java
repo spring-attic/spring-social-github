@@ -15,6 +15,8 @@
  */
 package org.springframework.social.github.api;
 
+import java.util.List;
+
 import org.springframework.social.ApiBinding;
 import org.springframework.social.github.api.impl.GitHubTemplate;
 
@@ -50,4 +52,22 @@ public interface GitHub extends ApiBinding {
 	 * @return the URL to the user's GitHub profile.
 	 */
 	String getProfileUrl();
+	
+	/**
+	 * Public operation to return a list of collaborators for the given repository.
+	 * 
+	 * @param user GitHub user
+	 * @param repo GitHub repository
+	 * @return list of collaborators
+	 */
+	List<GitHubUser> getRepoCollaborators(String user, String repo);
+	
+	/**
+	 * Public operation to return a list of watchers for the given repository.
+	 *  
+	 * @param user GitHub user
+	 * @param repo GitHub repository
+	 * @return list of watchers
+	 */
+	List<GitHubUser> getRepoWatchers(String user, String repo);
 }
