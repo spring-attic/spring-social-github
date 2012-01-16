@@ -1,0 +1,1262 @@
+[
+  {
+    "committer": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "url": "https://api.github.com/repos/williewheeler/skybase/commits/a17a4c68f62f4ca464a0faf4907c0417116f4092",
+    "author": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/williewheeler/skybase/commits/ad43ae6405aa4d8145fa66d38a258ab5dcf0e5b8",
+        "sha": "ad43ae6405aa4d8145fa66d38a258ab5dcf0e5b8"
+      }
+    ],
+    "commit": {
+      "committer": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2012-01-14T11:15:11-08:00",
+        "name": "Willie Wheeler"
+      },
+      "url": "https://api.github.com/repos/williewheeler/skybase/git/commits/a17a4c68f62f4ca464a0faf4907c0417116f4092",
+      "message": "Added simple integration with GitHub (query and display repo watchers)",
+      "author": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2012-01-14T11:15:11-08:00",
+        "name": "Willie Wheeler"
+      },
+      "tree": {
+        "url": "https://api.github.com/repos/williewheeler/skybase/git/trees/4a46a9fa8f4a6eebcf0480a39a08bc89f4d0dea5",
+        "sha": "4a46a9fa8f4a6eebcf0480a39a08bc89f4d0dea5"
+      }
+    },
+    "sha": "a17a4c68f62f4ca464a0faf4907c0417116f4092"
+  },
+  {
+    "committer": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "url": "https://api.github.com/repos/williewheeler/skybase/commits/ad43ae6405aa4d8145fa66d38a258ab5dcf0e5b8",
+    "author": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/williewheeler/skybase/commits/b59854f3d1331dd783b1d0425249585f440b8339",
+        "sha": "b59854f3d1331dd783b1d0425249585f440b8339"
+      }
+    ],
+    "commit": {
+      "committer": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2012-01-13T20:59:15-08:00",
+        "name": "Willie Wheeler"
+      },
+      "url": "https://api.github.com/repos/williewheeler/skybase/git/commits/ad43ae6405aa4d8145fa66d38a258ab5dcf0e5b8",
+      "message": "Added application entity",
+      "author": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2012-01-13T20:59:15-08:00",
+        "name": "Willie Wheeler"
+      },
+      "tree": {
+        "url": "https://api.github.com/repos/williewheeler/skybase/git/trees/bb6ab165019ebf98725cb80afe9072adf8e8d4c6",
+        "sha": "bb6ab165019ebf98725cb80afe9072adf8e8d4c6"
+      }
+    },
+    "sha": "ad43ae6405aa4d8145fa66d38a258ab5dcf0e5b8"
+  },
+  {
+    "committer": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "url": "https://api.github.com/repos/williewheeler/skybase/commits/b59854f3d1331dd783b1d0425249585f440b8339",
+    "author": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/williewheeler/skybase/commits/3465fc5a23f2b5e543cf279fcc8acdf22332bfe1",
+        "sha": "3465fc5a23f2b5e543cf279fcc8acdf22332bfe1"
+      }
+    ],
+    "commit": {
+      "committer": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2012-01-13T00:19:25-08:00",
+        "name": "Willie Wheeler"
+      },
+      "url": "https://api.github.com/repos/williewheeler/skybase/git/commits/b59854f3d1331dd783b1d0425249585f440b8339",
+      "message": "JIT region graph works now",
+      "author": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2012-01-13T00:19:25-08:00",
+        "name": "Willie Wheeler"
+      },
+      "tree": {
+        "url": "https://api.github.com/repos/williewheeler/skybase/git/trees/982ded8d366abfb491cee972463f397e69ca0d19",
+        "sha": "982ded8d366abfb491cee972463f397e69ca0d19"
+      }
+    },
+    "sha": "b59854f3d1331dd783b1d0425249585f440b8339"
+  },
+  {
+    "committer": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "url": "https://api.github.com/repos/williewheeler/skybase/commits/3465fc5a23f2b5e543cf279fcc8acdf22332bfe1",
+    "author": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/williewheeler/skybase/commits/13271bd14b75eda9fc2ed2136f9a4d445a6fccb5",
+        "sha": "13271bd14b75eda9fc2ed2136f9a4d445a6fccb5"
+      }
+    ],
+    "commit": {
+      "committer": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2012-01-12T00:13:41-08:00",
+        "name": "Willie Wheeler"
+      },
+      "url": "https://api.github.com/repos/williewheeler/skybase/git/commits/3465fc5a23f2b5e543cf279fcc8acdf22332bfe1",
+      "message": "Getting ready to add JIT visualization",
+      "author": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2012-01-12T00:13:41-08:00",
+        "name": "Willie Wheeler"
+      },
+      "tree": {
+        "url": "https://api.github.com/repos/williewheeler/skybase/git/trees/63b4bd546d6e52aba992b58fb0abe0550a30e3b5",
+        "sha": "63b4bd546d6e52aba992b58fb0abe0550a30e3b5"
+      }
+    },
+    "sha": "3465fc5a23f2b5e543cf279fcc8acdf22332bfe1"
+  },
+  {
+    "committer": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "url": "https://api.github.com/repos/williewheeler/skybase/commits/13271bd14b75eda9fc2ed2136f9a4d445a6fccb5",
+    "author": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/williewheeler/skybase/commits/0f9869fe4951337b7245cb2458159c169f08005a",
+        "sha": "0f9869fe4951337b7245cb2458159c169f08005a"
+      }
+    ],
+    "commit": {
+      "committer": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2012-01-09T21:30:25-08:00",
+        "name": "Willie Wheeler"
+      },
+      "url": "https://api.github.com/repos/williewheeler/skybase/git/commits/13271bd14b75eda9fc2ed2136f9a4d445a6fccb5",
+      "message": "Building out the region and data center entities",
+      "author": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2012-01-09T21:30:25-08:00",
+        "name": "Willie Wheeler"
+      },
+      "tree": {
+        "url": "https://api.github.com/repos/williewheeler/skybase/git/trees/48a91a70786901df20a7d7ab2ae8817f86abc77d",
+        "sha": "48a91a70786901df20a7d7ab2ae8817f86abc77d"
+      }
+    },
+    "sha": "13271bd14b75eda9fc2ed2136f9a4d445a6fccb5"
+  },
+  {
+    "committer": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "url": "https://api.github.com/repos/williewheeler/skybase/commits/0f9869fe4951337b7245cb2458159c169f08005a",
+    "author": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/williewheeler/skybase/commits/c1b8d02e614439e9c34b544a42068fa006cc798b",
+        "sha": "c1b8d02e614439e9c34b544a42068fa006cc798b"
+      }
+    ],
+    "commit": {
+      "committer": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2012-01-09T00:41:06-08:00",
+        "name": "Willie Wheeler"
+      },
+      "url": "https://api.github.com/repos/williewheeler/skybase/git/commits/0f9869fe4951337b7245cb2458159c169f08005a",
+      "message": "Adding regions to data centers. Still in progress.",
+      "author": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2012-01-09T00:41:06-08:00",
+        "name": "Willie Wheeler"
+      },
+      "tree": {
+        "url": "https://api.github.com/repos/williewheeler/skybase/git/trees/343f1ae60b350f7b1b8822c57ac514f0694aee73",
+        "sha": "343f1ae60b350f7b1b8822c57ac514f0694aee73"
+      }
+    },
+    "sha": "0f9869fe4951337b7245cb2458159c169f08005a"
+  },
+  {
+    "committer": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "url": "https://api.github.com/repos/williewheeler/skybase/commits/c1b8d02e614439e9c34b544a42068fa006cc798b",
+    "author": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/williewheeler/skybase/commits/8f9d3c068e5396fa4791ab7677613143a0a86206",
+        "sha": "8f9d3c068e5396fa4791ab7677613143a0a86206"
+      }
+    ],
+    "commit": {
+      "committer": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2012-01-08T20:19:40-08:00",
+        "name": "Willie Wheeler"
+      },
+      "url": "https://api.github.com/repos/williewheeler/skybase/git/commits/c1b8d02e614439e9c34b544a42068fa006cc798b",
+      "message": "Added unit tests for form controllers. Cleaned up the test framework a bit.",
+      "author": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2012-01-08T20:19:40-08:00",
+        "name": "Willie Wheeler"
+      },
+      "tree": {
+        "url": "https://api.github.com/repos/williewheeler/skybase/git/trees/5e482a8ceef57ef36af824da236232a06c25252e",
+        "sha": "5e482a8ceef57ef36af824da236232a06c25252e"
+      }
+    },
+    "sha": "c1b8d02e614439e9c34b544a42068fa006cc798b"
+  },
+  {
+    "committer": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "url": "https://api.github.com/repos/williewheeler/skybase/commits/8f9d3c068e5396fa4791ab7677613143a0a86206",
+    "author": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/williewheeler/skybase/commits/6f8c0075a44a6fc7dc17527d3d7e552fbe019d9a",
+        "sha": "6f8c0075a44a6fc7dc17527d3d7e552fbe019d9a"
+      }
+    ],
+    "commit": {
+      "committer": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2012-01-08T00:13:03-08:00",
+        "name": "Willie Wheeler"
+      },
+      "url": "https://api.github.com/repos/williewheeler/skybase/git/commits/8f9d3c068e5396fa4791ab7677613143a0a86206",
+      "message": "Fixed bug in equals() method",
+      "author": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2012-01-08T00:13:03-08:00",
+        "name": "Willie Wheeler"
+      },
+      "tree": {
+        "url": "https://api.github.com/repos/williewheeler/skybase/git/trees/00f1b49380dcb0f5389c05c715f070eb6e92f02c",
+        "sha": "00f1b49380dcb0f5389c05c715f070eb6e92f02c"
+      }
+    },
+    "sha": "8f9d3c068e5396fa4791ab7677613143a0a86206"
+  },
+  {
+    "committer": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "url": "https://api.github.com/repos/williewheeler/skybase/commits/6f8c0075a44a6fc7dc17527d3d7e552fbe019d9a",
+    "author": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/williewheeler/skybase/commits/ae70ca6f25ba3c4534affc3cba5e7bbbca1dfc5a",
+        "sha": "ae70ca6f25ba3c4534affc3cba5e7bbbca1dfc5a"
+      }
+    ],
+    "commit": {
+      "committer": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2012-01-08T00:08:59-08:00",
+        "name": "Willie Wheeler"
+      },
+      "url": "https://api.github.com/repos/williewheeler/skybase/git/commits/6f8c0075a44a6fc7dc17527d3d7e552fbe019d9a",
+      "message": "Adding Region to DataCenter. In progress.",
+      "author": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2012-01-08T00:08:59-08:00",
+        "name": "Willie Wheeler"
+      },
+      "tree": {
+        "url": "https://api.github.com/repos/williewheeler/skybase/git/trees/1edfb23aa8a40939ee24f25d022f3ba9e1b16400",
+        "sha": "1edfb23aa8a40939ee24f25d022f3ba9e1b16400"
+      }
+    },
+    "sha": "6f8c0075a44a6fc7dc17527d3d7e552fbe019d9a"
+  },
+  {
+    "committer": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "url": "https://api.github.com/repos/williewheeler/skybase/commits/ae70ca6f25ba3c4534affc3cba5e7bbbca1dfc5a",
+    "author": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/williewheeler/skybase/commits/79bed52a31549e505aa02edc9f0850b7e03d2c85",
+        "sha": "79bed52a31549e505aa02edc9f0850b7e03d2c85"
+      }
+    ],
+    "commit": {
+      "committer": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2012-01-07T23:46:09-08:00",
+        "name": "Willie Wheeler"
+      },
+      "url": "https://api.github.com/repos/williewheeler/skybase/git/commits/ae70ca6f25ba3c4534affc3cba5e7bbbca1dfc5a",
+      "message": "Cleaned up the service beans, and added unit tests",
+      "author": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2012-01-07T23:46:09-08:00",
+        "name": "Willie Wheeler"
+      },
+      "tree": {
+        "url": "https://api.github.com/repos/williewheeler/skybase/git/trees/fc7b741f7619a879895d728f2794662925676ede",
+        "sha": "fc7b741f7619a879895d728f2794662925676ede"
+      }
+    },
+    "sha": "ae70ca6f25ba3c4534affc3cba5e7bbbca1dfc5a"
+  },
+  {
+    "committer": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "url": "https://api.github.com/repos/williewheeler/skybase/commits/79bed52a31549e505aa02edc9f0850b7e03d2c85",
+    "author": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/williewheeler/skybase/commits/a399b1156592ba7f8bffd530219dc4634f73d37f",
+        "sha": "a399b1156592ba7f8bffd530219dc4634f73d37f"
+      }
+    ],
+    "commit": {
+      "committer": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2012-01-07T13:12:57-08:00",
+        "name": "Willie Wheeler"
+      },
+      "url": "https://api.github.com/repos/williewheeler/skybase/git/commits/79bed52a31549e505aa02edc9f0850b7e03d2c85",
+      "message": "Added pass-through service tier to get transactions. Hopefully I can avoid this but dont see how yet.",
+      "author": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2012-01-07T13:12:57-08:00",
+        "name": "Willie Wheeler"
+      },
+      "tree": {
+        "url": "https://api.github.com/repos/williewheeler/skybase/git/trees/7bc51f5a184bd63aa02d94f0e757229386a61c5c",
+        "sha": "7bc51f5a184bd63aa02d94f0e757229386a61c5c"
+      }
+    },
+    "sha": "79bed52a31549e505aa02edc9f0850b7e03d2c85"
+  },
+  {
+    "committer": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "url": "https://api.github.com/repos/williewheeler/skybase/commits/a399b1156592ba7f8bffd530219dc4634f73d37f",
+    "author": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/williewheeler/skybase/commits/8dbced80f52ae8b012a8c3d889ea936fe9340c2b",
+        "sha": "8dbced80f52ae8b012a8c3d889ea936fe9340c2b"
+      }
+    ],
+    "commit": {
+      "committer": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2012-01-07T02:07:36-08:00",
+        "name": "Willie Wheeler"
+      },
+      "url": "https://api.github.com/repos/williewheeler/skybase/git/commits/a399b1156592ba7f8bffd530219dc4634f73d37f",
+      "message": "Fixed broken unit test",
+      "author": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2012-01-07T02:07:36-08:00",
+        "name": "Willie Wheeler"
+      },
+      "tree": {
+        "url": "https://api.github.com/repos/williewheeler/skybase/git/trees/331c158dc77489af5192fb5f9ddbea96051f8d2c",
+        "sha": "331c158dc77489af5192fb5f9ddbea96051f8d2c"
+      }
+    },
+    "sha": "a399b1156592ba7f8bffd530219dc4634f73d37f"
+  },
+  {
+    "committer": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "url": "https://api.github.com/repos/williewheeler/skybase/commits/8dbced80f52ae8b012a8c3d889ea936fe9340c2b",
+    "author": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/williewheeler/skybase/commits/095c15ac6b27afb5c9668d8a1e755bea3b96ccbd",
+        "sha": "095c15ac6b27afb5c9668d8a1e755bea3b96ccbd"
+      }
+    ],
+    "commit": {
+      "committer": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2012-01-07T02:05:28-08:00",
+        "name": "Willie Wheeler"
+      },
+      "url": "https://api.github.com/repos/williewheeler/skybase/git/commits/8dbced80f52ae8b012a8c3d889ea936fe9340c2b",
+      "message": "Added Formatter stuff. Still need to fix the save code so that it doesnt just create new entities every time we edit something.",
+      "author": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2012-01-07T02:05:28-08:00",
+        "name": "Willie Wheeler"
+      },
+      "tree": {
+        "url": "https://api.github.com/repos/williewheeler/skybase/git/trees/6e5007be3298af7e21a8d53b7a881cea7368dce6",
+        "sha": "6e5007be3298af7e21a8d53b7a881cea7368dce6"
+      }
+    },
+    "sha": "8dbced80f52ae8b012a8c3d889ea936fe9340c2b"
+  },
+  {
+    "committer": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "url": "https://api.github.com/repos/williewheeler/skybase/commits/095c15ac6b27afb5c9668d8a1e755bea3b96ccbd",
+    "author": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/williewheeler/skybase/commits/d91011a587ad57ba80e17a66ea19966cb33d4e70",
+        "sha": "d91011a587ad57ba80e17a66ea19966cb33d4e70"
+      }
+    ],
+    "commit": {
+      "committer": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2012-01-01T21:35:44-08:00",
+        "name": "Willie Wheeler"
+      },
+      "url": "https://api.github.com/repos/williewheeler/skybase/git/commits/095c15ac6b27afb5c9668d8a1e755bea3b96ccbd",
+      "message": "Controller refactoring",
+      "author": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2012-01-01T21:35:44-08:00",
+        "name": "Willie Wheeler"
+      },
+      "tree": {
+        "url": "https://api.github.com/repos/williewheeler/skybase/git/trees/6c14f1a43a79f8cb7b91f05354391e9341e936fb",
+        "sha": "6c14f1a43a79f8cb7b91f05354391e9341e936fb"
+      }
+    },
+    "sha": "095c15ac6b27afb5c9668d8a1e755bea3b96ccbd"
+  },
+  {
+    "committer": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "url": "https://api.github.com/repos/williewheeler/skybase/commits/d91011a587ad57ba80e17a66ea19966cb33d4e70",
+    "author": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/williewheeler/skybase/commits/77160eb0dee552c308c9a603faa44e92c3e753e5",
+        "sha": "77160eb0dee552c308c9a603faa44e92c3e753e5"
+      }
+    ],
+    "commit": {
+      "committer": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2011-12-31T01:26:27-08:00",
+        "name": "Willie Wheeler"
+      },
+      "url": "https://api.github.com/repos/williewheeler/skybase/git/commits/d91011a587ad57ba80e17a66ea19966cb33d4e70",
+      "message": "Implementing the farm forms",
+      "author": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2011-12-31T01:26:27-08:00",
+        "name": "Willie Wheeler"
+      },
+      "tree": {
+        "url": "https://api.github.com/repos/williewheeler/skybase/git/trees/7d5bf0fcacb2643c9f0bb12ba7dff74f9c941411",
+        "sha": "7d5bf0fcacb2643c9f0bb12ba7dff74f9c941411"
+      }
+    },
+    "sha": "d91011a587ad57ba80e17a66ea19966cb33d4e70"
+  },
+  {
+    "committer": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "url": "https://api.github.com/repos/williewheeler/skybase/commits/77160eb0dee552c308c9a603faa44e92c3e753e5",
+    "author": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/williewheeler/skybase/commits/30081a824532a4be80d2a0e3901f83ff697d81ae",
+        "sha": "30081a824532a4be80d2a0e3901f83ff697d81ae"
+      }
+    ],
+    "commit": {
+      "committer": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2011-12-30T01:28:21-08:00",
+        "name": "Willie Wheeler"
+      },
+      "url": "https://api.github.com/repos/williewheeler/skybase/git/commits/77160eb0dee552c308c9a603faa44e92c3e753e5",
+      "message": "Bugfix",
+      "author": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2011-12-30T01:28:21-08:00",
+        "name": "Willie Wheeler"
+      },
+      "tree": {
+        "url": "https://api.github.com/repos/williewheeler/skybase/git/trees/74cfab0ed33b00d1bf9942a0308820f8014c55be",
+        "sha": "74cfab0ed33b00d1bf9942a0308820f8014c55be"
+      }
+    },
+    "sha": "77160eb0dee552c308c9a603faa44e92c3e753e5"
+  },
+  {
+    "committer": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "url": "https://api.github.com/repos/williewheeler/skybase/commits/30081a824532a4be80d2a0e3901f83ff697d81ae",
+    "author": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/williewheeler/skybase/commits/1950fbad985a9b48d4c7ca8e4702a996c3acb908",
+        "sha": "1950fbad985a9b48d4c7ca8e4702a996c3acb908"
+      }
+    ],
+    "commit": {
+      "committer": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2011-12-30T01:21:52-08:00",
+        "name": "Willie Wheeler"
+      },
+      "url": "https://api.github.com/repos/williewheeler/skybase/git/commits/30081a824532a4be80d2a0e3901f83ff697d81ae",
+      "message": "Moved RESTful endpoints to abstract controller. Added ClasspathScanningJaxb2Marshaller.",
+      "author": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2011-12-30T01:21:52-08:00",
+        "name": "Willie Wheeler"
+      },
+      "tree": {
+        "url": "https://api.github.com/repos/williewheeler/skybase/git/trees/9398ceb8ac10ead52d23b9026bd573b441e39b1c",
+        "sha": "9398ceb8ac10ead52d23b9026bd573b441e39b1c"
+      }
+    },
+    "sha": "30081a824532a4be80d2a0e3901f83ff697d81ae"
+  },
+  {
+    "committer": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "url": "https://api.github.com/repos/williewheeler/skybase/commits/1950fbad985a9b48d4c7ca8e4702a996c3acb908",
+    "author": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/williewheeler/skybase/commits/e0323b0eaa4cf39226a6e0ded09c096cd05174f0",
+        "sha": "e0323b0eaa4cf39226a6e0ded09c096cd05174f0"
+      }
+    ],
+    "commit": {
+      "committer": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2011-12-28T00:49:10-08:00",
+        "name": "Willie Wheeler"
+      },
+      "url": "https://api.github.com/repos/williewheeler/skybase/git/commits/1950fbad985a9b48d4c7ca8e4702a996c3acb908",
+      "message": "Upgraded to Spring Data Neo4j 2.0.0.RELEASE. Person details now loads manager and direct reports.",
+      "author": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2011-12-28T00:49:10-08:00",
+        "name": "Willie Wheeler"
+      },
+      "tree": {
+        "url": "https://api.github.com/repos/williewheeler/skybase/git/trees/55f0eff9350ea9bb34fd584201a9a5fb4777e6a8",
+        "sha": "55f0eff9350ea9bb34fd584201a9a5fb4777e6a8"
+      }
+    },
+    "sha": "1950fbad985a9b48d4c7ca8e4702a996c3acb908"
+  },
+  {
+    "committer": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "url": "https://api.github.com/repos/williewheeler/skybase/commits/e0323b0eaa4cf39226a6e0ded09c096cd05174f0",
+    "author": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/williewheeler/skybase/commits/f7061b3d1fcd8d75740b70711383d135c4674231",
+        "sha": "f7061b3d1fcd8d75740b70711383d135c4674231"
+      }
+    ],
+    "commit": {
+      "committer": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2011-12-27T22:09:16-08:00",
+        "name": "Willie Wheeler"
+      },
+      "url": "https://api.github.com/repos/williewheeler/skybase/git/commits/e0323b0eaa4cf39226a6e0ded09c096cd05174f0",
+      "message": "Added DataCenter and Environment entities",
+      "author": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2011-12-27T22:09:16-08:00",
+        "name": "Willie Wheeler"
+      },
+      "tree": {
+        "url": "https://api.github.com/repos/williewheeler/skybase/git/trees/0343ca74196c2bedc48111ef3746d9d5b2c14371",
+        "sha": "0343ca74196c2bedc48111ef3746d9d5b2c14371"
+      }
+    },
+    "sha": "e0323b0eaa4cf39226a6e0ded09c096cd05174f0"
+  },
+  {
+    "committer": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "url": "https://api.github.com/repos/williewheeler/skybase/commits/f7061b3d1fcd8d75740b70711383d135c4674231",
+    "author": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/williewheeler/skybase/commits/4db9ff9c64985cb7997f4ef1d5df2dbb65d887e2",
+        "sha": "4db9ff9c64985cb7997f4ef1d5df2dbb65d887e2"
+      }
+    ],
+    "commit": {
+      "committer": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2011-12-27T21:03:46-08:00",
+        "name": "Willie Wheeler"
+      },
+      "url": "https://api.github.com/repos/williewheeler/skybase/git/commits/f7061b3d1fcd8d75740b70711383d135c4674231",
+      "message": "Cleaned up entity framework code, and added a new Region entity",
+      "author": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2011-12-27T21:03:46-08:00",
+        "name": "Willie Wheeler"
+      },
+      "tree": {
+        "url": "https://api.github.com/repos/williewheeler/skybase/git/trees/559eb21f13c8610f40123320cdcdd98b3f20bd67",
+        "sha": "559eb21f13c8610f40123320cdcdd98b3f20bd67"
+      }
+    },
+    "sha": "f7061b3d1fcd8d75740b70711383d135c4674231"
+  },
+  {
+    "committer": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "url": "https://api.github.com/repos/williewheeler/skybase/commits/4db9ff9c64985cb7997f4ef1d5df2dbb65d887e2",
+    "author": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/williewheeler/skybase/commits/55e2e3a073e37b7c9b3837649160f33db0137fd9",
+        "sha": "55e2e3a073e37b7c9b3837649160f33db0137fd9"
+      }
+    ],
+    "commit": {
+      "committer": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2011-12-24T01:12:08-08:00",
+        "name": "Willie Wheeler"
+      },
+      "url": "https://api.github.com/repos/williewheeler/skybase/git/commits/4db9ff9c64985cb7997f4ef1d5df2dbb65d887e2",
+      "message": "Added PersonController unit test. Need to DRY up controllers and their unit tests.",
+      "author": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2011-12-24T01:12:08-08:00",
+        "name": "Willie Wheeler"
+      },
+      "tree": {
+        "url": "https://api.github.com/repos/williewheeler/skybase/git/trees/9086ff5c06c14c69cb318090b6c8d3015e2d0f0f",
+        "sha": "9086ff5c06c14c69cb318090b6c8d3015e2d0f0f"
+      }
+    },
+    "sha": "4db9ff9c64985cb7997f4ef1d5df2dbb65d887e2"
+  },
+  {
+    "committer": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "url": "https://api.github.com/repos/williewheeler/skybase/commits/55e2e3a073e37b7c9b3837649160f33db0137fd9",
+    "author": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/williewheeler/skybase/commits/c5029a6bf9afd2e154cf938b2ff2556fe4447bee",
+        "sha": "c5029a6bf9afd2e154cf938b2ff2556fe4447bee"
+      }
+    ],
+    "commit": {
+      "committer": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2011-12-24T00:51:01-08:00",
+        "name": "Willie Wheeler"
+      },
+      "url": "https://api.github.com/repos/williewheeler/skybase/git/commits/55e2e3a073e37b7c9b3837649160f33db0137fd9",
+      "message": "DRYed up the views a bit, and added ability to delete packages",
+      "author": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2011-12-24T00:51:01-08:00",
+        "name": "Willie Wheeler"
+      },
+      "tree": {
+        "url": "https://api.github.com/repos/williewheeler/skybase/git/trees/768124c82e244adda39ec35aba9aeeb0c981f5cf",
+        "sha": "768124c82e244adda39ec35aba9aeeb0c981f5cf"
+      }
+    },
+    "sha": "55e2e3a073e37b7c9b3837649160f33db0137fd9"
+  },
+  {
+    "committer": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "url": "https://api.github.com/repos/williewheeler/skybase/commits/c5029a6bf9afd2e154cf938b2ff2556fe4447bee",
+    "author": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/williewheeler/skybase/commits/a0770b9ca3d8b6a7faa35e8d8fa9e8b3468bebbe",
+        "sha": "a0770b9ca3d8b6a7faa35e8d8fa9e8b3468bebbe"
+      }
+    ],
+    "commit": {
+      "committer": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2011-12-23T16:00:23-08:00",
+        "name": "Willie Wheeler"
+      },
+      "url": "https://api.github.com/repos/williewheeler/skybase/git/commits/c5029a6bf9afd2e154cf938b2ff2556fe4447bee",
+      "message": "Submitting package edits now works",
+      "author": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2011-12-23T16:00:23-08:00",
+        "name": "Willie Wheeler"
+      },
+      "tree": {
+        "url": "https://api.github.com/repos/williewheeler/skybase/git/trees/8f3920b77be9583304e3ee83b55ab8396d460716",
+        "sha": "8f3920b77be9583304e3ee83b55ab8396d460716"
+      }
+    },
+    "sha": "c5029a6bf9afd2e154cf938b2ff2556fe4447bee"
+  },
+  {
+    "committer": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "url": "https://api.github.com/repos/williewheeler/skybase/commits/a0770b9ca3d8b6a7faa35e8d8fa9e8b3468bebbe",
+    "author": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/williewheeler/skybase/commits/7a826a34c3302f1a48061d0407f969f44764d67e",
+        "sha": "7a826a34c3302f1a48061d0407f969f44764d67e"
+      }
+    ],
+    "commit": {
+      "committer": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2011-12-23T09:38:46-08:00",
+        "name": "Willie Wheeler"
+      },
+      "url": "https://api.github.com/repos/williewheeler/skybase/git/commits/a0770b9ca3d8b6a7faa35e8d8fa9e8b3468bebbe",
+      "message": "Fixed wrong href on edit package forms cancel button",
+      "author": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2011-12-23T09:38:46-08:00",
+        "name": "Willie Wheeler"
+      },
+      "tree": {
+        "url": "https://api.github.com/repos/williewheeler/skybase/git/trees/aa9f0fb2845c597a8b93397916320bf454c55a51",
+        "sha": "aa9f0fb2845c597a8b93397916320bf454c55a51"
+      }
+    },
+    "sha": "a0770b9ca3d8b6a7faa35e8d8fa9e8b3468bebbe"
+  },
+  {
+    "committer": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "url": "https://api.github.com/repos/williewheeler/skybase/commits/7a826a34c3302f1a48061d0407f969f44764d67e",
+    "author": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/williewheeler/skybase/commits/6c8372145b211410359e71375900a6ae20aec470",
+        "sha": "6c8372145b211410359e71375900a6ae20aec470"
+      }
+    ],
+    "commit": {
+      "committer": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2011-12-22T23:16:36-08:00",
+        "name": "Willie Wheeler"
+      },
+      "url": "https://api.github.com/repos/williewheeler/skybase/git/commits/7a826a34c3302f1a48061d0407f969f44764d67e",
+      "message": "Added package editor page (but not yet processing edits)",
+      "author": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2011-12-22T23:16:36-08:00",
+        "name": "Willie Wheeler"
+      },
+      "tree": {
+        "url": "https://api.github.com/repos/williewheeler/skybase/git/trees/6221e17e20ea83e5a11f676550c88b89e991c350",
+        "sha": "6221e17e20ea83e5a11f676550c88b89e991c350"
+      }
+    },
+    "sha": "7a826a34c3302f1a48061d0407f969f44764d67e"
+  },
+  {
+    "committer": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "url": "https://api.github.com/repos/williewheeler/skybase/commits/6c8372145b211410359e71375900a6ae20aec470",
+    "author": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/williewheeler/skybase/commits/fb3c6d85fb60e3823ac11ba6fe6386a2bde90bc2",
+        "sha": "fb3c6d85fb60e3823ac11ba6fe6386a2bde90bc2"
+      }
+    ],
+    "commit": {
+      "committer": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2011-12-22T21:35:02-08:00",
+        "name": "Willie Wheeler"
+      },
+      "url": "https://api.github.com/repos/williewheeler/skybase/git/commits/6c8372145b211410359e71375900a6ae20aec470",
+      "message": "Added package details page",
+      "author": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2011-12-22T21:35:02-08:00",
+        "name": "Willie Wheeler"
+      },
+      "tree": {
+        "url": "https://api.github.com/repos/williewheeler/skybase/git/trees/953569fbaabf3f0983bc68370cc96b95d96556bf",
+        "sha": "953569fbaabf3f0983bc68370cc96b95d96556bf"
+      }
+    },
+    "sha": "6c8372145b211410359e71375900a6ae20aec470"
+  },
+  {
+    "committer": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "url": "https://api.github.com/repos/williewheeler/skybase/commits/fb3c6d85fb60e3823ac11ba6fe6386a2bde90bc2",
+    "author": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/williewheeler/skybase/commits/c830c500de3739e53524b3ae38e3a04024fdc3eb",
+        "sha": "c830c500de3739e53524b3ae38e3a04024fdc3eb"
+      }
+    ],
+    "commit": {
+      "committer": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2011-12-22T19:45:56-08:00",
+        "name": "Willie Wheeler"
+      },
+      "url": "https://api.github.com/repos/williewheeler/skybase/git/commits/fb3c6d85fb60e3823ac11ba6fe6386a2bde90bc2",
+      "message": "Fixed items listed in issue #1",
+      "author": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2011-12-22T19:45:56-08:00",
+        "name": "Willie Wheeler"
+      },
+      "tree": {
+        "url": "https://api.github.com/repos/williewheeler/skybase/git/trees/6c7badd50ecaa164572a1ffde1597ed7d7242171",
+        "sha": "6c7badd50ecaa164572a1ffde1597ed7d7242171"
+      }
+    },
+    "sha": "fb3c6d85fb60e3823ac11ba6fe6386a2bde90bc2"
+  },
+  {
+    "committer": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "url": "https://api.github.com/repos/williewheeler/skybase/commits/c830c500de3739e53524b3ae38e3a04024fdc3eb",
+    "author": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/williewheeler/skybase/commits/81dc467c75a3343b47aa882561e4ab5263176260",
+        "sha": "81dc467c75a3343b47aa882561e4ab5263176260"
+      }
+    ],
+    "commit": {
+      "committer": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2011-12-21T23:29:21-08:00",
+        "name": "Willie Wheeler"
+      },
+      "url": "https://api.github.com/repos/williewheeler/skybase/git/commits/c830c500de3739e53524b3ae38e3a04024fdc3eb",
+      "message": "Added support for farms (farm list, create farm)",
+      "author": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2011-12-21T23:29:21-08:00",
+        "name": "Willie Wheeler"
+      },
+      "tree": {
+        "url": "https://api.github.com/repos/williewheeler/skybase/git/trees/bc7bbe872dbdbf003f6a0028d1dfcd6848f9e7ef",
+        "sha": "bc7bbe872dbdbf003f6a0028d1dfcd6848f9e7ef"
+      }
+    },
+    "sha": "c830c500de3739e53524b3ae38e3a04024fdc3eb"
+  },
+  {
+    "committer": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "url": "https://api.github.com/repos/williewheeler/skybase/commits/81dc467c75a3343b47aa882561e4ab5263176260",
+    "author": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/williewheeler/skybase/commits/5b94327fe92523434004d97d9a29a83251b95483",
+        "sha": "5b94327fe92523434004d97d9a29a83251b95483"
+      }
+    ],
+    "commit": {
+      "committer": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2011-12-20T01:13:59-08:00",
+        "name": "Willie Wheeler"
+      },
+      "url": "https://api.github.com/repos/williewheeler/skybase/git/commits/81dc467c75a3343b47aa882561e4ab5263176260",
+      "message": "Minor cleanup",
+      "author": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2011-12-20T01:13:59-08:00",
+        "name": "Willie Wheeler"
+      },
+      "tree": {
+        "url": "https://api.github.com/repos/williewheeler/skybase/git/trees/43237dd16c4b562b21f252021f3462100e452876",
+        "sha": "43237dd16c4b562b21f252021f3462100e452876"
+      }
+    },
+    "sha": "81dc467c75a3343b47aa882561e4ab5263176260"
+  },
+  {
+    "committer": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "url": "https://api.github.com/repos/williewheeler/skybase/commits/5b94327fe92523434004d97d9a29a83251b95483",
+    "author": {
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "williewheeler",
+      "id": 853435,
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5"
+    },
+    "parents": [
+      {
+        "url": "https://api.github.com/repos/williewheeler/skybase/commits/6efd42e3c3062f46577d1ce6fd18580b40420808",
+        "sha": "6efd42e3c3062f46577d1ce6fd18580b40420808"
+      }
+    ],
+    "commit": {
+      "committer": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2011-12-20T01:09:47-08:00",
+        "name": "Willie Wheeler"
+      },
+      "url": "https://api.github.com/repos/williewheeler/skybase/git/commits/5b94327fe92523434004d97d9a29a83251b95483",
+      "message": "Stuff I think I forgot to commit",
+      "author": {
+        "email": "willie.wheeler@gmail.com",
+        "date": "2011-12-20T01:09:47-08:00",
+        "name": "Willie Wheeler"
+      },
+      "tree": {
+        "url": "https://api.github.com/repos/williewheeler/skybase/git/trees/0d6fa29a1ea9a3fd565a1a66a174db9dbe83f980",
+        "sha": "0d6fa29a1ea9a3fd565a1a66a174db9dbe83f980"
+      }
+    },
+    "sha": "5b94327fe92523434004d97d9a29a83251b95483"
+  }
+]
