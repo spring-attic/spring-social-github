@@ -31,4 +31,12 @@ public interface UserOperations {
 	 * @return list of followers
 	 */
 	public List<GitHubUser> getFollowers(String user);
+	
+	/**
+	 * Public operation to return the users that a given user is following.
+	 * 
+	 * @param user GitHub user
+	 * @return list of users the given user is following
+	 */
+	public List<GitHubUser> getFollowing(String user);
 }

@@ -37,5 +37,14 @@ public class UserTemplateTest extends AbstractGitHubApiTest {
 			.andRespond(withResponse(jsonResource("user-followers"), responseHeaders));
 		assertEquals(20, gitHub.userOperations().getFollowers("williewheeler").size());
 	}
+	
+	@Test
+	public void getFollowing() {
+		responseHeaders.setContentType(MediaType.APPLICATION_JSON);
+		mockServer.expect(requestTo("https://api.github.com/users/williewheeler/following"))
+			.andExpect(method(GET))
+			.andRespond(withResponse(jsonResource("user-following"), responseHeaders));
+		assertEquals(17, gitHub.userOperations().getFollowing("williewheeler").size());
+	}
 
 }

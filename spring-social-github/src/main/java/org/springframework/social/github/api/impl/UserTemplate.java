@@ -50,6 +50,14 @@ public class UserTemplate extends AbstractGitHubOperations implements UserOperat
 		return asList(restTemplate.getForObject(buildUserUri("/followers"), GitHubUser[].class, user));
 	}
 
+	/* (non-Javadoc)
+	 * @see org.springframework.social.github.api.UserOperations#getFollowing(java.lang.String)
+	 */
+	@Override
+	public List<GitHubUser> getFollowing(String user) {
+		return asList(restTemplate.getForObject(buildUserUri("/following"), GitHubUser[].class, user));
+	}
+
 	private String buildUserUri(String path) {
 		return buildUri("users/{user}" + path);
 	}
