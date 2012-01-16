@@ -34,6 +34,10 @@ import org.springframework.web.client.RestTemplate;
 public class RepoTemplate extends AbstractGitHubOperations implements RepoOperations {
 	private final RestTemplate restTemplate;
 	
+	/**
+	 * @param restTemplate
+	 * @param isAuthorizedForUser
+	 */
 	public RepoTemplate(RestTemplate restTemplate, boolean isAuthorizedForUser) {
 		super(isAuthorizedForUser);
 		this.restTemplate = restTemplate;
@@ -44,7 +48,7 @@ public class RepoTemplate extends AbstractGitHubOperations implements RepoOperat
 	 */
 	@Override
 	public List<GitHubUser> getCollaborators(String user, String repo) {
-		return asList(restTemplate.getForObject(buildRepoUri("collaborators"), GitHubUser[].class, user, repo));
+		return asList(restTemplate.getForObject(buildRepoUri("/collaborators"), GitHubUser[].class, user, repo));
 	}
 	
 	/* (non-Javadoc)
@@ -52,7 +56,7 @@ public class RepoTemplate extends AbstractGitHubOperations implements RepoOperat
 	 */
 	@Override
 	public List<GitHubCommit> getCommits(String user, String repo) {
-		return asList(restTemplate.getForObject(buildRepoUri("commits"), GitHubCommit[].class, user, repo));
+		return asList(restTemplate.getForObject(buildRepoUri("/commits"), GitHubCommit[].class, user, repo));
 	}
 	
 	/* (non-Javadoc)
@@ -60,10 +64,10 @@ public class RepoTemplate extends AbstractGitHubOperations implements RepoOperat
 	 */
 	@Override
 	public List<GitHubUser> getWatchers(String user, String repo) {
-		return asList(restTemplate.getForObject(buildRepoUri("watchers"), GitHubUser[].class, user, repo));
+		return asList(restTemplate.getForObject(buildRepoUri("/watchers"), GitHubUser[].class, user, repo));
 	}
 	
 	private String buildRepoUri(String path) {
-		return buildUri("repos/{user}/{repo}/" + path);
+		return buildUri("repos/{user}/{repo}" + path);
 	}
 }

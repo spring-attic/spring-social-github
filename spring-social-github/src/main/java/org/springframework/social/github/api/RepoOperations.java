@@ -18,7 +18,7 @@ package org.springframework.social.github.api;
 import java.util.List;
 
 /**
- * Interface defining the operations for working with a GitHub repository.
+ * Interface defining the operations for working with GitHub repositories.
  * 
  * @author Willie Wheeler (willie.wheeler@gmail.com)
  */

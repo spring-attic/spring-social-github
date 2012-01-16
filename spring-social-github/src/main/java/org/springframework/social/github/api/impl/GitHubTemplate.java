@@ -25,6 +25,7 @@ import java.util.Map;
 import org.springframework.social.github.api.GitHub;
 import org.springframework.social.github.api.GitHubUserProfile;
 import org.springframework.social.github.api.RepoOperations;
+import org.springframework.social.github.api.UserOperations;
 import org.springframework.social.oauth2.AbstractOAuth2ApiBinding;
 import org.springframework.social.oauth2.OAuth2Version;
 
@@ -37,6 +38,7 @@ import org.springframework.social.oauth2.OAuth2Version;
  */
 public class GitHubTemplate extends AbstractOAuth2ApiBinding implements GitHub {
 	private RepoOperations repoOperations;
+	private UserOperations userOperations;
 	
 	/**
 	 * No-arg constructor to support cases in which you want to call the GitHub
@@ -113,10 +115,17 @@ public class GitHubTemplate extends AbstractOAuth2ApiBinding implements GitHub {
 	@Override
 	public RepoOperations repoOperations() { return repoOperations; }
 	
+	/* (non-Javadoc)
+	 * @see org.springframework.social.github.api.GitHub#userOperations()
+	 */
+	@Override
+	public UserOperations userOperations() { return userOperations; }
+	
 	// internal helpers
 	
 	private void initSubApis() {
 		this.repoOperations = new RepoTemplate(getRestTemplate(), isAuthorized());
+		this.userOperations = new UserTemplate(getRestTemplate(), isAuthorized());
 	}
 	
 	private Date toDate(String dateString, DateFormat dateFormat) {

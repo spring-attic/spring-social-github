@@ -27,6 +27,7 @@ import org.springframework.social.github.api.impl.GitHubTemplate;
  * referring to the user for whom the access token has been issued.
  * 
  * @author Craig Walls
+ * @author Willie Wheeler (willie.wheeler@gmail.com)
  */
 public interface GitHub extends ApiBinding {
 
@@ -34,21 +35,27 @@ public interface GitHub extends ApiBinding {
 	 * Retrieves the user's GitHub profile ID.
 	 * 
 	 * @return the user's GitHub profile ID.
+	 * @deprecated Move to {@link UserOperations}
 	 */
+	@Deprecated
 	String getProfileId();
 
 	/**
 	 * Retrieves the user's GitHub profile details.
 	 * 
 	 * @return the user's GitHub profile
+	 * @deprecated Move to {@link UserOperations}
 	 */
+	@Deprecated
 	GitHubUserProfile getUserProfile();
 
 	/**
 	 * Retrieve the URL to the user's GitHub profile.
 	 * 
 	 * @return the URL to the user's GitHub profile.
+	 * @deprecated Move to {@link UserOperations}
 	 */
+	@Deprecated
 	String getProfileUrl();
 	
 	/**
@@ -57,4 +64,11 @@ public interface GitHub extends ApiBinding {
 	 * @return repo operations
 	 */
 	RepoOperations repoOperations();
+	
+	/**
+	 * Returns the portion of the GitHub API containing the user operations.
+	 * 
+	 * @return user operations
+	 */
+	UserOperations userOperations();
 }
