@@ -17,6 +17,7 @@ package org.springframework.social.github.api;
 
 import org.springframework.social.ApiBinding;
 import org.springframework.social.github.api.impl.GitHubTemplate;
+import org.springframework.web.client.RestOperations;
 
 /**
  * Interface specifying a basic set of operations for interacting with GitHub.
@@ -32,33 +33,6 @@ import org.springframework.social.github.api.impl.GitHubTemplate;
 public interface GitHub extends ApiBinding {
 
 	/**
-	 * Retrieves the user's GitHub profile ID.
-	 * 
-	 * @return the user's GitHub profile ID.
-	 * @deprecated Move to {@link UserOperations}
-	 */
-	@Deprecated
-	String getProfileId();
-
-	/**
-	 * Retrieves the user's GitHub profile details.
-	 * 
-	 * @return the user's GitHub profile
-	 * @deprecated Move to {@link UserOperations}
-	 */
-	@Deprecated
-	GitHubUserProfile getUserProfile();
-
-	/**
-	 * Retrieve the URL to the user's GitHub profile.
-	 * 
-	 * @return the URL to the user's GitHub profile.
-	 * @deprecated Move to {@link UserOperations}
-	 */
-	@Deprecated
-	String getProfileUrl();
-	
-	/**
 	 * Returns the portion of the GitHub API containing the repo operations.
 	 * 
 	 * @return repo operations
@@ -71,4 +45,11 @@ public interface GitHub extends ApiBinding {
 	 * @return user operations
 	 */
 	UserOperations userOperations();
+
+	/**
+	 * Returns the underlying {@link RestOperations} object allowing for consumption of GitHub endpoints that may not be otherwise covered by the API binding.
+	 * The RestOperations object returned is configured to include an OAuth "Authorization" header on all requests.
+	 */
+	RestOperations restOperations();
+
 }

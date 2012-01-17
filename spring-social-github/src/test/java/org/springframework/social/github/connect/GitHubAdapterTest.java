@@ -16,12 +16,14 @@
 package org.springframework.social.github.connect;
 
 import static org.junit.Assert.*;
+import static org.mockito.Mockito.*;
 
 import org.junit.Test;
 import org.mockito.Mockito;
 import org.springframework.social.connect.UserProfile;
 import org.springframework.social.github.api.GitHub;
 import org.springframework.social.github.api.GitHubUserProfile;
+import org.springframework.social.github.api.UserOperations;
 
 public class GitHubAdapterTest {
 
@@ -30,8 +32,10 @@ public class GitHubAdapterTest {
 	private GitHub github = Mockito.mock(GitHub.class);
 	
 	@Test
-	public void fetchProfile() {		
-		Mockito.when(github.getUserProfile()).thenReturn(new GitHubUserProfile(123456L, "habuma", "Craig Walls", "Plano, TX", "SpringSource", null, "cwalls@vmware.com", null, null));
+	public void fetchProfile() {
+		UserOperations userOperations = Mockito.mock(UserOperations.class);
+		when(github.userOperations()).thenReturn(userOperations);
+		when(userOperations.getUserProfile()).thenReturn(new GitHubUserProfile(123456L, "habuma", "Craig Walls", "Plano, TX", "SpringSource", null, "cwalls@vmware.com", null, null));
 		UserProfile profile = apiAdapter.fetchUserProfile(github);
 		assertEquals("Craig Walls", profile.getName());
 		assertEquals("Craig", profile.getFirstName());
@@ -42,7 +46,9 @@ public class GitHubAdapterTest {
 	
 	@Test
 	public void fetchProfileFirstNameOnly() {
-		Mockito.when(github.getUserProfile()).thenReturn(new GitHubUserProfile(123456L, "habuma", "Craig", "Plano, TX", "SpringSource", null, "cwalls@vmware.com", null, null));
+		UserOperations userOperations = Mockito.mock(UserOperations.class);
+		when(github.userOperations()).thenReturn(userOperations);
+		when(userOperations.getUserProfile()).thenReturn(new GitHubUserProfile(123456L, "habuma", "Craig", "Plano, TX", "SpringSource", null, "cwalls@vmware.com", null, null));
 		UserProfile profile = apiAdapter.fetchUserProfile(github);
 		assertEquals("Craig", profile.getName());
 		assertEquals("Craig", profile.getFirstName());
@@ -53,7 +59,9 @@ public class GitHubAdapterTest {
 
 	@Test
 	public void fetchProfileMiddleName() {
-		Mockito.when(github.getUserProfile()).thenReturn(new GitHubUserProfile(123456L, "habuma", "Michael Craig Walls", "Plano, TX", "SpringSource", null, "cwalls@vmware.com", null, null));
+		UserOperations userOperations = Mockito.mock(UserOperations.class);
+		when(github.userOperations()).thenReturn(userOperations);
+		when(userOperations.getUserProfile()).thenReturn(new GitHubUserProfile(123456L, "habuma", "Michael Craig Walls", "Plano, TX", "SpringSource", null, "cwalls@vmware.com", null, null));
 		UserProfile profile = apiAdapter.fetchUserProfile(github);
 		assertEquals("Michael Craig Walls", profile.getName());
 		assertEquals("Michael", profile.getFirstName());
@@ -64,7 +72,9 @@ public class GitHubAdapterTest {
 	
 	@Test
 	public void fetchProfileExtraWhitespace() {
-		Mockito.when(github.getUserProfile()).thenReturn(new GitHubUserProfile(123456L, "habuma", "Michael    Craig Walls", "Plano, TX", "SpringSource", null, "cwalls@vmware.com", null, null));
+		UserOperations userOperations = Mockito.mock(UserOperations.class);
+		when(github.userOperations()).thenReturn(userOperations);
+		when(userOperations.getUserProfile()).thenReturn(new GitHubUserProfile(123456L, "habuma", "Michael    Craig Walls", "Plano, TX", "SpringSource", null, "cwalls@vmware.com", null, null));
 		UserProfile profile = apiAdapter.fetchUserProfile(github);
 		assertEquals("Michael    Craig Walls", profile.getName());
 		assertEquals("Michael", profile.getFirstName());

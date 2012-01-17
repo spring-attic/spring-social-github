@@ -15,7 +15,7 @@
  */
 package org.springframework.social.github.api.impl;
 
-import static java.util.Arrays.asList;
+import static java.util.Arrays.*;
 
 import java.util.List;
 
@@ -43,26 +43,14 @@ public class RepoTemplate extends AbstractGitHubOperations implements RepoOperat
 		this.restTemplate = restTemplate;
 	}
 	
-	/* (non-Javadoc)
-	 * @see org.springframework.social.github.api.RepoOperations#getCollaborators(java.lang.String, java.lang.String)
-	 */
-	@Override
 	public List<GitHubUser> getCollaborators(String user, String repo) {
 		return asList(restTemplate.getForObject(buildRepoUri("/collaborators"), GitHubUser[].class, user, repo));
 	}
 	
-	/* (non-Javadoc)
-	 * @see org.springframework.social.github.api.RepoOperations#getCommits(java.lang.String, java.lang.String)
-	 */
-	@Override
 	public List<GitHubCommit> getCommits(String user, String repo) {
 		return asList(restTemplate.getForObject(buildRepoUri("/commits"), GitHubCommit[].class, user, repo));
 	}
 	
-	/* (non-Javadoc)
-	 * @see org.springframework.social.github.api.RepoOperations#getWatchers(java.lang.String, java.lang.String)
-	 */
-	@Override
 	public List<GitHubUser> getWatchers(String user, String repo) {
 		return asList(restTemplate.getForObject(buildRepoUri("/watchers"), GitHubUser[].class, user, repo));
 	}
@@ -70,4 +58,5 @@ public class RepoTemplate extends AbstractGitHubOperations implements RepoOperat
 	private String buildRepoUri(String path) {
 		return buildUri("repos/{user}/{repo}" + path);
 	}
+
 }
