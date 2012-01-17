@@ -33,30 +33,30 @@ public class UserTemplateTest extends AbstractGitHubApiTest {
 	
 	@Test
 	public void getUserProfile() throws Exception {
-		mockServer.expect(requestTo("https://github.com/api/v2/json/user/show")).andExpect(method(GET))
-				.andExpect(header("Authorization", "Token token=\"ACCESS_TOKEN\""))
+		mockServer.expect(requestTo("https://api.github.com/user")).andExpect(method(GET))
+				.andExpect(header("Authorization", "BEARER ACCESS_TOKEN"))
 				.andRespond(withResponse(new ClassPathResource("profile.json", getClass()), responseHeaders));
 		GitHubUserProfile profile = gitHub.userOperations().getUserProfile();
 		assertEquals("habuma", profile.getUsername());
 		assertEquals("Craig Walls", profile.getName());
 		assertEquals("SpringSource", profile.getCompany());
-		assertEquals("http://blog.springsource.com/author/cwalls", profile.getBlog());
-		assertEquals("cwalls@vmware.com", profile.getEmail());
-		assertEquals(123456, profile.getId());
+		assertEquals("http://blog.springsource.com/author/cwalls/", profile.getBlog());
+		assertEquals("cwalls at vmware.com", profile.getEmail());
+		assertEquals(167926, profile.getId());
 	}
 
 	@Test
 	public void getProfileId() {
-		mockServer.expect(requestTo("https://github.com/api/v2/json/user/show")).andExpect(method(GET))
-				.andExpect(header("Authorization", "Token token=\"ACCESS_TOKEN\""))
+		mockServer.expect(requestTo("https://api.github.com/user")).andExpect(method(GET))
+				.andExpect(header("Authorization", "BEARER ACCESS_TOKEN"))
 				.andRespond(withResponse(new ClassPathResource("profile.json", getClass()), responseHeaders));
 		assertEquals("habuma", gitHub.userOperations().getProfileId());
 	}
 
 	@Test
 	public void getProfileUrl() {
-		mockServer.expect(requestTo("https://github.com/api/v2/json/user/show")).andExpect(method(GET))
-				.andExpect(header("Authorization", "Token token=\"ACCESS_TOKEN\""))
+		mockServer.expect(requestTo("https://api.github.com/user")).andExpect(method(GET))
+				.andExpect(header("Authorization", "BEARER ACCESS_TOKEN"))
 				.andRespond(withResponse(new ClassPathResource("profile.json", getClass()), responseHeaders));
 		assertEquals("https://github.com/habuma", gitHub.userOperations().getProfileUrl());
 	}

@@ -1,12 +1,32 @@
 {
-	"user" : {
-		"id" : 123456,
-		"login" : "habuma",
-		"name" : "Craig Walls",
-		"location" : "Plano, TX",
-		"company" : "SpringSource",
-		"blog" : "http://blog.springsource.com/author/cwalls",
-		"email" : "cwalls@vmware.com",
-		"created_at" : "2010/06/09 12:34:56 -0600"
-	}
+    "total_private_repos": 0,
+    "following": 0,
+    "type": "User",
+    "owned_private_repos": 0,
+    "gravatar_id": "52fd524c733cc1098c2eeeae38ea8a20",
+    "disk_usage": 1852,
+    "plan": {
+        "private_repos": 0,
+        "collaborators": 0,
+        "name": "free",
+        "space": 307200
+    },
+    "location": "Plano, TX",
+    "avatar_url": "https://secure.gravatar.com/avatar/52fd524c733cc1098c2eeeae38ea8a20?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+    "public_gists": 0,
+    "company": "SpringSource",
+    "blog": "http://blog.springsource.com/author/cwalls/",
+    "private_gists": 0,
+    "followers": 24,
+    "html_url": "https://github.com/habuma",
+    "created_at": "2009-12-15T15:10:00Z",
+    "email": "cwalls at vmware.com",
+    "hireable": false,
+    "collaborators": 0,
+    "name": "Craig Walls",
+    "public_repos": 14,
+    "bio": null,
+    "url": "https://api.github.com/users/habuma",
+    "id": 167926,
+    "login": "habuma"
 }

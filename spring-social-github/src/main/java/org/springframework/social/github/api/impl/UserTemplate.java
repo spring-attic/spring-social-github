@@ -45,10 +45,9 @@ public class UserTemplate extends AbstractGitHubOperations implements UserOperat
 		return getUserProfile().getUsername();
 	}
 
-	@SuppressWarnings("unchecked")
 	public GitHubUserProfile getUserProfile() {
-		Map<String, ?> result = restTemplate.getForObject(PROFILE_URL, Map.class);
-		Map<String, ?> user = (Map<String, String>) result.get("user");
+		@SuppressWarnings("unchecked")
+		Map<String, ?> user = restTemplate.getForObject(buildUri("user"), Map.class);		
 		Long gitHubId = Long.valueOf(String.valueOf(user.get("id")));
 		String username = String.valueOf(user.get("login"));
 		String name = String.valueOf(user.get("name"));
@@ -97,7 +96,4 @@ public class UserTemplate extends AbstractGitHubOperations implements UserOperat
 
 	private DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss Z", Locale.ENGLISH);
 	
-	// FIXME Update to GitHub API v3 [WLW]
-	static final String PROFILE_URL = "https://github.com/api/v2/json/user/show";
-
 }

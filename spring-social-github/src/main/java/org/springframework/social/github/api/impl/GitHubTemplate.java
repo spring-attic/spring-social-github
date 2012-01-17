@@ -59,7 +59,7 @@ public class GitHubTemplate extends AbstractOAuth2ApiBinding implements GitHub {
 
 	@Override
 	protected OAuth2Version getOAuth2Version() {
-		return OAuth2Version.DRAFT_8;
+		return OAuth2Version.BEARER;
 	}
 	
 	public RepoOperations repoOperations() {
