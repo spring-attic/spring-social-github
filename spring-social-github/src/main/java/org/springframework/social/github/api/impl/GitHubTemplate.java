@@ -64,26 +64,15 @@ public class GitHubTemplate extends AbstractOAuth2ApiBinding implements GitHub {
 		initSubApis();
 	}
 
-	/* (non-Javadoc)
-	 * @see org.springframework.social.oauth2.AbstractOAuth2ApiBinding#getOAuth2Version()
-	 */
 	@Override
 	protected OAuth2Version getOAuth2Version() {
 		return OAuth2Version.DRAFT_8;
 	}
 
-	/* (non-Javadoc)
-	 * @see org.springframework.social.github.api.GitHub#getProfileId()
-	 */
-	@Override
 	public String getProfileId() {
 		return getUserProfile().getUsername();
 	}
 
-	/* (non-Javadoc)
-	 * @see org.springframework.social.github.api.GitHub#getUserProfile()
-	 */
-	@Override
 	@SuppressWarnings("unchecked")
 	public GitHubUserProfile getUserProfile() {
 		Map<String, ?> result = getRestTemplate().getForObject(PROFILE_URL, Map.class);
@@ -101,24 +90,12 @@ public class GitHubTemplate extends AbstractOAuth2ApiBinding implements GitHub {
 		return new GitHubUserProfile(gitHubId, username, name, location, company, blog, email, profileImageUrl, createdDate);
 	}
 
-	/* (non-Javadoc)
-	 * @see org.springframework.social.github.api.GitHub#getProfileUrl()
-	 */
-	@Override
 	public String getProfileUrl() {
 		return "https://github.com/" + getProfileId();
 	}
 	
-	/* (non-Javadoc)
-	 * @see org.springframework.social.github.api.GitHub#repoOperations()
-	 */
-	@Override
 	public RepoOperations repoOperations() { return repoOperations; }
 	
-	/* (non-Javadoc)
-	 * @see org.springframework.social.github.api.GitHub#userOperations()
-	 */
-	@Override
 	public UserOperations userOperations() { return userOperations; }
 	
 	// internal helpers

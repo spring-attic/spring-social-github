@@ -15,7 +15,7 @@
  */
 package org.springframework.social.github.api.impl;
 
-import static java.util.Arrays.asList;
+import static java.util.Arrays.*;
 
 import java.util.List;
 
@@ -42,18 +42,10 @@ public class UserTemplate extends AbstractGitHubOperations implements UserOperat
 		this.restTemplate = restTemplate;
 	}
 
-	/* (non-Javadoc)
-	 * @see org.springframework.social.github.api.UserOperations#getFollowers(java.lang.String)
-	 */
-	@Override
 	public List<GitHubUser> getFollowers(String user) {
 		return asList(restTemplate.getForObject(buildUserUri("/followers"), GitHubUser[].class, user));
 	}
 
-	/* (non-Javadoc)
-	 * @see org.springframework.social.github.api.UserOperations#getFollowing(java.lang.String)
-	 */
-	@Override
 	public List<GitHubUser> getFollowing(String user) {
 		return asList(restTemplate.getForObject(buildUserUri("/following"), GitHubUser[].class, user));
 	}
@@ -61,4 +53,5 @@ public class UserTemplate extends AbstractGitHubOperations implements UserOperat
 	private String buildUserUri(String path) {
 		return buildUri("users/{user}" + path);
 	}
+
 }
