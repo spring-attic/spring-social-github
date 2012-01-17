@@ -25,6 +25,27 @@ import java.util.List;
 public interface UserOperations {
 	
 	/**
+	 * Retrieves the user's GitHub profile ID.
+	 * 
+	 * @return the user's GitHub profile ID.
+	 */
+	String getProfileId();
+
+	/**
+	 * Retrieves the user's GitHub profile details.
+	 * 
+	 * @return the user's GitHub profile
+	 */
+	GitHubUserProfile getUserProfile();
+
+	/**
+	 * Retrieve the URL to the user's GitHub profile.
+	 * 
+	 * @return the URL to the user's GitHub profile.
+	 */
+	String getProfileUrl();
+	
+	/**
 	 * Public operation to return a given user's followers.
 	 * 
 	 * @param user GitHub user

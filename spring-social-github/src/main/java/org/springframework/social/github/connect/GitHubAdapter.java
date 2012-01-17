@@ -31,7 +31,7 @@ public class GitHubAdapter implements ApiAdapter<GitHub> {
 
 	public boolean test(GitHub github) {
 		try {
-			github.getUserProfile();
+			github.userOperations().getUserProfile();
 			return true;
 		} catch (HttpClientErrorException e) {
 			// TODO : Beef up GitHub's error handling and trigger off of a more specific exception
@@ -40,7 +40,7 @@ public class GitHubAdapter implements ApiAdapter<GitHub> {
 	}
 
 	public void setConnectionValues(GitHub github, ConnectionValues values) {
-		GitHubUserProfile profile = github.getUserProfile();
+		GitHubUserProfile profile = github.userOperations().getUserProfile();
 		values.setProviderUserId(String.valueOf(profile.getId()));		
 		values.setDisplayName(profile.getUsername());
 		values.setProfileUrl("https://github.com/" + profile.getId());
@@ -48,7 +48,7 @@ public class GitHubAdapter implements ApiAdapter<GitHub> {
 	}
 
 	public UserProfile fetchUserProfile(GitHub github) {
-		GitHubUserProfile profile = github.getUserProfile();
+		GitHubUserProfile profile = github.userOperations().getUserProfile();
 		return new UserProfileBuilder().setName(profile.getName()).setEmail(profile.getEmail()).setUsername(profile.getUsername()).build();
 	}
 	

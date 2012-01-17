@@ -32,33 +32,6 @@ import org.springframework.social.github.api.impl.GitHubTemplate;
 public interface GitHub extends ApiBinding {
 
 	/**
-	 * Retrieves the user's GitHub profile ID.
-	 * 
-	 * @return the user's GitHub profile ID.
-	 * @deprecated Move to {@link UserOperations}
-	 */
-	@Deprecated
-	String getProfileId();
-
-	/**
-	 * Retrieves the user's GitHub profile details.
-	 * 
-	 * @return the user's GitHub profile
-	 * @deprecated Move to {@link UserOperations}
-	 */
-	@Deprecated
-	GitHubUserProfile getUserProfile();
-
-	/**
-	 * Retrieve the URL to the user's GitHub profile.
-	 * 
-	 * @return the URL to the user's GitHub profile.
-	 * @deprecated Move to {@link UserOperations}
-	 */
-	@Deprecated
-	String getProfileUrl();
-	
-	/**
 	 * Returns the portion of the GitHub API containing the repo operations.
 	 * 
 	 * @return repo operations
@@ -71,4 +44,5 @@ public interface GitHub extends ApiBinding {
 	 * @return user operations
 	 */
 	UserOperations userOperations();
+
 }
