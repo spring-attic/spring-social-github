@@ -17,6 +17,7 @@ package org.springframework.social.github.api;
 
 import org.springframework.social.ApiBinding;
 import org.springframework.social.github.api.impl.GitHubTemplate;
+import org.springframework.web.client.RestOperations;
 
 /**
  * Interface specifying a basic set of operations for interacting with GitHub.
@@ -44,5 +45,11 @@ public interface GitHub extends ApiBinding {
 	 * @return user operations
 	 */
 	UserOperations userOperations();
+
+	/**
+	 * Returns the underlying {@link RestOperations} object allowing for consumption of GitHub endpoints that may not be otherwise covered by the API binding.
+	 * The RestOperations object returned is configured to include an OAuth "Authorization" header on all requests.
+	 */
+	RestOperations restOperations();
 
 }

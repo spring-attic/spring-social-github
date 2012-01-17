@@ -20,6 +20,7 @@ import org.springframework.social.github.api.RepoOperations;
 import org.springframework.social.github.api.UserOperations;
 import org.springframework.social.oauth2.AbstractOAuth2ApiBinding;
 import org.springframework.social.oauth2.OAuth2Version;
+import org.springframework.web.client.RestOperations;
 
 /**
  * <p>
@@ -61,9 +62,17 @@ public class GitHubTemplate extends AbstractOAuth2ApiBinding implements GitHub {
 		return OAuth2Version.DRAFT_8;
 	}
 	
-	public RepoOperations repoOperations() { return repoOperations; }
+	public RepoOperations repoOperations() {
+		return repoOperations; 
+	}
 	
-	public UserOperations userOperations() { return userOperations; }
+	public UserOperations userOperations() { 
+		return userOperations; 
+	}
+	
+	public RestOperations restOperations() {
+		return getRestTemplate();
+	}
 	
 	// internal helpers
 	
