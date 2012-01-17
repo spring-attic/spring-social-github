@@ -15,19 +15,51 @@
  */
 package org.springframework.social.github.api.impl;
 
-import static org.junit.Assert.assertEquals;
-import static org.springframework.http.HttpMethod.GET;
-import static org.springframework.social.test.client.RequestMatchers.method;
-import static org.springframework.social.test.client.RequestMatchers.requestTo;
-import static org.springframework.social.test.client.ResponseCreators.withResponse;
+import static org.junit.Assert.*;
+import static org.springframework.http.HttpMethod.*;
+import static org.springframework.social.test.client.RequestMatchers.*;
+import static org.springframework.social.test.client.ResponseCreators.*;
 
 import org.junit.Test;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.MediaType;
+import org.springframework.social.github.api.GitHubUserProfile;
 
 /**
+ * @author Craig Walls
  * @author Willie Wheeler (willie.wheeler@gmail.com)
  */
 public class UserTemplateTest extends AbstractGitHubApiTest {
+	
+	@Test
+	public void getUserProfile() throws Exception {
+		mockServer.expect(requestTo("https://api.github.com/user")).andExpect(method(GET))
+				.andExpect(header("Authorization", "BEARER ACCESS_TOKEN"))
+				.andRespond(withResponse(new ClassPathResource("profile.json", getClass()), responseHeaders));
+		GitHubUserProfile profile = gitHub.userOperations().getUserProfile();
+		assertEquals("habuma", profile.getUsername());
+		assertEquals("Craig Walls", profile.getName());
+		assertEquals("SpringSource", profile.getCompany());
+		assertEquals("http://blog.springsource.com/author/cwalls/", profile.getBlog());
+		assertEquals("cwalls at vmware.com", profile.getEmail());
+		assertEquals(167926, profile.getId());
+	}
+
+	@Test
+	public void getProfileId() {
+		mockServer.expect(requestTo("https://api.github.com/user")).andExpect(method(GET))
+				.andExpect(header("Authorization", "BEARER ACCESS_TOKEN"))
+				.andRespond(withResponse(new ClassPathResource("profile.json", getClass()), responseHeaders));
+		assertEquals("habuma", gitHub.userOperations().getProfileId());
+	}
+
+	@Test
+	public void getProfileUrl() {
+		mockServer.expect(requestTo("https://api.github.com/user")).andExpect(method(GET))
+				.andExpect(header("Authorization", "BEARER ACCESS_TOKEN"))
+				.andRespond(withResponse(new ClassPathResource("profile.json", getClass()), responseHeaders));
+		assertEquals("https://github.com/habuma", gitHub.userOperations().getProfileUrl());
+	}
 	
 	@Test
 	public void getFollowers() {
