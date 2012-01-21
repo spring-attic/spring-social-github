@@ -65,4 +65,39 @@ public class GistTemplateTest extends AbstractGitHubApiTest {
 		assertEquals("Java", file.getLanguage());
 		assertEquals(3749L, file.getSize().longValue());
 	}
+	
+	@Test
+	public void getGists_Anonymous() {
+		responseHeaders.setContentType(MediaType.APPLICATION_JSON);
+		mockServer.expect(requestTo("https://api.github.com/gists"))
+			.andExpect(method(GET))
+			.andRespond(withResponse(jsonResource("gists-public"), responseHeaders));
+		List<GitHubGist> gists = gitHub.gistOperations().getGists();
+		assertEquals(30, gists.size());
+	}
+	
+	@Test
+	public void getGists_Authenticated() {
+		// TODO
+	}
+	
+	@Test
+	public void getPublicGists() {
+		responseHeaders.setContentType(MediaType.APPLICATION_JSON);
+		mockServer.expect(requestTo("https://api.github.com/gists/public"))
+			.andExpect(method(GET))
+			.andRespond(withResponse(jsonResource("gists-public"), responseHeaders));
+		List<GitHubGist> gists = gitHub.gistOperations().getPublicGists();
+		assertEquals(30, gists.size());
+	}
+	
+	@Test
+	public void getStarredGists() {
+		// TODO
+	}
+	
+	@Test
+	public void getGist() {
+		// TODO
+	}
 }
