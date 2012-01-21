@@ -31,4 +31,35 @@ public interface GistOperations {
 	 * @return list of user's gists
 	 */
 	List<GitHubGist> getUserGists(String user);
+	
+	/**
+	 * <p>
+	 * If authenticated, this method returns the current user's gists. Otherwise it returns all public gists.
+	 * </p>
+	 * 
+	 * @return current user's gists, or else all public gists
+	 */
+	List<GitHubGist> getGists();
+	
+	/**
+	 * Public operation to return all public gists.
+	 * 
+	 * @return all public gists
+	 */
+	List<GitHubGist> getPublicGists();
+	
+	/**
+	 * Returns the authenticated user's starred gists.
+	 * 
+	 * @return authenticated user's starred gists
+	 */
+	List<GitHubGist> getStarredGists();
+	
+	/**
+	 * Returns the gist with the given ID.
+	 * 
+	 * @param id gist ID
+	 * @return gist
+	 */
+	GitHubGist getGist(String id);
 }

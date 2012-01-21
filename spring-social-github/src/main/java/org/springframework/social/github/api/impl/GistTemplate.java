@@ -17,7 +17,7 @@
  */
 package org.springframework.social.github.api.impl;
 
-import static java.util.Arrays.*;
+import static java.util.Arrays.asList;
 
 import java.util.List;
 
@@ -45,8 +45,23 @@ public class GistTemplate extends AbstractGitHubOperations implements GistOperat
 	}
 
 	public List<GitHubGist> getUserGists(String user) {
-		String uri = buildUri("users/{user}/gists");
-		return asList(restTemplate.getForObject(uri, GitHubGist[].class, user));
+		return asList(restTemplate.getForObject(buildUri("users/{user}/gists"), GitHubGist[].class, user));
+	}
+
+	public List<GitHubGist> getGists() {
+		return asList(restTemplate.getForObject(buildUri("gists"), GitHubGist[].class));
+	}
+
+	public List<GitHubGist> getPublicGists() {
+		return asList(restTemplate.getForObject(buildUri("gists/public"), GitHubGist[].class));
+	}
+
+	public List<GitHubGist> getStarredGists() {
+		return asList(restTemplate.getForObject(buildUri("gists/starred"), GitHubGist[].class));
+	}
+
+	public GitHubGist getGist(String id) {
+		return restTemplate.getForObject(buildUri("gists/{id}"), GitHubGist.class, id);
 	}
 
 }
