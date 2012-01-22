@@ -25,6 +25,15 @@ import java.util.List;
 public interface RepoOperations {
 	
 	/**
+	 * Public operation to return a repo.
+	 * 
+	 * @param user GitHub user
+	 * @param repo GitHub repo
+	 * @return repo
+	 */
+	GitHubRepo getRepo(String user, String repo);
+	
+	/**
 	 * Public operation to return a list of collaborators for the given repository.
 	 * 
 	 * @param user GitHub user

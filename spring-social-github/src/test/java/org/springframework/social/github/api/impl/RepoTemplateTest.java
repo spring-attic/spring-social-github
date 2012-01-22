@@ -23,11 +23,33 @@ import static org.springframework.social.test.client.ResponseCreators.withRespon
 
 import org.junit.Test;
 import org.springframework.http.MediaType;
+import org.springframework.social.github.api.GitHubRepo;
 
 /**
  * @author Willie Wheeler (willie.wheeler@gmail.com)
  */
 public class RepoTemplateTest extends AbstractGitHubApiTest {
+	
+	@Test
+	public void getRepo() {
+		responseHeaders.setContentType(MediaType.APPLICATION_JSON);
+		mockServer.expect(requestTo("https://api.github.com/repos/williewheeler/skybase"))
+			.andExpect(method(GET))
+			.andRespond(withResponse(jsonResource("repo"), responseHeaders));
+		
+		GitHubRepo repo = gitHub.repoOperations().getRepo("williewheeler", "skybase");
+		
+		// TODO There are other fields that we need to test.
+		assertEquals(2811637L, repo.getId().longValue());
+		assertEquals("skybase", repo.getName());
+		assertEquals("CMDB based on Neo4j", repo.getDescription());
+		assertEquals("https://api.github.com/repos/williewheeler/skybase", repo.getUrl());
+		assertEquals("https://github.com/williewheeler/skybase", repo.getHtmlUrl());
+		assertEquals("https://github.com/williewheeler/skybase.git", repo.getCloneUrl());
+		assertEquals("git://github.com/williewheeler/skybase.git", repo.getGitUrl());
+		assertEquals("git@github.com:williewheeler/skybase.git", repo.getSshUrl());
+		assertEquals("https://github.com/williewheeler/skybase", repo.getSvnUrl());
+	}
 	
 	@Test
 	public void getCollaborators() {
