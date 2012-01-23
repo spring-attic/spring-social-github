@@ -62,4 +62,12 @@ public interface GistOperations {
 	 * @return gist
 	 */
 	GitHubGist getGist(String id);
+	
+	/**
+	 * Public operation to return the comments on a given gist.
+	 * 
+	 * @param id gist ID
+	 * @return gist comments
+	 */
+	List<GitHubComment> getGistComments(String id);
 }

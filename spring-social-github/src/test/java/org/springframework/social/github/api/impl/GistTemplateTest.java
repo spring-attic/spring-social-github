@@ -27,6 +27,7 @@ import java.util.List;
 
 import org.junit.Test;
 import org.springframework.http.MediaType;
+import org.springframework.social.github.api.GitHubComment;
 import org.springframework.social.github.api.GitHubFile;
 import org.springframework.social.github.api.GitHubGist;
 
@@ -99,5 +100,24 @@ public class GistTemplateTest extends AbstractGitHubApiTest {
 	@Test
 	public void getGist() {
 		// TODO
+	}
+	
+	@Test
+	public void getGistComments() {
+		responseHeaders.setContentType(MediaType.APPLICATION_JSON);
+		mockServer.expect(requestTo("https://api.github.com/gists/1651139/comments"))
+			.andExpect(method(GET))
+			.andRespond(withResponse(jsonResource("gist-comments"), responseHeaders));
+		List<GitHubComment> comments = gitHub.gistOperations().getGistComments("1651139");
+		assertEquals(2, comments.size());
+		
+		// Verify comment 0
+		GitHubComment comment = comments.get(0);
+		assertEquals(77557L, comment.getId().longValue());
+		assertEquals("https://api.github.com/gists/comments/77557", comment.getUrl());
+		assertEquals("This is a comment.", comment.getBody());
+		assertEquals("williewheeler", comment.getUser().getLogin());
+		assertNotNull(comment.getCreatedAt());
+		assertNotNull(comment.getUpdatedAt());
 	}
 }

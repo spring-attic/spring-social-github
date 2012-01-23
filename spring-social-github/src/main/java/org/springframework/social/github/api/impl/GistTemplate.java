@@ -22,6 +22,7 @@ import static java.util.Arrays.asList;
 import java.util.List;
 
 import org.springframework.social.github.api.GistOperations;
+import org.springframework.social.github.api.GitHubComment;
 import org.springframework.social.github.api.GitHubGist;
 import org.springframework.web.client.RestTemplate;
 
@@ -62,6 +63,10 @@ public class GistTemplate extends AbstractGitHubOperations implements GistOperat
 
 	public GitHubGist getGist(String id) {
 		return restTemplate.getForObject(buildUri("gists/{id}"), GitHubGist.class, id);
+	}
+
+	public List<GitHubComment> getGistComments(String id) {
+		return asList(restTemplate.getForObject(buildUri("gists/{id}/comments"), GitHubComment[].class, id));
 	}
 
 }
