@@ -1,0 +1,30 @@
+[
+  {
+    "updated_at": "2012-01-21T03:44:12Z",
+    "user": {
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5",
+      "login": "williewheeler",
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 853435
+    },
+    "created_at": "2012-01-21T03:44:12Z",
+    "body": "This is a comment.",
+    "id": 77557,
+    "url": "https://api.github.com/gists/comments/77557"
+  },
+  {
+    "updated_at": "2012-01-23T08:17:55Z",
+    "user": {
+      "gravatar_id": "b0a72ae61c5c74a51fe46cf66599b6c5",
+      "login": "williewheeler",
+      "url": "https://api.github.com/users/williewheeler",
+      "avatar_url": "https://secure.gravatar.com/avatar/b0a72ae61c5c74a51fe46cf66599b6c5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 853435
+    },
+    "created_at": "2012-01-23T08:17:55Z",
+    "body": "Here is another comment.",
+    "id": 77896,
+    "url": "https://api.github.com/gists/comments/77896"
+  }
+]

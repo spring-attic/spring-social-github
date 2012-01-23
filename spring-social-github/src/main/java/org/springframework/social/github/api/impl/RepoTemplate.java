@@ -15,11 +15,12 @@
  */
 package org.springframework.social.github.api.impl;
 
-import static java.util.Arrays.*;
+import static java.util.Arrays.asList;
 
 import java.util.List;
 
 import org.springframework.social.github.api.GitHubCommit;
+import org.springframework.social.github.api.GitHubRepo;
 import org.springframework.social.github.api.GitHubUser;
 import org.springframework.social.github.api.RepoOperations;
 import org.springframework.web.client.RestTemplate;
@@ -41,6 +42,10 @@ public class RepoTemplate extends AbstractGitHubOperations implements RepoOperat
 	public RepoTemplate(RestTemplate restTemplate, boolean isAuthorizedForUser) {
 		super(isAuthorizedForUser);
 		this.restTemplate = restTemplate;
+	}
+	
+	public GitHubRepo getRepo(String user, String repo) {
+		return restTemplate.getForObject(buildRepoUri(""), GitHubRepo.class, user, repo);
 	}
 	
 	public List<GitHubUser> getCollaborators(String user, String repo) {

@@ -31,7 +31,14 @@ import org.springframework.web.client.RestOperations;
  * @author Willie Wheeler (willie.wheeler@gmail.com)
  */
 public interface GitHub extends ApiBinding {
-
+	
+	/**
+	 * Returns the portion of the GitHub API containing the gist operations.
+	 * 
+	 * @return gist operations
+	 */
+	GistOperations gistOperations();
+	
 	/**
 	 * Returns the portion of the GitHub API containing the repo operations.
 	 * 
