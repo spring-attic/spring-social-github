@@ -110,9 +110,20 @@ public class GistTemplateTest extends AbstractGitHubApiTest {
 			.andRespond(withResponse(jsonResource("gist-comments"), responseHeaders));
 		List<GitHubComment> comments = gitHub.gistOperations().getGistComments("1651139");
 		assertEquals(2, comments.size());
-		
-		// Verify comment 0
-		GitHubComment comment = comments.get(0);
+		verifyComment(comments.get(0));
+	}
+	
+	@Test
+	public void getGistComment() {
+		responseHeaders.setContentType(MediaType.APPLICATION_JSON);
+		mockServer.expect(requestTo("https://api.github.com/gists/comments/77557"))
+			.andExpect(method(GET))
+			.andRespond(withResponse(jsonResource("gist-comment"), responseHeaders));
+		GitHubComment comment = gitHub.gistOperations().getGistComment(77557L);
+		verifyComment(comment);
+	}
+	
+	private void verifyComment(GitHubComment comment) {
 		assertEquals(77557L, comment.getId().longValue());
 		assertEquals("https://api.github.com/gists/comments/77557", comment.getUrl());
 		assertEquals("This is a comment.", comment.getBody());

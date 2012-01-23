@@ -69,4 +69,8 @@ public class GistTemplate extends AbstractGitHubOperations implements GistOperat
 		return asList(restTemplate.getForObject(buildUri("gists/{id}/comments"), GitHubComment[].class, id));
 	}
 
+	public GitHubComment getGistComment(Long id) {
+		return restTemplate.getForObject(buildUri("gists/comments/{id}"), GitHubComment.class, id);
+	}
+
 }
