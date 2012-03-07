@@ -32,6 +32,7 @@ public class GitHubHook implements Serializable {
 	private Long id;
 	private String name;
 	private String url;
+	private boolean active;
 	private Date createdAt;
 	private Date updatedAt;
 	
@@ -46,6 +47,10 @@ public class GitHubHook implements Serializable {
 	public String getUrl() { return url; }
 	
 	public void setUrl(String url) { this.url = url; }
+	
+	public boolean getActive() { return active; }
+	
+	public void setActive(boolean active) { this.active = active; }
 	
 	@JsonProperty("created_at")
 	public Date getCreatedAt() { return createdAt; }
