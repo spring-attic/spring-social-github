@@ -16,6 +16,7 @@
 package org.springframework.social.github.api;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.codehaus.jackson.annotate.JsonProperty;
@@ -33,6 +34,9 @@ public class GitHubUser implements Serializable {
 	private String login;
 	private String avatarUrl;
 	private String gravatarId;
+	private String name;
+	private String email;
+	private Date date;
 	
 	public Long getId() { return id; }
 	
@@ -58,4 +62,16 @@ public class GitHubUser implements Serializable {
 	public String getGravatarId() { return gravatarId; }
 	
 	public void setGravatarId(String gravatarId) { this.gravatarId = gravatarId; }
+	
+	public String getName() { return name; }
+	
+	public void setName(String name) { this.name = name; }
+	
+	public String getEmail() { return email; }
+	
+	public void setEmail(String email) { this.email = email; }
+	
+	public Date getDate() { return date; }
+	
+	public void setDate(Date date) { this.date = date; }
 }
