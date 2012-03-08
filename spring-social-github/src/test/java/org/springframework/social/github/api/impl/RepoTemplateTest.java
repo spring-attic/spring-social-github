@@ -77,4 +77,9 @@ public class RepoTemplateTest extends AbstractGitHubApiTest {
 			.andRespond(withResponse(jsonResource("repo-watchers"), responseHeaders));
 		assertEquals(15, gitHub.repoOperations().getWatchers("williewheeler", "skybase").size());
 	}
+	
+	@Test
+	public void getHooks() {
+		
+	}
 }
