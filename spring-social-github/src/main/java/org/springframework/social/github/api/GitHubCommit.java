@@ -27,10 +27,22 @@ import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 @SuppressWarnings("serial")
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class GitHubCommit implements Serializable {
+	private String message;
 	private String sha;
 	private String url;
 	private GitHubUser committer;
 	private GitHubUser author;
+	private GitHubCommit commit;
+	
+	/**
+	 * @return commit message
+	 */
+	public String getMessage() { return message; }
+	
+	/**
+	 * @param message commit message
+	 */
+	public void setMessage(String message) { this.message = message; }
 	
 	public String getSha() { return sha; }
 	
@@ -55,4 +67,8 @@ public class GitHubCommit implements Serializable {
 	 * @param author user who wrote the patch
 	 */
 	public void setAuthor(GitHubUser author) { this.author = author; }
+	
+	public GitHubCommit getCommit() { return commit; }
+	
+	public void setCommit(GitHubCommit commit) { this.commit = commit; }
 }

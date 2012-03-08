@@ -59,4 +59,13 @@ public interface RepoOperations {
 	 * @return list of watchers
 	 */
 	List<GitHubUser> getWatchers(String user, String repo);
+	
+	/**
+	 * Authorized operation to return a list of hooks for the given repository.
+	 * 
+	 * @param user GitHub user
+	 * @param repo GitHub repository
+	 * @return list of hooks
+	 */
+	List<GitHubHook> getHooks(String user, String repo);
 }
