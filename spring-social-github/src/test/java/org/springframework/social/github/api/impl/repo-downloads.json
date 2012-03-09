@@ -1,0 +1,46 @@
+[
+  {
+    "content_type": "image/png",
+    "html_url": "https://github.com/downloads/williewheeler/skybase/disconnected.png",
+    "download_count": 0,
+    "size": 15360,
+    "url": "https://api.github.com/repos/williewheeler/skybase/downloads/201817",
+    "created_at": "2012-03-09T03:57:09Z",
+    "name": "disconnected.png",
+    "id": 201817,
+    "description": "Disconnected from GitHub screenshot"
+  },
+  {
+    "content_type": "image/png",
+    "html_url": "https://github.com/downloads/williewheeler/skybase/connected.png",
+    "download_count": 0,
+    "size": 20480,
+    "url": "https://api.github.com/repos/williewheeler/skybase/downloads/201816",
+    "created_at": "2012-03-09T03:56:56Z",
+    "name": "connected.png",
+    "id": 201816,
+    "description": "Connected to GitHub screenshot"
+  },
+  {
+    "content_type": "image/png",
+    "html_url": "https://github.com/downloads/williewheeler/skybase/watchers.png",
+    "download_count": 0,
+    "size": 234496,
+    "url": "https://api.github.com/repos/williewheeler/skybase/downloads/201815",
+    "created_at": "2012-03-09T03:56:31Z",
+    "name": "watchers.png",
+    "id": 201815,
+    "description": "Repo watchers screenshot"
+  },
+  {
+    "content_type": "image/png",
+    "html_url": "https://github.com/downloads/williewheeler/skybase/hooks.png",
+    "download_count": 1,
+    "size": 67584,
+    "url": "https://api.github.com/repos/williewheeler/skybase/downloads/201813",
+    "created_at": "2012-03-09T03:54:41Z",
+    "name": "hooks.png",
+    "id": 201813,
+    "description": "Repo hooks screenshot"
+  }
+]
