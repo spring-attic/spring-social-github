@@ -23,6 +23,7 @@ import static org.springframework.social.test.client.ResponseCreators.withRespon
 
 import org.junit.Test;
 import org.springframework.http.MediaType;
+import org.springframework.social.github.api.GitHubDownload;
 import org.springframework.social.github.api.GitHubRepo;
 
 /**
@@ -75,7 +76,28 @@ public class RepoTemplateTest extends AbstractGitHubApiTest {
 		mockServer.expect(requestTo("https://api.github.com/repos/williewheeler/skybase/downloads"))
 			.andExpect(method(GET))
 			.andRespond(withResponse(jsonResource("repo-downloads"), responseHeaders));
-		assertEquals(4, gitHub.repoOperations().getCommits("williewheeler", "skybase").size());
+		assertEquals(4, gitHub.repoOperations().getDownloads("williewheeler", "skybase").size());
+	}
+	
+	@Test
+	public void getDownload() {
+		responseHeaders.setContentType(MediaType.APPLICATION_JSON);
+		mockServer.expect(requestTo("https://api.github.com/repos/williewheeler/skybase/downloads/201817"))
+			.andExpect(method(GET))
+			.andRespond(withResponse(jsonResource("repo-download"), responseHeaders));
+		
+		GitHubDownload download = gitHub.repoOperations().getDownload("williewheeler", "skybase", 201817L);
+		assertEquals("disconnected.png", download.getName());
+		assertEquals(new Long(15360L), download.getSize());
+	}
+	
+	@Test
+	public void getForks() {
+		responseHeaders.setContentType(MediaType.APPLICATION_JSON);
+		mockServer.expect(requestTo("https://api.github.com/repos/williewheeler/skybase/forks"))
+			.andExpect(method(GET))
+			.andRespond(withResponse(jsonResource("repo-forks"), responseHeaders));
+		assertEquals(4, gitHub.repoOperations().getForks("williewheeler", "skybase").size());
 	}
 	
 	@Test

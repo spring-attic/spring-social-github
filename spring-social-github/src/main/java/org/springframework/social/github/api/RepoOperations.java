@@ -61,6 +61,25 @@ public interface RepoOperations {
 	List<GitHubDownload> getDownloads(String user, String repo);
 	
 	/**
+	 * Public operation to return a single download.
+	 * 
+	 * @param user GitHub user
+	 * @param repo GitHub repository
+	 * @param id download ID
+	 * @return download
+	 */
+	GitHubDownload getDownload(String user, String repo, Long id);
+	
+	/**
+	 * Public operation to return the forks for the given repository.
+	 * 
+	 * @param user GitHub user
+	 * @param repo GitHub repository
+	 * @return list of repository forks
+	 */
+	List<GitHubRepo> getForks(String user, String repo);
+	
+	/**
 	 * Public operation to return a list of watchers for the given repository.
 	 *  
 	 * @param user GitHub user

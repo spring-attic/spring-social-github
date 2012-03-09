@@ -62,6 +62,15 @@ public class RepoTemplate extends AbstractGitHubOperations implements RepoOperat
 		return asList(restTemplate.getForObject(buildRepoUri("/downloads"), GitHubDownload[].class, user, repo));
 	}
 	
+	public GitHubDownload getDownload(String user, String repo, Long id) {
+		String uri = buildUri("repos/{user}/{repo}/downloads/{id}");
+		return restTemplate.getForObject(uri, GitHubDownload.class, user, repo, id);
+	}
+	
+	public List<GitHubRepo> getForks(String user, String repo) {
+		return asList(restTemplate.getForObject(buildRepoUri("/forks"), GitHubRepo[].class, user, repo));
+	}
+	
 	public List<GitHubUser> getWatchers(String user, String repo) {
 		return asList(restTemplate.getForObject(buildRepoUri("/watchers"), GitHubUser[].class, user, repo));
 	}
