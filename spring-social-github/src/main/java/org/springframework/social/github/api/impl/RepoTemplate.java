@@ -20,6 +20,7 @@ import static java.util.Arrays.asList;
 import java.util.List;
 
 import org.springframework.social.github.api.GitHubCommit;
+import org.springframework.social.github.api.GitHubDownload;
 import org.springframework.social.github.api.GitHubHook;
 import org.springframework.social.github.api.GitHubRepo;
 import org.springframework.social.github.api.GitHubUser;
@@ -55,6 +56,10 @@ public class RepoTemplate extends AbstractGitHubOperations implements RepoOperat
 	
 	public List<GitHubCommit> getCommits(String user, String repo) {
 		return asList(restTemplate.getForObject(buildRepoUri("/commits"), GitHubCommit[].class, user, repo));
+	}
+	
+	public List<GitHubDownload> getDownloads(String user, String repo) {
+		return asList(restTemplate.getForObject(buildRepoUri("/downloads"), GitHubDownload[].class, user, repo));
 	}
 	
 	public List<GitHubUser> getWatchers(String user, String repo) {

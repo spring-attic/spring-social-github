@@ -52,6 +52,15 @@ public interface RepoOperations {
 	List<GitHubCommit> getCommits(String user, String repo);
 	
 	/**
+	 * Public operation to return a list of downloads for the given repository.
+	 * 
+	 * @param user GitHub user
+	 * @param repo GitHub repository
+	 * @return list of downloads
+	 */
+	List<GitHubDownload> getDownloads(String user, String repo);
+	
+	/**
 	 * Public operation to return a list of watchers for the given repository.
 	 *  
 	 * @param user GitHub user

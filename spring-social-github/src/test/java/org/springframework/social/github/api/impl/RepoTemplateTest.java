@@ -70,6 +70,15 @@ public class RepoTemplateTest extends AbstractGitHubApiTest {
 	}
 	
 	@Test
+	public void getDownloads() {
+		responseHeaders.setContentType(MediaType.APPLICATION_JSON);
+		mockServer.expect(requestTo("https://api.github.com/repos/williewheeler/skybase/downloads"))
+			.andExpect(method(GET))
+			.andRespond(withResponse(jsonResource("repo-downloads"), responseHeaders));
+		assertEquals(4, gitHub.repoOperations().getCommits("williewheeler", "skybase").size());
+	}
+	
+	@Test
 	public void getWatchers() {
 		responseHeaders.setContentType(MediaType.APPLICATION_JSON);
 		mockServer.expect(requestTo("https://api.github.com/repos/williewheeler/skybase/watchers"))
