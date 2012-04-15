@@ -1,4 +1,4 @@
-Spring Social GitHub
+Spring Social GitHub ${version}
 -----------------------------------------------------------
 Spring Social GitHub is an extension to Spring Social to enable connectivity with GitHub.
 
