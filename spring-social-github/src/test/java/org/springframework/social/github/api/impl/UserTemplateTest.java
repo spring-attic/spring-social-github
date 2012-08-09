@@ -17,8 +17,8 @@ package org.springframework.social.github.api.impl;
 
 import static org.junit.Assert.*;
 import static org.springframework.http.HttpMethod.*;
-import static org.springframework.social.test.client.RequestMatchers.*;
-import static org.springframework.social.test.client.ResponseCreators.*;
+import static org.springframework.test.web.client.RequestMatchers.*;
+import static org.springframework.test.web.client.ResponseCreators.*;
 
 import org.junit.Test;
 import org.springframework.core.io.ClassPathResource;
@@ -34,8 +34,8 @@ public class UserTemplateTest extends AbstractGitHubApiTest {
 	@Test
 	public void getUserProfile() throws Exception {
 		mockServer.expect(requestTo("https://api.github.com/user")).andExpect(method(GET))
-				.andExpect(header("Authorization", "BEARER ACCESS_TOKEN"))
-				.andRespond(withResponse(new ClassPathResource("profile.json", getClass()), responseHeaders));
+				.andExpect(header("Authorization", "Bearer ACCESS_TOKEN"))
+				.andRespond(withSuccess(new ClassPathResource("profile.json", getClass()), MediaType.APPLICATION_JSON));
 		GitHubUserProfile profile = gitHub.userOperations().getUserProfile();
 		assertEquals("habuma", profile.getUsername());
 		assertEquals("Craig Walls", profile.getName());
@@ -48,16 +48,16 @@ public class UserTemplateTest extends AbstractGitHubApiTest {
 	@Test
 	public void getProfileId() {
 		mockServer.expect(requestTo("https://api.github.com/user")).andExpect(method(GET))
-				.andExpect(header("Authorization", "BEARER ACCESS_TOKEN"))
-				.andRespond(withResponse(new ClassPathResource("profile.json", getClass()), responseHeaders));
+				.andExpect(header("Authorization", "Bearer ACCESS_TOKEN"))
+				.andRespond(withSuccess(new ClassPathResource("profile.json", getClass()), MediaType.APPLICATION_JSON));
 		assertEquals("habuma", gitHub.userOperations().getProfileId());
 	}
 
 	@Test
 	public void getProfileUrl() {
 		mockServer.expect(requestTo("https://api.github.com/user")).andExpect(method(GET))
-				.andExpect(header("Authorization", "BEARER ACCESS_TOKEN"))
-				.andRespond(withResponse(new ClassPathResource("profile.json", getClass()), responseHeaders));
+				.andExpect(header("Authorization", "Bearer ACCESS_TOKEN"))
+				.andRespond(withSuccess(new ClassPathResource("profile.json", getClass()), MediaType.APPLICATION_JSON));
 		assertEquals("https://github.com/habuma", gitHub.userOperations().getProfileUrl());
 	}
 	
@@ -66,7 +66,7 @@ public class UserTemplateTest extends AbstractGitHubApiTest {
 		responseHeaders.setContentType(MediaType.APPLICATION_JSON);
 		mockServer.expect(requestTo("https://api.github.com/users/williewheeler/followers"))
 			.andExpect(method(GET))
-			.andRespond(withResponse(jsonResource("user-followers"), responseHeaders));
+			.andRespond(withSuccess(jsonResource("user-followers"), MediaType.APPLICATION_JSON));
 		assertEquals(20, gitHub.userOperations().getFollowers("williewheeler").size());
 	}
 	
@@ -75,7 +75,7 @@ public class UserTemplateTest extends AbstractGitHubApiTest {
 		responseHeaders.setContentType(MediaType.APPLICATION_JSON);
 		mockServer.expect(requestTo("https://api.github.com/users/williewheeler/following"))
 			.andExpect(method(GET))
-			.andRespond(withResponse(jsonResource("user-following"), responseHeaders));
+			.andRespond(withSuccess(jsonResource("user-following"), MediaType.APPLICATION_JSON));
 		assertEquals(17, gitHub.userOperations().getFollowing("williewheeler").size());
 	}
 
