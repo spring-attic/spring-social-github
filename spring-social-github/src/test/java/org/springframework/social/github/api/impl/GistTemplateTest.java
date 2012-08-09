@@ -15,13 +15,10 @@
  */
 package org.springframework.social.github.api.impl;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-import static org.springframework.http.HttpMethod.GET;
-import static org.springframework.social.test.client.RequestMatchers.method;
-import static org.springframework.social.test.client.RequestMatchers.requestTo;
-import static org.springframework.social.test.client.ResponseCreators.withResponse;
+import static org.junit.Assert.*;
+import static org.springframework.http.HttpMethod.*;
+import static org.springframework.test.web.client.RequestMatchers.*;
+import static org.springframework.test.web.client.ResponseCreators.*;
 
 import java.util.List;
 
@@ -41,7 +38,7 @@ public class GistTemplateTest extends AbstractGitHubApiTest {
 		responseHeaders.setContentType(MediaType.APPLICATION_JSON);
 		mockServer.expect(requestTo("https://api.github.com/users/kdonald/gists"))
 			.andExpect(method(GET))
-			.andRespond(withResponse(jsonResource("user-gists"), responseHeaders));
+			.andRespond(withSuccess(jsonResource("user-gists"), MediaType.APPLICATION_JSON));
 		
 		// Verify the list
 		List<GitHubGist> gists = gitHub.gistOperations().getUserGists("kdonald");
@@ -72,7 +69,7 @@ public class GistTemplateTest extends AbstractGitHubApiTest {
 		responseHeaders.setContentType(MediaType.APPLICATION_JSON);
 		mockServer.expect(requestTo("https://api.github.com/gists"))
 			.andExpect(method(GET))
-			.andRespond(withResponse(jsonResource("gists-public"), responseHeaders));
+			.andRespond(withSuccess(jsonResource("gists-public"), MediaType.APPLICATION_JSON));
 		List<GitHubGist> gists = gitHub.gistOperations().getGists();
 		assertEquals(30, gists.size());
 	}
@@ -87,7 +84,7 @@ public class GistTemplateTest extends AbstractGitHubApiTest {
 		responseHeaders.setContentType(MediaType.APPLICATION_JSON);
 		mockServer.expect(requestTo("https://api.github.com/gists/public"))
 			.andExpect(method(GET))
-			.andRespond(withResponse(jsonResource("gists-public"), responseHeaders));
+			.andRespond(withSuccess(jsonResource("gists-public"), MediaType.APPLICATION_JSON));
 		List<GitHubGist> gists = gitHub.gistOperations().getPublicGists();
 		assertEquals(30, gists.size());
 	}
@@ -107,7 +104,7 @@ public class GistTemplateTest extends AbstractGitHubApiTest {
 		responseHeaders.setContentType(MediaType.APPLICATION_JSON);
 		mockServer.expect(requestTo("https://api.github.com/gists/1651139/comments"))
 			.andExpect(method(GET))
-			.andRespond(withResponse(jsonResource("gist-comments"), responseHeaders));
+			.andRespond(withSuccess(jsonResource("gist-comments"), MediaType.APPLICATION_JSON));
 		List<GitHubComment> comments = gitHub.gistOperations().getGistComments("1651139");
 		assertEquals(2, comments.size());
 		verifyComment(comments.get(0));
@@ -118,7 +115,7 @@ public class GistTemplateTest extends AbstractGitHubApiTest {
 		responseHeaders.setContentType(MediaType.APPLICATION_JSON);
 		mockServer.expect(requestTo("https://api.github.com/gists/comments/77557"))
 			.andExpect(method(GET))
-			.andRespond(withResponse(jsonResource("gist-comment"), responseHeaders));
+			.andRespond(withSuccess(jsonResource("gist-comment"), MediaType.APPLICATION_JSON));
 		GitHubComment comment = gitHub.gistOperations().getGistComment(77557L);
 		verifyComment(comment);
 	}
