@@ -35,7 +35,7 @@ public class RepoTemplateTest extends AbstractGitHubApiTest {
 		responseHeaders.setContentType(MediaType.APPLICATION_JSON);
 		mockServer.expect(requestTo("https://api.github.com/repos/williewheeler/skybase"))
 			.andExpect(method(GET))
-			.andRespond(withResponse(jsonResource("repo"), responseHeaders));
+			.andRespond(withSuccess(jsonResource("repo"), MediaType.APPLICATION_JSON));
 		
 		GitHubRepo repo = gitHub.repoOperations().getRepo("williewheeler", "skybase");
 		
@@ -74,7 +74,7 @@ public class RepoTemplateTest extends AbstractGitHubApiTest {
 		responseHeaders.setContentType(MediaType.APPLICATION_JSON);
 		mockServer.expect(requestTo("https://api.github.com/repos/williewheeler/skybase/downloads"))
 			.andExpect(method(GET))
-			.andRespond(withResponse(jsonResource("repo-downloads"), responseHeaders));
+			.andRespond(withSuccess(jsonResource("repo-downloads"), MediaType.APPLICATION_JSON));
 		assertEquals(4, gitHub.repoOperations().getDownloads("williewheeler", "skybase").size());
 	}
 	
@@ -83,7 +83,7 @@ public class RepoTemplateTest extends AbstractGitHubApiTest {
 		responseHeaders.setContentType(MediaType.APPLICATION_JSON);
 		mockServer.expect(requestTo("https://api.github.com/repos/williewheeler/skybase/downloads/201817"))
 			.andExpect(method(GET))
-			.andRespond(withResponse(jsonResource("repo-download"), responseHeaders));
+			.andRespond(withSuccess(jsonResource("repo-download"), MediaType.APPLICATION_JSON));
 		
 		GitHubDownload download = gitHub.repoOperations().getDownload("williewheeler", "skybase", 201817L);
 		assertEquals("disconnected.png", download.getName());
@@ -95,7 +95,7 @@ public class RepoTemplateTest extends AbstractGitHubApiTest {
 		responseHeaders.setContentType(MediaType.APPLICATION_JSON);
 		mockServer.expect(requestTo("https://api.github.com/repos/williewheeler/skybase/forks"))
 			.andExpect(method(GET))
-			.andRespond(withResponse(jsonResource("repo-forks"), responseHeaders));
+			.andRespond(withSuccess(jsonResource("repo-forks"), MediaType.APPLICATION_JSON));
 		assertEquals(4, gitHub.repoOperations().getForks("williewheeler", "skybase").size());
 	}
 	
