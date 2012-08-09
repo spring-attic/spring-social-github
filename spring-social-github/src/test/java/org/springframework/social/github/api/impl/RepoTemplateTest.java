@@ -15,11 +15,10 @@
  */
 package org.springframework.social.github.api.impl;
 
-import static org.junit.Assert.assertEquals;
-import static org.springframework.http.HttpMethod.GET;
-import static org.springframework.social.test.client.RequestMatchers.method;
-import static org.springframework.social.test.client.RequestMatchers.requestTo;
-import static org.springframework.social.test.client.ResponseCreators.withResponse;
+import static org.junit.Assert.*;
+import static org.springframework.http.HttpMethod.*;
+import static org.springframework.test.web.client.RequestMatchers.*;
+import static org.springframework.test.web.client.ResponseCreators.*;
 
 import org.junit.Test;
 import org.springframework.http.MediaType;
@@ -57,7 +56,7 @@ public class RepoTemplateTest extends AbstractGitHubApiTest {
 		responseHeaders.setContentType(MediaType.APPLICATION_JSON);
 		mockServer.expect(requestTo("https://api.github.com/repos/williewheeler/skybase/collaborators"))
 			.andExpect(method(GET))
-			.andRespond(withResponse(jsonResource("repo-collaborators"), responseHeaders));
+			.andRespond(withSuccess(jsonResource("repo-collaborators"), MediaType.APPLICATION_JSON));
 		assertEquals(2, gitHub.repoOperations().getCollaborators("williewheeler", "skybase").size());
 	}
 	
@@ -66,7 +65,7 @@ public class RepoTemplateTest extends AbstractGitHubApiTest {
 		responseHeaders.setContentType(MediaType.APPLICATION_JSON);
 		mockServer.expect(requestTo("https://api.github.com/repos/williewheeler/skybase/commits"))
 			.andExpect(method(GET))
-			.andRespond(withResponse(jsonResource("repo-commits"), responseHeaders));
+			.andRespond(withSuccess(jsonResource("repo-commits"), MediaType.APPLICATION_JSON));
 		assertEquals(30, gitHub.repoOperations().getCommits("williewheeler", "skybase").size());
 	}
 	
@@ -105,7 +104,7 @@ public class RepoTemplateTest extends AbstractGitHubApiTest {
 		responseHeaders.setContentType(MediaType.APPLICATION_JSON);
 		mockServer.expect(requestTo("https://api.github.com/repos/williewheeler/skybase/watchers"))
 			.andExpect(method(GET))
-			.andRespond(withResponse(jsonResource("repo-watchers"), responseHeaders));
+			.andRespond(withSuccess(jsonResource("repo-watchers"), MediaType.APPLICATION_JSON));
 		assertEquals(15, gitHub.repoOperations().getWatchers("williewheeler", "skybase").size());
 	}
 	
