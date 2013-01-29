@@ -19,10 +19,9 @@ configure(allprojects) {
 
 	  springSocialVersion = '1.1.0.BUILD-SNAPSHOT'
     jacksonVersion = '1.9.9'
-    junitVersion = '4.8.2'
-    mockitoVersion = '1.9.0'
-    springVersion = '3.1.2.RELEASE'
-    springTestMvcVersion = "1.0.0.M1"
+    junitVersion = '4.11'
+    mockitoVersion = '1.9.5'
+    springVersion = '3.2.1.RELEASE'
 
     [compileJava, compileTestJava]*.options*.compilerArgs = ['-Xlint:none']
 
@@ -94,7 +93,7 @@ project('spring-social-github') {
     dependencies {
        compile "org.springframework.social:spring-social-core:$springSocialVersion"
        compile "org.codehaus.jackson:jackson-mapper-asl:$jacksonVersion"
-       testCompile "org.springframework:spring-test-mvc:$springTestMvcVersion"
+       testCompile "org.springframework:spring-test:$springVersion"
     }
 }
 
