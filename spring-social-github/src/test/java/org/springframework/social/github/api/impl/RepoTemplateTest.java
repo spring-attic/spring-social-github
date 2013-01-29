@@ -17,8 +17,8 @@ package org.springframework.social.github.api.impl;
 
 import static org.junit.Assert.*;
 import static org.springframework.http.HttpMethod.*;
-import static org.springframework.test.web.client.RequestMatchers.*;
-import static org.springframework.test.web.client.ResponseCreators.*;
+import static org.springframework.test.web.client.match.MockRestRequestMatchers.*;
+import static org.springframework.test.web.client.response.MockRestResponseCreators.*;
 
 import org.junit.Test;
 import org.springframework.http.MediaType;
