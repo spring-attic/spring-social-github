@@ -33,7 +33,7 @@ class AbstractGitHubOperations {
 	
 	protected void requireAuthorization() {
 		if (!isAuthorized) {
-			throw new MissingAuthorizationException();
+			throw new MissingAuthorizationException("github");
 		}
 	}
 	
