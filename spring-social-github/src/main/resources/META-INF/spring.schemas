@@ -1,0 +1,2 @@
+http\://www.springframework.org/schema/social/spring-social-github.xsd=org/springframework/social/github/config/xml/spring-social-github-1.0.xsd
+http\://www.springframework.org/schema/social/spring-social-github-1.0.xsd=org/springframework/social/github/config/xml/spring-social-github-1.0.xsd

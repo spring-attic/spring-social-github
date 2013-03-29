@@ -1,0 +1,1 @@
+http\://www.springframework.org/schema/social/github=org.springframework.social.github.config.xml.GitHubNamespaceHandler
