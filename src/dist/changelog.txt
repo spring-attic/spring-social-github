@@ -1,3 +1,8 @@
+Spring Social GitHub 1.0.0 Milestone 5 (? ?, 2013)
+=====================================================
+Miscellaneous
+  - Upgraded to Jackson 2
+
 Spring Social GitHub 1.0.0 Milestone 4 (June 7, 2011)
 =====================================================
  - Extracted Spring Social GitHub module from core Spring Social project.
