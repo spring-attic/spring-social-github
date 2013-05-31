@@ -17,10 +17,11 @@ configure(allprojects) {
     sourceCompatibility=1.5
     targetCompatibility=1.5
 
-	  springSocialVersion = '1.1.0.BUILD-SNAPSHOT'
-    jacksonVersion = '1.9.9'
+	springSocialVersion = '1.1.0.BUILD-SNAPSHOT'
+    jacksonVersion = '2.2.1'
     junitVersion = '4.11'
     mockitoVersion = '1.9.5'
+    servletApiVersion = '2.5'
     springVersion = '3.2.1.RELEASE'
 
     [compileJava, compileTestJava]*.options*.compilerArgs = ['-Xlint:none']
@@ -92,7 +93,12 @@ project('spring-social-github') {
     description = 'Github API'
     dependencies {
        compile "org.springframework.social:spring-social-core:$springSocialVersion"
-       compile "org.codehaus.jackson:jackson-mapper-asl:$jacksonVersion"
+       compile ("org.springframework.social:spring-social-config:$springSocialVersion")
+       compile ("org.springframework.social:spring-social-security:$springSocialVersion", optional)
+       compile ("com.fasterxml.jackson.core:jackson-core:$jacksonVersion")
+       compile ("com.fasterxml.jackson.core:jackson-databind:$jacksonVersion")
+       compile ("com.fasterxml.jackson.core:jackson-annotations:$jacksonVersion")
+       compile ("javax.servlet:servlet-api:$servletApiVersion", provided)
        testCompile "org.springframework:spring-test:$springVersion"
     }
 }

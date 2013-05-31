@@ -17,7 +17,7 @@ package org.springframework.social.github.api;
 
 import java.io.Serializable;
 
-import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 /**
  * A GitHub repository commit.
