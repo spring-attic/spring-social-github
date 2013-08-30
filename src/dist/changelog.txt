@@ -1,12 +1,19 @@
-Spring Social GitHub 1.0.0 Milestone 5 (? ?, 2013)
-=====================================================
+Spring Social GitHub 1.0.0 Milestone 4 (August 30, 2013)
+========================================================
 Miscellaneous
   - Upgraded to Jackson 2
+  - Extracted Spring Social GitHub module from core Spring Social project.
+  - Renamed GitHubApi to GitHub.
 
-Spring Social GitHub 1.0.0 Milestone 4 (June 7, 2011)
-=====================================================
- - Extracted Spring Social GitHub module from core Spring Social project.
- - Renamed GitHubApi to GitHub.
+Features
+  - A more complete API binding.
+  - An OAuth-enabled RestOperations is now exposed through the GitHub
+    interface.
+  - Support for SocialAuthenticationFilter, for tighter integration with
+    Spring Security. (SOCIAL-232)
+  - Support for simplified configuration with @EnableGitHub and an XML
+    configuration namespace. (SOCIAL-292 and SOCIAL-293)
+
 
 Refer to Spring Social's changelog for a history of the GitHub module
 prior to it being extracted into its own project.

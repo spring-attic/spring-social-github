@@ -25,11 +25,13 @@ import java.lang.annotation.Target;
 import org.springframework.context.annotation.Import;
 import org.springframework.social.connect.ConnectionFactoryLocator;
 import org.springframework.social.connect.ConnectionRepository;
+import org.springframework.social.github.api.GitHub;
+import org.springframework.social.github.connect.GitHubConnectionFactory;
 
 /**
- * Annotation to enable Facebook in a Spring Social application.
- * Configures a {@link FacebookConnectionFactory} bean (and a {@link ConnectionFactoryLocator} bean if one isn't already registered).
- * Also configures a request-scoped {@link Facebook} bean fetched from the current user's {@link ConnectionRepository}. 
+ * Annotation to enable Github in a Spring Social application.
+ * Configures a {@link GitHubConnectionFactory} bean (and a {@link ConnectionFactoryLocator} bean if one isn't already registered).
+ * Also configures a request-scoped {@link GitHub} bean fetched from the current user's {@link ConnectionRepository}. 
  * @author Craig Walls
  */
 @Target(ElementType.TYPE)
