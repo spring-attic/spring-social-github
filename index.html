@@ -1,0 +1,68 @@
+---
+title: Spring Social GitHub
+
+badges:
+  twitter: SpringSocial
+
+  custom:
+    - name: Source (GitHub)
+      url:  https://github.com/spring-projects/spring-social-github
+      icon: github
+
+    - name: Issues (JIRA)
+      url:  https://jira.springsource.org/browse/SOCIALGH
+      icon: tracking
+
+    - name: CI (Bamboo)
+      url:  https://build.springsource.org/browse/SOCIAL
+      icon: ci
+
+    - name: Forum
+      url:  http://forum.stage.springsource.org/forum/spring-projects/web/social
+      icon: forum
+
+    - name: StackOverflow
+      image_url: http://myrrix.com/wp-content/uploads/2012/06/stackoverflow.png
+      url:  http://stackoverflow.com/questions/tagged/spring-social
+      icon: stackoverflow
+
+---
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<!-- Specify the parent of this project (or delete if none) to influence the rendering of the breadcrumb -->
+{% capture parent_link %}
+[Spring Social]({{ site.projects_site_url }}/spring-social)
+{% endcapture %}
+
+{% capture billboard_description %}
+
+Connect your Spring application with GitHub's REST API.
+
+{% endcapture %}
+
+{% capture main_content %}
+
+Spring Social GitHub is an extension of Spring Social that enables you to connection your application with GitHub's REST API.
+
+## Features
+
+* A service provider and connection factory for use with Spring Social's connection framework.
+* An API binding for GitHub's REST API.
+* Much more...
+
+<span id="quick-start"></span>
+## Quick Start
+
+{% include download_widget.md %}
+
+{% endcapture %}
+
+{% capture related_resources %}
+### API Reference
+[The GitHub API](http://developer.github.com/)
+{% endcapture %}
+
+
+{% include project_page.html %}
+</html>
