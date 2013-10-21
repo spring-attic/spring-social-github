@@ -1,0 +1,47 @@
+[
+    {
+        "url": "https://api.github.com/repos/spring-guides/gs-rest-service/issues/10",
+        "labels_url": "https://api.github.com/repos/spring-guides/gs-rest-service/issues/10/labels{/name}",
+        "comments_url": "https://api.github.com/repos/spring-guides/gs-rest-service/issues/10/comments",
+        "events_url": "https://api.github.com/repos/spring-guides/gs-rest-service/issues/10/events",
+        "html_url": "https://github.com/spring-guides/gs-rest-service/pull/10",
+        "id": 15107207,
+        "number": 10,
+        "title": "Use WAR packaging for rest service",
+        "user": {
+            "login": "dsyer",
+            "id": 124075,
+            "avatar_url": "https://2.gravatar.com/avatar/ae671230e3a1c2a0eefa7604990084f1?d=https%3A%2F%2Fidenticons.github.com%2F2018b58c3c7835457287264e40fa1a3c.png",
+            "gravatar_id": "ae671230e3a1c2a0eefa7604990084f1",
+            "url": "https://api.github.com/users/dsyer",
+            "html_url": "https://github.com/dsyer",
+            "followers_url": "https://api.github.com/users/dsyer/followers",
+            "following_url": "https://api.github.com/users/dsyer/following{/other_user}",
+            "gists_url": "https://api.github.com/users/dsyer/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/dsyer/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/dsyer/subscriptions",
+            "organizations_url": "https://api.github.com/users/dsyer/orgs",
+            "repos_url": "https://api.github.com/users/dsyer/repos",
+            "events_url": "https://api.github.com/users/dsyer/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/dsyer/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "labels": [
+
+        ],
+        "state": "open",
+        "assignee": null,
+        "milestone": null,
+        "comments": 12,
+        "created_at": "2013-06-04T08:29:50Z",
+        "updated_at": "2013-06-11T08:23:45Z",
+        "closed_at": null,
+        "pull_request": {
+            "html_url": "https://github.com/spring-guides/gs-rest-service/pull/10",
+            "diff_url": "https://github.com/spring-guides/gs-rest-service/pull/10.diff",
+            "patch_url": "https://github.com/spring-guides/gs-rest-service/pull/10.patch"
+        },
+        "body": "You can deploy to WTP, build a war, execute it (java -jar) or use mvn exec."
+    }
+]

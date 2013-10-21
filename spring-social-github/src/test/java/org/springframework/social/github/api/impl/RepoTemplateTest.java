@@ -23,10 +23,14 @@ import static org.springframework.test.web.client.response.MockRestResponseCreat
 import org.junit.Test;
 import org.springframework.http.MediaType;
 import org.springframework.social.github.api.GitHubDownload;
+import org.springframework.social.github.api.GitHubIssue;
 import org.springframework.social.github.api.GitHubRepo;
+
+import java.util.List;
 
 /**
  * @author Willie Wheeler (willie.wheeler@gmail.com)
+ * @author Greg Turnquist
  */
 public class RepoTemplateTest extends AbstractGitHubApiTest {
 	
@@ -98,7 +102,22 @@ public class RepoTemplateTest extends AbstractGitHubApiTest {
 			.andRespond(withSuccess(jsonResource("repo-forks"), MediaType.APPLICATION_JSON));
 		assertEquals(4, gitHub.repoOperations().getForks("williewheeler", "skybase").size());
 	}
-	
+
+	@Test
+	public void getIssues() {
+		responseHeaders.setContentType(MediaType.APPLICATION_JSON);
+		mockServer.expect(requestTo("https://api.github.com/repos/spring-guides/gs-rest-service/issues"))
+				.andExpect(method(GET))
+				.andRespond(withSuccess(jsonResource("repo-issues"), MediaType.APPLICATION_JSON));
+		List<GitHubIssue> issues = gitHub.repoOperations().getIssues("spring-guides", "gs-rest-service");
+		assertEquals(1, issues.size());
+		assertEquals("10", issues.get(0).getNumber());
+		assertEquals("open", issues.get(0).getState());
+		assertEquals("Use WAR packaging for rest service", issues.get(0).getTitle());
+		assertEquals("You can deploy to WTP, build a war, execute it (java -jar) or use mvn exec.",
+				issues.get(0).getBody());
+	}
+
 	@Test
 	public void getWatchers() {
 		responseHeaders.setContentType(MediaType.APPLICATION_JSON);
