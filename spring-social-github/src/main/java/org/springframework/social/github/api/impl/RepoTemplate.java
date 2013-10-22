@@ -22,6 +22,7 @@ import java.util.List;
 import org.springframework.social.github.api.GitHubCommit;
 import org.springframework.social.github.api.GitHubDownload;
 import org.springframework.social.github.api.GitHubHook;
+import org.springframework.social.github.api.GitHubIssue;
 import org.springframework.social.github.api.GitHubRepo;
 import org.springframework.social.github.api.GitHubUser;
 import org.springframework.social.github.api.RepoOperations;
@@ -33,6 +34,7 @@ import org.springframework.web.client.RestTemplate;
  * </p>
  * 
  * @author Willie Wheeler (willie.wheeler@gmail.com)
+ * @author Greg Turnquist
  */
 public class RepoTemplate extends AbstractGitHubOperations implements RepoOperations {
 	private final RestTemplate restTemplate;
@@ -70,7 +72,11 @@ public class RepoTemplate extends AbstractGitHubOperations implements RepoOperat
 	public List<GitHubRepo> getForks(String user, String repo) {
 		return asList(restTemplate.getForObject(buildRepoUri("/forks"), GitHubRepo[].class, user, repo));
 	}
-	
+
+	public List<GitHubIssue> getIssues(String user, String repo) {
+		return asList(restTemplate.getForObject(buildRepoUri("/issues"), GitHubIssue[].class, user, repo));
+	}
+
 	public List<GitHubUser> getWatchers(String user, String repo) {
 		return asList(restTemplate.getForObject(buildRepoUri("/watchers"), GitHubUser[].class, user, repo));
 	}

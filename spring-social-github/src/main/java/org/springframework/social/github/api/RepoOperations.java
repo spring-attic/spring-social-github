@@ -78,7 +78,17 @@ public interface RepoOperations {
 	 * @return list of repository forks
 	 */
 	List<GitHubRepo> getForks(String user, String repo);
-	
+
+
+	/**
+	 * Public operation to return the forks for the given repository.
+	 *
+	 * @param user GitHub user
+	 * @param repo GitHub repository
+	 * @return list of repository issues
+	 */
+	List<GitHubIssue> getIssues(String user, String repo);
+
 	/**
 	 * Public operation to return a list of watchers for the given repository.
 	 *  
