@@ -15,6 +15,7 @@ import java.util.Date;
 public class GitHubIssue {
 	private String number;
 	private String url;
+	private String htmlUrl;
 	private String state;
 	private String title;
 	private String body;
@@ -37,6 +38,15 @@ public class GitHubIssue {
 
 	public void setUrl(String url) {
 		this.url = url;
+	}
+
+	@JsonProperty("html_url")
+	public String getHtmlUrl() {
+		return htmlUrl;
+	}
+
+	public void setHtmlUrl(String htmlUrl) {
+		this.htmlUrl = htmlUrl;
 	}
 
 	public String getState() {

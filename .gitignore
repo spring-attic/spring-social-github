@@ -13,3 +13,6 @@ spring-social-core/src/test/java/exploration
 **/bin
 .idea
 *.iml
+*.ipr
+*.iws
+out
