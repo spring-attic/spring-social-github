@@ -19,12 +19,14 @@ configure(allprojects) {
     sourceCompatibility=1.5
     targetCompatibility=1.5
 
-	springSocialVersion = '1.1.0.M4'
-    jacksonVersion = '2.2.2'
-    junitVersion = '4.11'
-    mockitoVersion = '1.9.5'
-    servletApiVersion = '2.5'
-    springVersion = '3.2.4.RELEASE'
+    ext {
+        springSocialVersion = '1.1.0.M4'
+        jacksonVersion = '2.2.2'
+        junitVersion = '4.11'
+        mockitoVersion = '1.9.5'
+        servletApiVersion = '2.5'
+        springVersion = '3.2.4.RELEASE'
+    }
 
     [compileJava, compileTestJava]*.options*.compilerArgs = ['-Xlint:none']
 
@@ -191,7 +193,7 @@ configure(rootProject) {
         description = "Builds -${classifier} archive, containing all jars and docs, " +
                       "suitable for community download page."
 
-        baseDir = "${project.name}-${project.version}";
+        ext.baseDir = "${project.name}-${project.version}";
 
         from('src/dist') {
             include 'readme.txt'
