@@ -31,10 +31,10 @@ def customizePom(pom, gradleProject) {
         generatedPom.project {
             name = gradleProject.description
             description = gradleProject.description
-            url = 'https://github.com/SpringSource/spring-social-github'
+            url = 'https://github.com/spring-projects/spring-social-github'
             organization {
-                name = 'SpringSource'
-                url = 'http://springsource.org/spring-social'
+                name = 'Spring'
+                url = 'http://projects.spring.io/spring-social'
             }
             licenses {
                 license {
@@ -44,15 +44,15 @@ def customizePom(pom, gradleProject) {
                 }
             }
             scm {
-                url = 'https://github.com/SpringSource/spring-social-github'
-                connection = 'scm:git:git://github.com/SpringSource/spring-social-github'
-                developerConnection = 'scm:git:git://github.com/SpringSource/spring-social-github'
+                url = 'https://github.com/spring-projects/spring-social-github'
+                connection = 'scm:git:git://github.com/spring-projects/spring-social-github'
+                developerConnection = 'scm:git:git://github.com/spring-projects/spring-social-github'
             }
             developers {
                 developer {
                     id = 'cwalls'
                     name = 'Craig Walls'
-                    email = 'cwalls@vmware.com'
+                    email = 'cwalls@gopivotal.com'
                 }
             }
         }
