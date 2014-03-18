@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 the original author or authors.
+ * Copyright 2013-2014 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,46 +22,45 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * A GitHub repository user.
+ * A GitHub user
  * 
  * @author Willie Wheeler (willie.wheeler@gmail.com)
+ * @author Andy Wilkinson
  */
 @SuppressWarnings("serial")
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class GitHubUser implements Serializable {
-	private Long id;
-	private String url;
-	private String login;
-	private String avatarUrl;
-	private String gravatarId;
+
+	private final long id;
+
+	private final String url;
+
+	private final String login;
+
+	private final String avatarUrl;
+
+	private final String gravatarId;
+
 	private String name;
+
 	private String email;
-	private Date date;
-	
-	public Long getId() { return id; }
-	
-	public void setId(Long id) { this.id = id; }
+
+    public GitHubUser(long id, String url, String login, String avatarUrl, String gravatarId) {
+        this.id = id;
+        this.url = url;
+        this.login = login;
+        this.avatarUrl = avatarUrl;
+        this.gravatarId = gravatarId;
+    }
+
+    public Long getId() { return id; }
 	
 	public String getUrl() { return url; }
-	
-	public void setUrl(String url) { this.url = url; }
-	
-	/**
-	 * @return watcher's GitHub login
-	 */
+
 	public String getLogin() { return login; }
-	
-	public void setLogin(String login) { this.login = login; }
-	
-	@JsonProperty("avatar_url")
+
 	public String getAvatarUrl() { return avatarUrl; }
-	
-	public void setAvatarUrl(String avatarUrl) { this.avatarUrl = avatarUrl; }
-	
-	@JsonProperty("gravatar_id")
+
 	public String getGravatarId() { return gravatarId; }
-	
-	public void setGravatarId(String gravatarId) { this.gravatarId = gravatarId; }
 	
 	public String getName() { return name; }
 	
@@ -70,8 +69,4 @@ public class GitHubUser implements Serializable {
 	public String getEmail() { return email; }
 	
 	public void setEmail(String email) { this.email = email; }
-	
-	public Date getDate() { return date; }
-	
-	public void setDate(Date date) { this.date = date; }
 }

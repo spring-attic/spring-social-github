@@ -15,10 +15,13 @@
  */
 package org.springframework.social.github.api.impl;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.social.github.api.GistOperations;
 import org.springframework.social.github.api.GitHub;
 import org.springframework.social.github.api.RepoOperations;
 import org.springframework.social.github.api.UserOperations;
+import org.springframework.social.github.api.impl.json.GitHubModule;
 import org.springframework.social.oauth2.AbstractOAuth2ApiBinding;
 import org.springframework.social.oauth2.OAuth2Version;
 import org.springframework.web.client.RestOperations;
@@ -29,6 +32,7 @@ import org.springframework.web.client.RestOperations;
  * </p>
  * @author Craig Walls
  * @author Willie Wheeler (willie.wheeler@gmail.com)
+ * @author Andy Wilkinson
  */
 public class GitHubTemplate extends AbstractOAuth2ApiBinding implements GitHub {
 	private GistOperations gistOperations;
@@ -79,8 +83,17 @@ public class GitHubTemplate extends AbstractOAuth2ApiBinding implements GitHub {
 	public RestOperations restOperations() {
 		return getRestTemplate();
 	}
-	
-	// internal helpers
+
+    @Override
+    protected MappingJackson2HttpMessageConverter getJsonMessageConverter() {
+        MappingJackson2HttpMessageConverter converter = super.getJsonMessageConverter();
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.registerModule(new GitHubModule());
+        converter.setObjectMapper(objectMapper);
+        return converter;
+    }
+
+    // internal helpers
 	
 	private void initSubApis() {
 		this.gistOperations = new GistTemplate(getRestTemplate(), isAuthorized());

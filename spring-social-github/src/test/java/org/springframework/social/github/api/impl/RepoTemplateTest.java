@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 the original author or authors.
+ * Copyright 2013-2014 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 package org.springframework.social.github.api.impl;
 
 import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 import static org.springframework.http.HttpMethod.*;
 import static org.springframework.test.web.client.match.MockRestRequestMatchers.*;
 import static org.springframework.test.web.client.response.MockRestResponseCreators.*;
@@ -23,14 +24,17 @@ import static org.springframework.test.web.client.response.MockRestResponseCreat
 import org.junit.Test;
 import org.springframework.http.MediaType;
 import org.springframework.social.github.api.GitHubDownload;
+import org.springframework.social.github.api.GitHubHook;
 import org.springframework.social.github.api.GitHubIssue;
 import org.springframework.social.github.api.GitHubRepo;
 
+import java.util.Date;
 import java.util.List;
 
 /**
  * @author Willie Wheeler (willie.wheeler@gmail.com)
  * @author Greg Turnquist
+ * @author Andy Wilkinson
  */
 public class RepoTemplateTest extends AbstractGitHubApiTest {
 	
@@ -44,7 +48,7 @@ public class RepoTemplateTest extends AbstractGitHubApiTest {
 		GitHubRepo repo = gitHub.repoOperations().getRepo("williewheeler", "skybase");
 		
 		// TODO There are other fields that we need to test.
-		assertEquals(2811637L, repo.getId().longValue());
+		assertEquals(2811637L, repo.getId());
 		assertEquals("skybase", repo.getName());
 		assertEquals("CMDB based on Neo4j", repo.getDescription());
 		assertEquals("https://api.github.com/repos/williewheeler/skybase", repo.getUrl());
@@ -91,7 +95,11 @@ public class RepoTemplateTest extends AbstractGitHubApiTest {
 		
 		GitHubDownload download = gitHub.repoOperations().getDownload("williewheeler", "skybase", 201817L);
 		assertEquals("disconnected.png", download.getName());
-		assertEquals(new Long(15360L), download.getSize());
+		assertEquals(15360L, download.getSize());
+        assertEquals("image/png", download.getContentType());
+        assertEquals(2, download.getDownloadCount());
+        assertEquals("https://github.com/downloads/williewheeler/skybase/disconnected.png", download.getHtmlUrl());
+        assertEquals("https://api.github.com/repos/williewheeler/skybase/downloads/201817", download.getUrl());
 	}
 	
 	@Test
@@ -111,11 +119,15 @@ public class RepoTemplateTest extends AbstractGitHubApiTest {
 				.andRespond(withSuccess(jsonResource("repo-issues"), MediaType.APPLICATION_JSON));
 		List<GitHubIssue> issues = gitHub.repoOperations().getIssues("spring-guides", "gs-rest-service");
 		assertEquals(1, issues.size());
-		assertEquals("10", issues.get(0).getNumber());
-		assertEquals("open", issues.get(0).getState());
-		assertEquals("Use WAR packaging for rest service", issues.get(0).getTitle());
+        GitHubIssue issue = issues.get(0);
+        assertEquals(10, issue.getNumber());
+		assertEquals("open", issue.getState());
+		assertEquals("Use WAR packaging for rest service", issue.getTitle());
 		assertEquals("You can deploy to WTP, build a war, execute it (java -jar) or use mvn exec.",
-				issues.get(0).getBody());
+                issue.getBody());
+        assertEquals(new Date(1370334590000L), issue.getCreatedAt());
+        assertEquals(new Date(1370939025000L), issue.getUpdatedAt());
+        assertNull(issue.getClosedAt());
 	}
 
 	@Test
@@ -129,6 +141,19 @@ public class RepoTemplateTest extends AbstractGitHubApiTest {
 	
 	@Test
 	public void getHooks() {
-		
+        responseHeaders.setContentType(MediaType.APPLICATION_JSON);
+        mockServer.expect(requestTo("https://api.github.com/repos/octocat/Hello-World/hooks"))
+                .andExpect(method(GET))
+                .andRespond(withSuccess(jsonResource("repo-hooks"), MediaType.APPLICATION_JSON));
+        List<GitHubHook> hooks = gitHub.repoOperations().getHooks("octocat", "Hello-World");
+        assertEquals(1, hooks.size());
+        GitHubHook hook = hooks.get(0);
+        assertEquals(1, hook.getId());
+        assertEquals("https://api.github.com/repos/octocat/Hello-World/hooks/1", hook.getUrl());
+        assertEquals("web", hook.getName());
+        assertTrue(hook.isActive());
+        assertEquals(new Date(1315329987000L), hook.getCreatedAt());
+        assertEquals(new Date(1315341563000L), hook.getUpdatedAt());
+
 	}
 }

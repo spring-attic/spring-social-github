@@ -1,3 +1,18 @@
+/*
+ * Copyright 2012-2014 the original author or authors.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package org.springframework.social.github.api;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -9,35 +24,56 @@ import java.util.Date;
  * A GitHub issue
  *
  * @author Greg Turnquist
+ * @author Andy Wilkinson
  */
 @SuppressWarnings("serial")
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class GitHubIssue {
-	private String number;
-	private String url;
+
+	private final int number;
+
+	private final String url;
+
+    private final Date closedAt;
+
+    private final Date createdAt;
+
+    private final Date updatedAt;
+
 	private String state;
+
 	private String title;
+
 	private String body;
+
 	private GitHubUser assignee;
-	private Date closedAt;
-	private Date createdAt;
-	private Date updatedAt;
 
-	public String getNumber() {
+    public GitHubIssue(int number, String url, Date closedAt, Date createdAt, Date updatedAt) {
+        this.number = number;
+        this.url = url;
+        this.closedAt = closedAt;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+    }
+
+    public int getNumber() {
 		return number;
-	}
-
-	public void setNumber(String number) {
-		this.number = number;
 	}
 
 	public String getUrl() {
 		return url;
 	}
 
-	public void setUrl(String url) {
-		this.url = url;
-	}
+    public Date getClosedAt() {
+        return closedAt;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public Date getUpdatedAt() {
+        return updatedAt;
+    }
 
 	public String getState() {
 		return state;
@@ -69,32 +105,5 @@ public class GitHubIssue {
 
 	public void setAssignee(GitHubUser assignee) {
 		this.assignee = assignee;
-	}
-
-	@JsonProperty("closed_at")
-	public Date getClosedAt() {
-		return closedAt;
-	}
-
-	public void setClosedAt(Date closedAt) {
-		this.closedAt = closedAt;
-	}
-
-	@JsonProperty("created_at")
-	public Date getCreatedAt() {
-		return createdAt;
-	}
-
-	public void setCreatedAt(Date createdAt) {
-		this.createdAt = createdAt;
-	}
-
-	@JsonProperty("updated_at")
-	public Date getUpdatedAt() {
-		return updatedAt;
-	}
-
-	public void setUpdatedAt(Date updatedAt) {
-		this.updatedAt = updatedAt;
 	}
 }
