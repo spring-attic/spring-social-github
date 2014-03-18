@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 the original author or authors.
+ * Copyright 2013-2014 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,50 +25,44 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  * @author Willie Wheeler (willie.wheeler@gmail.com)
  */
 @SuppressWarnings("serial")
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class GitHubCommit implements Serializable {
-	private String message;
-	private String sha;
-	private String url;
-	private GitHubUser committer;
-	private GitHubUser author;
-	private GitHubCommit commit;
-	
-	/**
+
+	private final String message;
+
+	private final String sha;
+
+	private final String url;
+
+	private final GitHubUser committer;
+
+	private final GitHubUser author;
+
+    public GitHubCommit(String message, String sha, String url, GitHubUser committer, GitHubUser author) {
+        this.message = message;
+        this.sha = sha;
+        this.url = url;
+        this.committer = committer;
+        this.author = author;
+    }
+
+    /**
 	 * @return commit message
 	 */
 	public String getMessage() { return message; }
-	
-	/**
-	 * @param message commit message
-	 */
-	public void setMessage(String message) { this.message = message; }
-	
+
 	public String getSha() { return sha; }
-	
-	public void setSha(String sha) { this.sha = sha; }
-	
+
 	public String getUrl() { return url; }
-	
-	public void setUrl(String url) { this.url = url; }
-	
+
 	/**
 	 * @return user who committed the patch, perhaps on behalf of a separate
 	 *         author (e.g., Willie authors code, issues a pull request, and
 	 *         Craig commits it)
 	 */
 	public GitHubUser getCommitter() { return committer; }
-	
-	public void setCommitter(GitHubUser committer) { this.committer = committer; }
-	
-	public GitHubUser getAuthor() { return author; }
-	
-	/**
-	 * @param author user who wrote the patch
-	 */
-	public void setAuthor(GitHubUser author) { this.author = author; }
-	
-	public GitHubCommit getCommit() { return commit; }
-	
-	public void setCommit(GitHubCommit commit) { this.commit = commit; }
+
+    /**
+     * @return user who wrote the patch
+     */
+    public GitHubUser getAuthor() { return author; }
 }

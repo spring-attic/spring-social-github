@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2012 the original author or authors.
+ * Copyright 2012-2014 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ import org.springframework.social.github.api.GitHubGist;
 
 /**
  * @author Willie Wheeler (willie.wheeler@gmail.com)
+ * @author Andy Wilkinson
  */
 public class GistTemplateTest extends AbstractGitHubApiTest {
 
@@ -46,7 +47,7 @@ public class GistTemplateTest extends AbstractGitHubApiTest {
 		
 		// Verify the gist
 		GitHubGist gist = gists.get(0);
-		assertEquals(0, gist.getComments().intValue());
+		assertEquals(0, gist.getComments());
 		assertTrue(gist.isPublic());
 		assertEquals("https://gist.github.com/1603296", gist.getHtmlUrl());
 		assertEquals("git@gist.github.com:1603296.git", gist.getGitPushUrl());
@@ -61,7 +62,8 @@ public class GistTemplateTest extends AbstractGitHubApiTest {
 		assertEquals("text/plain", file.getType());
 		assertEquals("https://gist.github.com/raw/1603296/18195cefb653c8ed3ecbd0cb3a60a76eb417158e/jmustache-spring-mvc.java", file.getRawUrl());
 		assertEquals("Java", file.getLanguage());
-		assertEquals(3749L, file.getSize().longValue());
+		assertEquals(3749L, file.getSize());
+        assertNull(file.getContent()); // No content for a file in a list of Gists
 	}
 	
 	@Test
@@ -121,7 +123,7 @@ public class GistTemplateTest extends AbstractGitHubApiTest {
 	}
 	
 	private void verifyComment(GitHubComment comment) {
-		assertEquals(77557L, comment.getId().longValue());
+		assertEquals(77557L, comment.getId());
 		assertEquals("https://api.github.com/gists/comments/77557", comment.getUrl());
 		assertEquals("This is a comment.", comment.getBody());
 		assertEquals("williewheeler", comment.getUser().getLogin());
