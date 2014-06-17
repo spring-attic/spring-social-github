@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2012 the original author or authors.
+ * Copyright 2012-2014 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,41 +25,46 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * A GitHub hook. Hooks share commits with other apps, such as Bamboo, Basecamp, e-mail and so forth.
  * 
  * @author Willie Wheeler (willie.wheeler@gmail.com)
+ * @author Andy Wilkinson
  */
 @SuppressWarnings("serial")
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class GitHubHook implements Serializable {
-	private Long id;
-	private String name;
-	private String url;
+
+	private final long id;
+
+	private final String name;
+
+	private final String url;
+
+    private final Date createdAt;
+
+    private final Date updatedAt;
+
 	private boolean active;
-	private Date createdAt;
-	private Date updatedAt;
-	
-	public Long getId() { return id; }
-	
-	public void setId(Long id) { this.id = id; }
+
+    public GitHubHook(long id, String name, String url, Date createdAt, Date updatedAt) {
+        this.id = id;
+        this.name = name;
+        this.url = url;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+    }
+
+    public long getId() { return id; }
 	
 	public String getName() { return name; }
 	
-	public void setName(String name) { this.name = name; }
-	
 	public String getUrl() { return url; }
-	
-	public void setUrl(String url) { this.url = url; }
-	
-	public boolean getActive() { return active; }
-	
-	public void setActive(boolean active) { this.active = active; }
-	
-	@JsonProperty("created_at")
-	public Date getCreatedAt() { return createdAt; }
-	
-	public void setCreatedAt(Date createdAt) { this.createdAt = createdAt; }
-	
-	@JsonProperty("updated_at")
-	public Date getUpdatedAt() { return updatedAt; }
-	
-	public void setUpdatedAt(Date updatedAt) { this.updatedAt = updatedAt; }
 
+	public Date getCreatedAt() { return createdAt; }
+
+	public Date getUpdatedAt() { return updatedAt; }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
 }

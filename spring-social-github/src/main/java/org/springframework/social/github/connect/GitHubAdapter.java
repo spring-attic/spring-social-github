@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 the original author or authors.
+ * Copyright 2013-2014 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@ import org.springframework.web.client.HttpClientErrorException;
 /**
  * Github ApiAdapter implementation.
  * @author Keith Donald
+ * @author Andy Wilkinson
  */
 public class GitHubAdapter implements ApiAdapter<GitHub> {
 
@@ -42,14 +43,14 @@ public class GitHubAdapter implements ApiAdapter<GitHub> {
 	public void setConnectionValues(GitHub github, ConnectionValues values) {
 		GitHubUserProfile profile = github.userOperations().getUserProfile();
 		values.setProviderUserId(String.valueOf(profile.getId()));		
-		values.setDisplayName(profile.getUsername());
-		values.setProfileUrl("https://github.com/" + profile.getId());
-		values.setImageUrl(profile.getProfileImageUrl());
+		values.setDisplayName(profile.getLogin());
+		values.setProfileUrl("https://github.com/" + profile.getId()); // TODO: Expose and use HTML URL
+		values.setImageUrl(profile.getAvatarUrl());
 	}
 
 	public UserProfile fetchUserProfile(GitHub github) {
 		GitHubUserProfile profile = github.userOperations().getUserProfile();
-		return new UserProfileBuilder().setName(profile.getName()).setEmail(profile.getEmail()).setUsername(profile.getUsername()).build();
+		return new UserProfileBuilder().setName(profile.getName()).setEmail(profile.getEmail()).setUsername(profile.getLogin()).build();
 	}
 	
 	public void updateStatus(GitHub github, String message) {

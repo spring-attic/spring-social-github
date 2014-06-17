@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 the original author or authors.
+ * Copyright 2013-2014 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,65 +18,91 @@ package org.springframework.social.github.api;
 import java.io.Serializable;
 import java.util.Date;
 
+/**
+ * @author Andy Wilkinson
+ */
 public class GitHubUserProfile implements Serializable {
+
 	private static final long serialVersionUID = 1L;
 
 	private final long id;
-	private final String name;
-	private final String username;
-	private final String location;
-	private final String company;
-	private final String blog;
-	private final String email;
-	private final Date createdDate;
-	private final String profileImageUrl;
 
-	public GitHubUserProfile(long id, String username, String name, String location, String company, String blog,
-			String email, String profileImageUrl, Date createdDate) {
-		this.id = id;
-		this.username = username;
-		this.name = name;
-		this.location = location;
-		this.company = company;
-		this.blog = blog;
-		this.email = email;
-		this.profileImageUrl = profileImageUrl;
-		this.createdDate = createdDate;
-	}
+    private final String login;
 
-	public long getId() {
-		return id;
-	}
+    private final String avatarUrl;
 
-	public String getName() {
-		return name;
-	}
+    private final Date createdAt;
 
-	public String getUsername() {
-		return username;
-	}
+	private String name;
 
-	public String getLocation() {
-		return location;
-	}
+	private String location;
 
-	public String getCompany() {
-		return company;
-	}
+	private String company;
 
-	public String getBlog() {
-		return blog;
-	}
+	private String blog;
 
-	public String getEmail() {
-		return email;
-	}
+	private String email;
 
-	public Date getCreatedDate() {
-		return createdDate;
-	}
+    public GitHubUserProfile(long id, String login, String avatarUrl, Date createdAt) {
+        this.id = id;
+        this.login = login;
+        this.avatarUrl = avatarUrl;
+        this.createdAt = createdAt;
+    }
 
-	public String getProfileImageUrl() {
-		return profileImageUrl;
-	}
+    public long getId() {
+        return id;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public String getAvatarUrl() {
+        return avatarUrl;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getCompany() {
+        return company;
+    }
+
+    public void setCompany(String company) {
+        this.company = company;
+    }
+
+    public String getBlog() {
+        return blog;
+    }
+
+    public void setBlog(String blog) {
+        this.blog = blog;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }

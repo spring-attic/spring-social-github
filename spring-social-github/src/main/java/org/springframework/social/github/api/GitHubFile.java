@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2012 the original author or authors.
+ * Copyright 2012-2014 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,40 +24,43 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * A GitHub file.
  * 
  * @author Willie Wheeler (willie.wheeler@gmail.com)
+ * @author Andy Wilkinson
  */
 @SuppressWarnings("serial")
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class GitHubFile implements Serializable {
-	private String filename;
-	private String type;
-	private String language;
-	private String rawUrl;
-	private Long size;
-	private String content;
 
-	public String getFilename() { return filename; }
+    private final String type;
+
+    private final String language;
+
+    private final String rawUrl;
+
+    private final long size;
+
+    private String filename;
+
+    private String content;
+
+    public GitHubFile(String type, String language, String rawUrl, long size) {
+        this.type = type;
+        this.language = language;
+        this.rawUrl = rawUrl;
+        this.size = size;
+    }
+
+    public String getType() { return type; }
+
+    public String getLanguage() { return language; }
+
+    public String getRawUrl() { return rawUrl; }
+
+    public long getSize() { return size; }
+
+    public String getFilename() { return filename; }
 
 	public void setFilename(String filename) { this.filename = filename; }
-
-	public String getType() { return type; }
-
-	public void setType(String type) { this.type = type; }
-
-	public String getLanguage() { return language; }
-
-	public void setLanguage(String language) { this.language = language; }
-	
-	@JsonProperty("raw_url")
-	public String getRawUrl() { return rawUrl; }
-
-	public void setRawUrl(String rawUrl) { this.rawUrl = rawUrl; }
-
-	public Long getSize() { return size; }
-
-	public void setSize(Long size) { this.size = size; }
 
 	public String getContent() { return content; }
 
 	public void setContent(String content) { this.content = content; }
-
 }

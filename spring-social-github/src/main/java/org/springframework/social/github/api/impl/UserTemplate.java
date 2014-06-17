@@ -36,38 +36,15 @@ import org.springframework.web.client.RestTemplate;
  * </p>
  * 
  * @author Willie Wheeler (willie.wheeler@gmail.com)
+ * @author Andy Wilkinson
  */
 public class UserTemplate extends AbstractGitHubOperations implements UserOperations {
 
 	private final RestTemplate restTemplate;
 	
-	public String getProfileId() {
-		return getUserProfile().getUsername();
-	}
-
-	public GitHubUserProfile getUserProfile() {
-		@SuppressWarnings("unchecked")
-		Map<String, ?> user = restTemplate.getForObject(buildUri("user"), Map.class);		
-		Long gitHubId = Long.valueOf(String.valueOf(user.get("id")));
-		String username = String.valueOf(user.get("login"));
-		String name = String.valueOf(user.get("name"));
-		String location = user.get("location") != null ? String.valueOf(user.get("location")) : null;
-		String company = user.get("company") != null ? String.valueOf(user.get("company")) : null;
-		String blog = user.get("blog") != null ? String.valueOf(user.get("blog")) : null;
-		String email = user.get("email") != null ? String.valueOf(user.get("email")) : null;
-		Date createdDate = toDate(String.valueOf(user.get("created_at")), dateFormat);
-		String gravatarId = (String) user.get("gravatar_id");
-		String profileImageUrl = gravatarId != null ? "https://secure.gravatar.com/avatar/" + gravatarId : null;
-		return new GitHubUserProfile(gitHubId, username, name, location, company, blog, email, profileImageUrl, createdDate);
-	}
-
-	public String getProfileUrl() {
-		return "https://github.com/" + getProfileId();
-	}
-
 	/**
-	 * @param restTemplate
-	 * @param isAuthorizedForUser
+	 * @param restTemplate A RestTemplate
+	 * @param isAuthorizedForUser Boolean indicating whether the RestTemplate is authorized for a user
 	 */
 	public UserTemplate(RestTemplate restTemplate, boolean isAuthorizedForUser) {
 		super(isAuthorizedForUser);
@@ -81,6 +58,20 @@ public class UserTemplate extends AbstractGitHubOperations implements UserOperat
 	public List<GitHubUser> getFollowing(String user) {
 		return asList(restTemplate.getForObject(buildUserUri("/following"), GitHubUser[].class, user));
 	}
+
+	public String getProfileId() {
+		return getUserProfile().getLogin();
+	}
+
+	public GitHubUserProfile getUserProfile() {
+		return restTemplate.getForObject(buildUri("user"), GitHubUserProfile.class);
+	}
+
+	public String getProfileUrl() {
+		return "https://github.com/" + getProfileId();
+	}
+
+
 
 	private String buildUserUri(String path) {
 		return buildUri("users/{user}" + path);

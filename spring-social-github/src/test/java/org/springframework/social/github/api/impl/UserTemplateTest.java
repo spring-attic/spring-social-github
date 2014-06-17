@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 the original author or authors.
+ * Copyright 2013-2014 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ import org.springframework.social.github.api.GitHubUserProfile;
 /**
  * @author Craig Walls
  * @author Willie Wheeler (willie.wheeler@gmail.com)
+ * @author Andy Wilkinson
  */
 public class UserTemplateTest extends AbstractGitHubApiTest {
 	
@@ -37,7 +38,7 @@ public class UserTemplateTest extends AbstractGitHubApiTest {
 				.andExpect(header("Authorization", "Bearer ACCESS_TOKEN"))
 				.andRespond(withSuccess(new ClassPathResource("profile.json", getClass()), MediaType.APPLICATION_JSON));
 		GitHubUserProfile profile = gitHub.userOperations().getUserProfile();
-		assertEquals("habuma", profile.getUsername());
+		assertEquals("habuma", profile.getLogin());
 		assertEquals("Craig Walls", profile.getName());
 		assertEquals("SpringSource", profile.getCompany());
 		assertEquals("http://blog.springsource.com/author/cwalls/", profile.getBlog());

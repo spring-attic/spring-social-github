@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2012 the original author or authors.
+ * Copyright 2012-2014 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,59 +24,60 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * A GitHub repo.
  * 
  * @author Willie Wheeler (willie.wheeler@gmail.com)
+ * @author Andy Wilkinson
  */
 @SuppressWarnings("serial")
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class GitHubRepo implements Serializable {
-	private Long id;
-	private String name;
-	private String description;
-	private String url;
-	private String htmlUrl;
-	private String cloneUrl;
-	private String gitUrl;
-	private String sshUrl;
-	private String svnUrl;
+
+	private final long id;
+
+	private final String url;
+
+	private final String htmlUrl;
+
+	private final String cloneUrl;
+
+	private final String gitUrl;
+
+	private final String sshUrl;
+
+	private final String svnUrl;
+
+    public GitHubRepo(long id, String url, String htmlUrl, String cloneUrl, String gitUrl, String sshUrl,
+            String svnUrl) {
+        this.id = id;
+        this.url = url;
+        this.htmlUrl = htmlUrl;
+        this.cloneUrl = cloneUrl;
+        this.gitUrl = gitUrl;
+        this.sshUrl = sshUrl;
+        this.svnUrl = svnUrl;
+    }
+
+    private String name;
+
+    private String description;
 	
-	public Long getId() { return id; }
-	
-	public void setId(Long id) { this.id = id; }
-	
-	public String getName() { return name; }
-	
-	public void setName(String name) { this.name = name; }
-	
-	public String getDescription() { return description; }
-	
-	public void setDescription(String description) { this.description = description; }
+	public long getId() { return id; }
 	
 	public String getUrl() { return url; }
-	
-	public void setUrl(String url) { this.url = url; }
-	
-	@JsonProperty("html_url")
+
 	public String getHtmlUrl() { return htmlUrl; }
-	
-	public void setHtmlUrl(String htmlUrl) { this.htmlUrl = htmlUrl; }
-	
-	@JsonProperty("clone_url")
+
 	public String getCloneUrl() { return cloneUrl; }
-	
-	public void setCloneUrl(String cloneUrl) { this.cloneUrl = cloneUrl; }
-	
-	@JsonProperty("git_url")
+
 	public String getGitUrl() { return gitUrl; }
-	
-	public void setGitUrl(String gitUrl) { this.gitUrl = gitUrl; }
-	
-	@JsonProperty("ssh_url")
+
 	public String getSshUrl() { return sshUrl; }
-	
-	public void setSshUrl(String sshUrl) { this.sshUrl = sshUrl; }
-	
-	@JsonProperty("svn_url")
+
 	public String getSvnUrl() { return svnUrl; }
-	
-	public void setSvnUrl(String svnUrl) { this.svnUrl = svnUrl; }
+
+    public String getName() { return name; }
+
+    public void setName(String name) { this.name = name; }
+
+    public String getDescription() { return description; }
+
+    public void setDescription(String description) { this.description = description; }
 	
 }

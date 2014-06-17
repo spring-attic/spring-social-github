@@ -56,6 +56,8 @@ public interface GitHub extends ApiBinding {
 	/**
 	 * Returns the underlying {@link RestOperations} object allowing for consumption of GitHub endpoints that may not be otherwise covered by the API binding.
 	 * The RestOperations object returned is configured to include an OAuth "Authorization" header on all requests.
+	 *
+	 * @return REST operations
 	 */
 	RestOperations restOperations();
 

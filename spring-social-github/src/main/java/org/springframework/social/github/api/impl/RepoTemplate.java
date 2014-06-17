@@ -37,11 +37,12 @@ import org.springframework.web.client.RestTemplate;
  * @author Greg Turnquist
  */
 public class RepoTemplate extends AbstractGitHubOperations implements RepoOperations {
+
 	private final RestTemplate restTemplate;
 	
 	/**
-	 * @param restTemplate
-	 * @param isAuthorizedForUser
+	 * @param restTemplate A RestTemplate
+	 * @param isAuthorizedForUser Boolean indicating whether the RestTemplate is authorized for a user
 	 */
 	public RepoTemplate(RestTemplate restTemplate, boolean isAuthorizedForUser) {
 		super(isAuthorizedForUser);

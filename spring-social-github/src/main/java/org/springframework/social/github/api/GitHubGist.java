@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2012 the original author or authors.
+ * Copyright 2012-2014 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,31 +26,52 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * A GitHub gist.
  * 
  * @author Willie Wheeler (willie.wheeler@gmail.com)
+ * @author Andy Wilkinson
  */
 @SuppressWarnings("serial")
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class GitHubGist implements Serializable {
-	private String id;
-	private String url;
-	private String description;
-	private boolean publicGist;
-	private GitHubUser user;
-	private Map<String, GitHubFile> files;
-	private Integer comments;
-	private String htmlUrl;
-	private String gitPullUrl;
-	private String gitPushUrl;
-	private Date createdAt;
-	private Date updatedAt;
-	
-	// Looks like GitHub is returning a string, even though the IDs appear to be stringified integers.
+
+	private final String id;
+
+	private final String url;
+
+	private final boolean publicGist;
+
+	private final GitHubUser user;
+
+	private final int comments;
+
+	private final String htmlUrl;
+
+    private final String gitPullUrl;
+
+	private final String gitPushUrl;
+
+	private final Date createdAt;
+
+	private final Date updatedAt;
+
+    private String description;
+
+    private Map<String, GitHubFile> files;
+
+    public GitHubGist(String id, String url, boolean publicGist, GitHubUser user, int comments, String htmlUrl,
+            String gitPullUrl, String gitPushUrl, Date createdAt, Date updatedAt) {
+        this.id = id;
+        this.url = url;
+        this.publicGist = publicGist;
+        this.user = user;
+        this.comments = comments;
+        this.htmlUrl = htmlUrl;
+        this.gitPullUrl = gitPullUrl;
+        this.gitPushUrl = gitPushUrl;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+    }
+
 	public String getId() { return id; }
 	
-	public void setId(String id) { this.id = id; }
-	
 	public String getUrl() { return url; }
-	
-	public void setUrl(String url) { this.url = url; }
 	
 	public String getDescription() { return description; }
 	
@@ -58,43 +79,21 @@ public class GitHubGist implements Serializable {
 	
 	public boolean isPublic() { return publicGist; }
 	
-	public void setPublic(boolean publicGist) { this.publicGist = publicGist; }
-	
 	public GitHubUser getUser() { return user; }
-	
-	public void setUser(GitHubUser user) { this.user = user; }
 	
 	public Map<String, GitHubFile> getFiles() { return files; }
 	
 	public void setFiles(Map<String, GitHubFile> files) { this.files = files; }
 	
-	public Integer getComments() { return comments; }
-	
-	public void setComments(Integer comments) { this.comments = comments; }
-	
-	@JsonProperty("html_url")
+	public int getComments() { return comments; }
+
 	public String getHtmlUrl() { return htmlUrl; }
-	
-	public void setHtmlUrl(String htmlUrl) { this.htmlUrl = htmlUrl; }
-	
-	@JsonProperty("git_pull_url")
+
 	public String getGitPullUrl() { return gitPullUrl; }
-	
-	public void setGitPullUrl(String gitPullUrl) { this.gitPullUrl = gitPullUrl; }
-	
-	@JsonProperty("git_push_url")
+
 	public String getGitPushUrl() { return gitPushUrl; }
-	
-	public void setGitPushUrl(String gitPushUrl) { this.gitPushUrl = gitPushUrl; }
-	
-	@JsonProperty("created_at")
+
 	public Date getCreatedAt() { return createdAt; }
-	
-	public void setCreatedAt(Date createdAt) { this.createdAt = createdAt; }
-	
-	@JsonProperty("updated_at")
+
 	public Date getUpdatedAt() { return updatedAt; }
-	
-	public void setUpdatedAt(Date updatedAt) { this.updatedAt = updatedAt; }
-	
 }
