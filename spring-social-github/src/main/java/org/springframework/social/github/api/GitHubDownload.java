@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2012 the original author or authors.
+ * Copyright 2012-2014 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,58 +25,52 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * A GitHub download.
  * 
  * @author Willie Wheeler (willie.wheeler@gmail.com)
+ * @author Andy Wilkinson
  */
 @SuppressWarnings("serial")
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class GitHubDownload implements Serializable {
-	private Long id;
-	private String url;
-	private String htmlUrl;
-	private String name;
-	private String description;
-	private Long size;
-	private Integer downloadCount;
-	private String contentType;
-	private Date createdAt;
 
-	public Long getId() { return id; }
+	private final long id;
 
-	public void setId(Long id) { this.id = id; }
+	private final String url;
+
+	private final String htmlUrl;
+
+	private final String name;
+
+	private final String description;
+
+	private final long size;
+
+	private final int downloadCount;
+
+	private final String contentType;
+
+    public GitHubDownload(long id, String url, String htmlUrl, String name, String description, long size,
+            int downloadCount, String contentType) {
+        this.id = id;
+        this.url = url;
+        this.htmlUrl = htmlUrl;
+        this.name = name;
+        this.description = description;
+        this.size = size;
+        this.downloadCount = downloadCount;
+        this.contentType = contentType;
+    }
+
+    public long getId() { return id; }
 
 	public String getUrl() { return url; }
 
-	public void setUrl(String url) { this.url = url; }
-	
-	@JsonProperty("html_url")
 	public String getHtmlUrl() { return htmlUrl; }
-
-	public void setHtmlUrl(String htmlUrl) { this.htmlUrl = htmlUrl; }
 
 	public String getName() { return name; }
 
-	public void setName(String name) { this.name = name; }
-
 	public String getDescription() { return description; }
 
-	public void setDescription(String description) { this.description = description; }
+	public long getSize() { return size; }
 
-	public Long getSize() { return size; }
+	public int getDownloadCount() { return downloadCount; }
 
-	public void setSize(Long size) { this.size = size; }
-	
-	@JsonProperty("download_count")
-	public Integer getDownloadCount() { return downloadCount; }
-
-	public void setDownloadCount(Integer downloadCount) { this.downloadCount = downloadCount; }
-	
-	@JsonProperty("content_type")
 	public String getContentType() { return contentType; }
-
-	public void setContentType(String contentType) { this.contentType = contentType; }
-	
-	@JsonProperty("created_at")
-	public Date getCreatedAt() { return createdAt; }
-	
-	public void setCreatedAt(Date createdAt) { this.createdAt = createdAt; }
-	
 }

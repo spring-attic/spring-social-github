@@ -32,11 +32,12 @@ import org.springframework.web.client.RestTemplate;
  * @author Willie Wheeler (willie.wheeler@gmail.com)
  */
 public class GistTemplate extends AbstractGitHubOperations implements GistOperations {
+
 	private final RestTemplate restTemplate;
 	
 	/**
-	 * @param restTemplate
-	 * @param isAuthorizedForUser
+	 * @param restTemplate A RestTemplate
+	 * @param isAuthorizedForUser Boolean indicating whether the RestTemplate is authorized for a user
 	 */
 	public GistTemplate(RestTemplate restTemplate, boolean isAuthorizedForUser) {
 		super(isAuthorizedForUser);

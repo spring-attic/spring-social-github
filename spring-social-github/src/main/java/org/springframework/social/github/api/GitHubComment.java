@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2012 the original author or authors.
+ * Copyright 2012-2014 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,41 +25,56 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * A GitHub comment.
  * 
  * @author Willie Wheeler (willie.wheeler@gmail.com)
+ * @author Andy Wilkinson
  */
 @SuppressWarnings("serial")
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class GitHubComment implements Serializable {
-	private Long id;
-	private String url;
-	private String body;
-	private GitHubUser user;
-	private Date createdAt;
-	private Date updatedAt;
-	
-	public Long getId() { return id; }
-	
-	public void setId(Long id) { this.id = id; }
-	
-	public String getUrl() { return url; }
-	
-	public void setUrl(String url) { this.url = url; }
-	
-	public String getBody() { return body; }
-	
-	public void setBody(String body) { this.body = body; }
-	
-	public GitHubUser getUser() { return user; }
-	
-	public void setUser(GitHubUser user) { this.user = user; }
-	
-	@JsonProperty("created_at")
-	public Date getCreatedAt() { return createdAt; }
-	
-	public void setCreatedAt(Date createdAt) { this.createdAt = createdAt; }
-	
-	@JsonProperty("updated_at")
-	public Date getUpdatedAt() { return updatedAt; }
-	
-	public void setUpdatedA(Date updatedAt) { this.updatedAt = updatedAt; }
-	
+
+    private final long id;
+
+    private final String url;
+
+    private final GitHubUser user;
+
+    private final Date createdAt;
+
+    private final Date updatedAt;
+
+    private volatile String body;
+
+    public GitHubComment(long id, String url, GitHubUser user, Date createdAt, Date updatedAt) {
+        this.id = id;
+        this.url = url;
+        this.user = user;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public GitHubUser getUser() {
+        return user;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public Date getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public String getBody() {
+        return body;
+    }
+
+    public void setBody(String body) {
+        this.body = body;
+    }
 }
