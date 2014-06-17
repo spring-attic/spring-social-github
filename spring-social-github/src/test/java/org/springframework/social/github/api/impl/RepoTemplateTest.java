@@ -116,6 +116,10 @@ public class RepoTemplateTest extends AbstractGitHubApiTest {
 		assertEquals("Use WAR packaging for rest service", issues.get(0).getTitle());
 		assertEquals("You can deploy to WTP, build a war, execute it (java -jar) or use mvn exec.",
 				issues.get(0).getBody());
+		assertEquals("https://api.github.com/repos/spring-guides/gs-rest-service/issues/10",
+				issues.get(0).getUrl());
+		assertEquals("https://github.com/spring-guides/gs-rest-service/pull/10",
+				issues.get(0).getHtmlUrl());
 	}
 
 	@Test
