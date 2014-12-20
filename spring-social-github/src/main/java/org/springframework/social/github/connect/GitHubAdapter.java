@@ -44,7 +44,7 @@ public class GitHubAdapter implements ApiAdapter<GitHub> {
 		GitHubUserProfile profile = github.userOperations().getUserProfile();
 		values.setProviderUserId(String.valueOf(profile.getId()));		
 		values.setDisplayName(profile.getLogin());
-		values.setProfileUrl("https://github.com/" + profile.getId()); // TODO: Expose and use HTML URL
+		values.setProfileUrl("https://github.com/" + profile.getLogin()); // TODO: Expose and use HTML URL
 		values.setImageUrl(profile.getAvatarUrl());
 	}
 
