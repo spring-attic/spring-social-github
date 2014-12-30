@@ -68,7 +68,7 @@ public class UserTemplate extends AbstractGitHubOperations implements UserOperat
 	}
 
 	public String getProfileUrl() {
-		return "https://github.com/" + getProfileId();
+		return "https://github.com/" + getUserProfile().getLogin();
 	}
 
 
