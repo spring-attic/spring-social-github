@@ -43,6 +43,16 @@ public class GistTemplate extends AbstractGitHubOperations implements GistOperat
 		super(isAuthorizedForUser);
 		this.restTemplate = restTemplate;
 	}
+	
+	/**
+     * @param restTemplate A RestTemplate
+     * @param isAuthorizedForUser Boolean indicating whether the RestTemplate is authorized for a user
+     * @param gitHubHost github host
+     */
+    public GistTemplate(RestTemplate restTemplate, boolean isAuthorizedForUser, String gitHubHost) {
+        super(isAuthorizedForUser,gitHubHost);
+        this.restTemplate = restTemplate;
+    }
 
 	public List<GitHubGist> getUserGists(String user) {
 		return asList(restTemplate.getForObject(buildUri("users/{user}/gists"), GitHubGist[].class, user));

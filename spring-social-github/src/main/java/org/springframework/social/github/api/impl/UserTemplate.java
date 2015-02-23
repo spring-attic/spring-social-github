@@ -25,6 +25,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
+import org.springframework.social.github.api.GitHubRepo;
 import org.springframework.social.github.api.GitHubUser;
 import org.springframework.social.github.api.GitHubUserProfile;
 import org.springframework.social.github.api.UserOperations;
@@ -37,54 +38,67 @@ import org.springframework.web.client.RestTemplate;
  * 
  * @author Willie Wheeler (willie.wheeler@gmail.com)
  * @author Andy Wilkinson
+ * @author Vinayak Hulawale
  */
 public class UserTemplate extends AbstractGitHubOperations implements UserOperations {
 
-	private final RestTemplate restTemplate;
-	
-	/**
-	 * @param restTemplate A RestTemplate
-	 * @param isAuthorizedForUser Boolean indicating whether the RestTemplate is authorized for a user
-	 */
-	public UserTemplate(RestTemplate restTemplate, boolean isAuthorizedForUser) {
-		super(isAuthorizedForUser);
-		this.restTemplate = restTemplate;
-	}
+    private final RestTemplate restTemplate;
 
-	public List<GitHubUser> getFollowers(String user) {
-		return asList(restTemplate.getForObject(buildUserUri("/followers"), GitHubUser[].class, user));
-	}
+    /**
+     * @param restTemplate A RestTemplate
+     * @param isAuthorizedForUser Boolean indicating whether the RestTemplate is authorized for a user
+     */
+    public UserTemplate(RestTemplate restTemplate, boolean isAuthorizedForUser) {
+        super(isAuthorizedForUser);
+        this.restTemplate = restTemplate;
+    }
 
-	public List<GitHubUser> getFollowing(String user) {
-		return asList(restTemplate.getForObject(buildUserUri("/following"), GitHubUser[].class, user));
-	}
+    /**
+     * @param restTemplate A RestTemplate
+     * @param isAuthorizedForUser Boolean indicating whether the RestTemplate is authorized for a user
+     * @param gitHubHost github host
+     */
+    public UserTemplate(RestTemplate restTemplate, boolean isAuthorizedForUser, String gitHubHost) {
+        super(isAuthorizedForUser, gitHubHost);
+        this.restTemplate = restTemplate;
+    }
 
-	public String getProfileId() {
-		return getUserProfile().getLogin();
-	}
+    public List<GitHubUser> getFollowers(String user) {
+        return asList(restTemplate.getForObject(buildUserUri("/followers"), GitHubUser[].class, user));
+    }
 
-	public GitHubUserProfile getUserProfile() {
-		return restTemplate.getForObject(buildUri("user"), GitHubUserProfile.class);
-	}
+    public List<GitHubUser> getFollowing(String user) {
+        return asList(restTemplate.getForObject(buildUserUri("/following"), GitHubUser[].class, user));
+    }
 
-	public String getProfileUrl() {
-		return "https://github.com/" + getUserProfile().getLogin();
-	}
+    public List<GitHubRepo> getWatching(String user) {
+        return asList(restTemplate.getForObject(buildUserUri("/subscriptions"), GitHubRepo[].class, user));
+    }
 
+    public String getProfileId() {
+        return getUserProfile().getLogin();
+    }
 
+    public GitHubUserProfile getUserProfile() {
+        return restTemplate.getForObject(buildUri("user"), GitHubUserProfile.class);
+    }
 
-	private String buildUserUri(String path) {
-		return buildUri("users/{user}" + path);
-	}
-	
-	private Date toDate(String dateString, DateFormat dateFormat) {
-		try {
-			return dateFormat.parse(dateString);
-		} catch (ParseException e) {
-			return null;
-		}
-	}
+    public String getProfileUrl() {
+        return "https://github.com/" + getUserProfile().getLogin();
+    }
 
-	private DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss Z", Locale.ENGLISH);
-	
+    private String buildUserUri(String path) {
+        return buildUri("users/{user}" + path);
+    }
+
+    private Date toDate(String dateString, DateFormat dateFormat) {
+        try {
+            return dateFormat.parse(dateString);
+        } catch (ParseException e) {
+            return null;
+        }
+    }
+
+    private DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss Z", Locale.ENGLISH);
+
 }

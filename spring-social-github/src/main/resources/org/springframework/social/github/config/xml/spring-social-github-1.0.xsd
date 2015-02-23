@@ -7,6 +7,13 @@
 		<xs:complexType>
 			<xs:attribute name="app-id" use="required" type="xs:string" />
 			<xs:attribute name="app-secret" use="required" type="xs:string" />
+			<xs:attribute name="app-host" use="optional" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					 Optional attribute to specify custom domain for GitHub, typically used for Enterprise GitHub
+					</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
 		</xs:complexType>
 	</xs:element>
 

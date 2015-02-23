@@ -21,6 +21,7 @@ import org.springframework.social.connect.UserProfile;
 import org.springframework.social.connect.UserProfileBuilder;
 import org.springframework.social.github.api.GitHub;
 import org.springframework.social.github.api.GitHubUserProfile;
+import org.springframework.util.StringUtils;
 import org.springframework.web.client.HttpClientErrorException;
 
 /**
@@ -29,6 +30,16 @@ import org.springframework.web.client.HttpClientErrorException;
  * @author Andy Wilkinson
  */
 public class GitHubAdapter implements ApiAdapter<GitHub> {
+	
+	private String gitHubHost ;
+	
+	public GitHubAdapter() {
+		setGitHubHost(null);
+	}
+	
+	public GitHubAdapter(String gitHubHost) {
+		setGitHubHost(gitHubHost);
+	}
 
 	public boolean test(GitHub github) {
 		try {
@@ -44,7 +55,7 @@ public class GitHubAdapter implements ApiAdapter<GitHub> {
 		GitHubUserProfile profile = github.userOperations().getUserProfile();
 		values.setProviderUserId(String.valueOf(profile.getId()));		
 		values.setDisplayName(profile.getLogin());
-		values.setProfileUrl("https://github.com/" + profile.getLogin()); // TODO: Expose and use HTML URL
+		values.setProfileUrl(gitHubHost + profile.getLogin()); // TODO: Expose and use HTML URL
 		values.setImageUrl(profile.getAvatarUrl());
 	}
 
@@ -55,6 +66,10 @@ public class GitHubAdapter implements ApiAdapter<GitHub> {
 	
 	public void updateStatus(GitHub github, String message) {
 		// not supported
+	}
+	
+	private void setGitHubHost(String gitHubHost) {
+		this.gitHubHost = GitHubHostUtils.getGitHubHost(gitHubHost);
 	}
 	
 }

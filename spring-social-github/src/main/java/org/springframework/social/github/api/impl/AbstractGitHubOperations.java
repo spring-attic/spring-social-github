@@ -16,6 +16,7 @@
 package org.springframework.social.github.api.impl;
 
 import org.springframework.social.MissingAuthorizationException;
+import org.springframework.social.github.connect.GitHubHostUtils;
 
 /**
  * <p>
@@ -26,10 +27,16 @@ import org.springframework.social.MissingAuthorizationException;
  */
 class AbstractGitHubOperations {
 	private final boolean isAuthorized;
+	private String gitHubHost;
 	
 	public AbstractGitHubOperations(boolean isAuthorized) {
 		this.isAuthorized = isAuthorized;
 	}
+	
+	public AbstractGitHubOperations(boolean isAuthorized, String gitHubHost) {
+        this.isAuthorized = isAuthorized;
+        this.gitHubHost = gitHubHost;
+    }
 	
 	protected void requireAuthorization() {
 		if (!isAuthorized) {
@@ -40,9 +47,7 @@ class AbstractGitHubOperations {
 	// Using String here instead of URI so I can include braces in the path. See, e.g., RepoTemplate. [WLW]
 	protected String buildUri(String path) {
 //		return URIBuilder.fromUri(API_URL_BASE + path).build();
-		return API_URL_BASE + path;
+		return GitHubHostUtils.getGitHubApi(gitHubHost) + path;
 	}
 	
-	// GitHub API v3
-	private static final String API_URL_BASE = "https://api.github.com/";
 }

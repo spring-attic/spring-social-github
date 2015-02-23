@@ -49,6 +49,16 @@ public class RepoTemplate extends AbstractGitHubOperations implements RepoOperat
 		this.restTemplate = restTemplate;
 	}
 	
+	/**
+     * @param restTemplate A RestTemplate
+     * @param isAuthorizedForUser Boolean indicating whether the RestTemplate is authorized for a user
+     * @param gitHubHost github host
+     */
+    public RepoTemplate(RestTemplate restTemplate, boolean isAuthorizedForUser, String gitHubHost) {
+        super(isAuthorizedForUser,gitHubHost);
+        this.restTemplate = restTemplate;
+    }
+	
 	public GitHubRepo getRepo(String user, String repo) {
 		return restTemplate.getForObject(buildRepoUri(""), GitHubRepo.class, user, repo);
 	}
