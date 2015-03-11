@@ -15,7 +15,7 @@
  */
 package org.springframework.social.github.api.impl;
 
-import static java.util.Arrays.*;
+import static java.util.Arrays.asList;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -23,7 +23,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
-import java.util.Map;
 
 import org.springframework.social.github.api.GitHubUser;
 import org.springframework.social.github.api.GitHubUserProfile;
@@ -34,14 +33,14 @@ import org.springframework.web.client.RestTemplate;
  * <p>
  * User template implementation.
  * </p>
- * 
+ *
  * @author Willie Wheeler (willie.wheeler@gmail.com)
  * @author Andy Wilkinson
  */
 public class UserTemplate extends AbstractGitHubOperations implements UserOperations {
 
 	private final RestTemplate restTemplate;
-	
+
 	/**
 	 * @param restTemplate A RestTemplate
 	 * @param isAuthorizedForUser Boolean indicating whether the RestTemplate is authorized for a user
@@ -71,12 +70,10 @@ public class UserTemplate extends AbstractGitHubOperations implements UserOperat
 		return "https://github.com/" + getUserProfile().getLogin();
 	}
 
-
-
 	private String buildUserUri(String path) {
 		return buildUri("users/{user}" + path);
 	}
-	
+
 	private Date toDate(String dateString, DateFormat dateFormat) {
 		try {
 			return dateFormat.parse(dateString);
@@ -86,5 +83,5 @@ public class UserTemplate extends AbstractGitHubOperations implements UserOperat
 	}
 
 	private DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss Z", Locale.ENGLISH);
-	
+
 }

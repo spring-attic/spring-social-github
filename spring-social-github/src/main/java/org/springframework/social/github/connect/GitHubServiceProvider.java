@@ -38,6 +38,6 @@ public class GitHubServiceProvider extends AbstractOAuth2ServiceProvider<GitHub>
 
 	public GitHub getApi(String accessToken) {
 		return new GitHubTemplate(accessToken);
-	} 
+	}
 
 }

@@ -19,60 +19,60 @@ import java.util.List;
 
 /**
  * Interface defining the operations for working with GitHub repositories.
- * 
+ *
  * @author Willie Wheeler (willie.wheeler@gmail.com)
  */
 public interface RepoOperations {
-	
+
 	/**
 	 * Public operation to return a repo.
-	 * 
+	 *
 	 * @param user GitHub user
 	 * @param repo GitHub repo
 	 * @return repo
 	 */
 	GitHubRepo getRepo(String user, String repo);
-	
+
 	/**
 	 * Public operation to return a list of collaborators for the given repository.
-	 * 
+	 *
 	 * @param user GitHub user
 	 * @param repo GitHub repository
 	 * @return list of collaborators
 	 */
 	List<GitHubUser> getCollaborators(String user, String repo);
-	
+
 	/**
 	 * Public operation to return a list of commits for the given repository.
-	 * 
+	 *
 	 * @param user GitHub user
 	 * @param repo GitHub repository
 	 * @return list of commits
 	 */
 	List<GitHubCommit> getCommits(String user, String repo);
-	
+
 	/**
 	 * Public operation to return a list of downloads for the given repository.
-	 * 
+	 *
 	 * @param user GitHub user
 	 * @param repo GitHub repository
 	 * @return list of downloads
 	 */
 	List<GitHubDownload> getDownloads(String user, String repo);
-	
+
 	/**
 	 * Public operation to return a single download.
-	 * 
+	 *
 	 * @param user GitHub user
 	 * @param repo GitHub repository
 	 * @param id download ID
 	 * @return download
 	 */
 	GitHubDownload getDownload(String user, String repo, Long id);
-	
+
 	/**
 	 * Public operation to return the forks for the given repository.
-	 * 
+	 *
 	 * @param user GitHub user
 	 * @param repo GitHub repository
 	 * @return list of repository forks
@@ -91,16 +91,16 @@ public interface RepoOperations {
 
 	/**
 	 * Public operation to return a list of watchers for the given repository.
-	 *  
+	 *
 	 * @param user GitHub user
 	 * @param repo GitHub repository
 	 * @return list of watchers
 	 */
 	List<GitHubUser> getWatchers(String user, String repo);
-	
+
 	/**
 	 * Authorized operation to return a list of hooks for the given repository.
-	 * 
+	 *
 	 * @param user GitHub user
 	 * @param repo GitHub repository
 	 * @return list of hooks

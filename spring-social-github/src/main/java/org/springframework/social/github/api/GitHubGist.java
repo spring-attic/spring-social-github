@@ -19,12 +19,9 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.Map;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 /**
  * A GitHub gist.
- * 
+ *
  * @author Willie Wheeler (willie.wheeler@gmail.com)
  * @author Andy Wilkinson
  */
@@ -43,7 +40,7 @@ public class GitHubGist implements Serializable {
 
 	private final String htmlUrl;
 
-    private final String gitPullUrl;
+	private final String gitPullUrl;
 
 	private final String gitPushUrl;
 
@@ -51,40 +48,40 @@ public class GitHubGist implements Serializable {
 
 	private final Date updatedAt;
 
-    private String description;
+	private String description;
 
-    private Map<String, GitHubFile> files;
+	private Map<String, GitHubFile> files;
 
-    public GitHubGist(String id, String url, boolean publicGist, GitHubUser user, int comments, String htmlUrl,
-            String gitPullUrl, String gitPushUrl, Date createdAt, Date updatedAt) {
-        this.id = id;
-        this.url = url;
-        this.publicGist = publicGist;
-        this.user = user;
-        this.comments = comments;
-        this.htmlUrl = htmlUrl;
-        this.gitPullUrl = gitPullUrl;
-        this.gitPushUrl = gitPushUrl;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
-    }
+	public GitHubGist(String id, String url, boolean publicGist, GitHubUser user, int comments, String htmlUrl,
+			String gitPullUrl, String gitPushUrl, Date createdAt, Date updatedAt) {
+		this.id = id;
+		this.url = url;
+		this.publicGist = publicGist;
+		this.user = user;
+		this.comments = comments;
+		this.htmlUrl = htmlUrl;
+		this.gitPullUrl = gitPullUrl;
+		this.gitPushUrl = gitPushUrl;
+		this.createdAt = createdAt;
+		this.updatedAt = updatedAt;
+	}
 
 	public String getId() { return id; }
-	
+
 	public String getUrl() { return url; }
-	
+
 	public String getDescription() { return description; }
-	
+
 	public void setDescription(String description) { this.description = description; }
-	
+
 	public boolean isPublic() { return publicGist; }
-	
+
 	public GitHubUser getUser() { return user; }
-	
+
 	public Map<String, GitHubFile> getFiles() { return files; }
-	
+
 	public void setFiles(Map<String, GitHubFile> files) { this.files = files; }
-	
+
 	public int getComments() { return comments; }
 
 	public String getHtmlUrl() { return htmlUrl; }

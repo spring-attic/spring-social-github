@@ -15,7 +15,6 @@
  */
 package org.springframework.social.github.api.impl;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.social.github.api.GistOperations;
 import org.springframework.social.github.api.GitHub;
@@ -25,6 +24,8 @@ import org.springframework.social.github.api.impl.json.GitHubModule;
 import org.springframework.social.oauth2.AbstractOAuth2ApiBinding;
 import org.springframework.social.oauth2.OAuth2Version;
 import org.springframework.web.client.RestOperations;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * <p>
@@ -38,7 +39,7 @@ public class GitHubTemplate extends AbstractOAuth2ApiBinding implements GitHub {
 	private GistOperations gistOperations;
 	private RepoOperations repoOperations;
 	private UserOperations userOperations;
-	
+
 	/**
 	 * No-arg constructor to support cases in which you want to call the GitHub
 	 * API without requiring authorization. This is useful for public operations,
@@ -48,12 +49,12 @@ public class GitHubTemplate extends AbstractOAuth2ApiBinding implements GitHub {
 		super();
 		initSubApis();
 	}
-	
+
 	/**
 	 * Constructs a GitHubTemplate with the minimal amount of information
 	 * required to sign requests with an OAuth <code>Authorization</code>
 	 * header.
-	 * 
+	 *
 	 * @param accessToken
 	 *            An access token granted to the application after OAuth
 	 *            authentication.
@@ -67,34 +68,34 @@ public class GitHubTemplate extends AbstractOAuth2ApiBinding implements GitHub {
 	protected OAuth2Version getOAuth2Version() {
 		return OAuth2Version.BEARER;
 	}
-	
+
 	public GistOperations gistOperations() {
 		return gistOperations;
 	}
-	
+
 	public RepoOperations repoOperations() {
-		return repoOperations; 
+		return repoOperations;
 	}
-	
-	public UserOperations userOperations() { 
-		return userOperations; 
+
+	public UserOperations userOperations() {
+		return userOperations;
 	}
-	
+
 	public RestOperations restOperations() {
 		return getRestTemplate();
 	}
 
-    @Override
-    protected MappingJackson2HttpMessageConverter getJsonMessageConverter() {
-        MappingJackson2HttpMessageConverter converter = super.getJsonMessageConverter();
-        ObjectMapper objectMapper = new ObjectMapper();
-        objectMapper.registerModule(new GitHubModule());
-        converter.setObjectMapper(objectMapper);
-        return converter;
-    }
+	@Override
+	protected MappingJackson2HttpMessageConverter getJsonMessageConverter() {
+		MappingJackson2HttpMessageConverter converter = super.getJsonMessageConverter();
+		ObjectMapper objectMapper = new ObjectMapper();
+		objectMapper.registerModule(new GitHubModule());
+		converter.setObjectMapper(objectMapper);
+		return converter;
+	}
 
-    // internal helpers
-	
+	// internal helpers
+
 	private void initSubApis() {
 		this.gistOperations = new GistTemplate(getRestTemplate(), isAuthorized());
 		this.repoOperations = new RepoTemplate(getRestTemplate(), isAuthorized());

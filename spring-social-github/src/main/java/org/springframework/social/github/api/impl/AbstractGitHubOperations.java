@@ -21,28 +21,28 @@ import org.springframework.social.MissingAuthorizationException;
  * <p>
  * Based on <code>AbstractTwitterOperations</code>, by Keith Donald.
  * </p>
- * 
+ *
  * @author Willie Wheeler (willie.wheeler@gmail.com)
  */
 class AbstractGitHubOperations {
 	private final boolean isAuthorized;
-	
+
 	public AbstractGitHubOperations(boolean isAuthorized) {
 		this.isAuthorized = isAuthorized;
 	}
-	
+
 	protected void requireAuthorization() {
 		if (!isAuthorized) {
 			throw new MissingAuthorizationException("github");
 		}
 	}
-	
+
 	// Using String here instead of URI so I can include braces in the path. See, e.g., RepoTemplate. [WLW]
 	protected String buildUri(String path) {
 //		return URIBuilder.fromUri(API_URL_BASE + path).build();
 		return API_URL_BASE + path;
 	}
-	
+
 	// GitHub API v3
 	private static final String API_URL_BASE = "https://api.github.com/";
 }

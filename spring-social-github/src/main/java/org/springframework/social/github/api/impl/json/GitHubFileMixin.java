@@ -15,8 +15,9 @@
  */
 package org.springframework.social.github.api.impl.json;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.social.github.api.GitHubFile;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * Annotated mixin to add annotations to {@link GitHubFile}
@@ -25,16 +26,16 @@ import org.springframework.social.github.api.GitHubFile;
  */
 abstract class GitHubFileMixin extends GitHubObjectMixin {
 
-    @JsonProperty("filename")
-    String filename;
+	@JsonProperty("filename")
+	String filename;
 
-    @JsonProperty("content")
-    String content;
+	@JsonProperty("content")
+	String content;
 
-    GitHubFileMixin(
-            @JsonProperty("type") String type,
-            @JsonProperty("language") String language,
-            @JsonProperty("raw_url") String rawUrl,
-            @JsonProperty("size") long size) {}
+	GitHubFileMixin(
+			@JsonProperty("type") String type,
+			@JsonProperty("language") String language,
+			@JsonProperty("raw_url") String rawUrl,
+			@JsonProperty("size") long size) {}
 
 }

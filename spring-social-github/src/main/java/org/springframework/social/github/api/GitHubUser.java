@@ -16,14 +16,10 @@
 package org.springframework.social.github.api;
 
 import java.io.Serializable;
-import java.util.Date;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * A GitHub user
- * 
+ *
  * @author Willie Wheeler (willie.wheeler@gmail.com)
  * @author Andy Wilkinson
  */
@@ -44,16 +40,16 @@ public class GitHubUser implements Serializable {
 
 	private String email;
 
-    public GitHubUser(long id, String url, String login, String avatarUrl, String gravatarId) {
-        this.id = id;
-        this.url = url;
-        this.login = login;
-        this.avatarUrl = avatarUrl;
-        this.gravatarId = gravatarId;
-    }
+	public GitHubUser(long id, String url, String login, String avatarUrl, String gravatarId) {
+		this.id = id;
+		this.url = url;
+		this.login = login;
+		this.avatarUrl = avatarUrl;
+		this.gravatarId = gravatarId;
+	}
 
-    public Long getId() { return id; }
-	
+	public Long getId() { return id; }
+
 	public String getUrl() { return url; }
 
 	public String getLogin() { return login; }
@@ -61,12 +57,12 @@ public class GitHubUser implements Serializable {
 	public String getAvatarUrl() { return avatarUrl; }
 
 	public String getGravatarId() { return gravatarId; }
-	
+
 	public String getName() { return name; }
-	
+
 	public void setName(String name) { this.name = name; }
-	
+
 	public String getEmail() { return email; }
-	
+
 	public void setEmail(String email) { this.email = email; }
 }

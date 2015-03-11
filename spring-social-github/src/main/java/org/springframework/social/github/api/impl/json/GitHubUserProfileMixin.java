@@ -15,36 +15,37 @@
  */
 package org.springframework.social.github.api.impl.json;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.Date;
+
 import org.springframework.social.github.api.GitHubUserProfile;
 
-import java.util.Date;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * Annotated mixin to add annotations to {@link GitHubUserProfile}
  *
  * @author Andy Wilkinson
  */
- abstract class GitHubUserProfileMixin extends GitHubObjectMixin {
+abstract class GitHubUserProfileMixin extends GitHubObjectMixin {
 
-    @JsonProperty("name")
-    String name;
+	@JsonProperty("name")
+	String name;
 
-    @JsonProperty("location")
-    String location;
+	@JsonProperty("location")
+	String location;
 
-    @JsonProperty("company")
-    String company;
+	@JsonProperty("company")
+	String company;
 
-    @JsonProperty("blog")
-    String blog;
+	@JsonProperty("blog")
+	String blog;
 
-    @JsonProperty("email")
-    String email;
+	@JsonProperty("email")
+	String email;
 
-    GitHubUserProfileMixin(
-            @JsonProperty("id") long id,
-            @JsonProperty("login") String login,
-            @JsonProperty("avatar_url") String avatarUrl,
-            @JsonProperty("created_at") Date createdAt) {}
+	GitHubUserProfileMixin(
+			@JsonProperty("id") long id,
+			@JsonProperty("login") String login,
+			@JsonProperty("avatar_url") String avatarUrl,
+			@JsonProperty("created_at") Date createdAt) {}
 }

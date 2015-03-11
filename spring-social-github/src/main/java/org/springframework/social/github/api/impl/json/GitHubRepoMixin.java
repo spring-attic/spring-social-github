@@ -15,8 +15,9 @@
  */
 package org.springframework.social.github.api.impl.json;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.social.github.api.GitHubRepo;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * Annotated mixin to add annotations to {@link GitHubRepo}
@@ -25,18 +26,18 @@ import org.springframework.social.github.api.GitHubRepo;
  */
 public class GitHubRepoMixin extends GitHubObjectMixin {
 
-    @JsonProperty("name")
-    String name;
+	@JsonProperty("name")
+	String name;
 
-    @JsonProperty("description")
-    String description;
+	@JsonProperty("description")
+	String description;
 
-    GitHubRepoMixin(
-            @JsonProperty("id") long id,
-            @JsonProperty("url") String url,
-            @JsonProperty("html_url") String htmlUrl,
-            @JsonProperty("clone_url") String clone_url,
-            @JsonProperty("git_url") String gitUrl,
-            @JsonProperty("ssh_url") String sshUrl,
-            @JsonProperty("svn_url") String svnUrl) {}
+	GitHubRepoMixin(
+			@JsonProperty("id") long id,
+			@JsonProperty("url") String url,
+			@JsonProperty("html_url") String htmlUrl,
+			@JsonProperty("clone_url") String clone_url,
+			@JsonProperty("git_url") String gitUrl,
+			@JsonProperty("ssh_url") String sshUrl,
+			@JsonProperty("svn_url") String svnUrl) {}
 }

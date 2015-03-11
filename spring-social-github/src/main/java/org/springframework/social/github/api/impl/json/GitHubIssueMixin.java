@@ -15,11 +15,12 @@
  */
 package org.springframework.social.github.api.impl.json;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.Date;
+
 import org.springframework.social.github.api.GitHubIssue;
 import org.springframework.social.github.api.GitHubUser;
 
-import java.util.Date;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * Annotated mixin to add annotations to {@link GitHubIssue}
@@ -28,23 +29,23 @@ import java.util.Date;
  */
 abstract class GitHubIssueMixin extends GitHubObjectMixin {
 
-    @JsonProperty("state")
-    String state;
+	@JsonProperty("state")
+	String state;
 
-    @JsonProperty("title")
-    String title;
+	@JsonProperty("title")
+	String title;
 
-    @JsonProperty("body")
-    String body;
+	@JsonProperty("body")
+	String body;
 
-    @JsonProperty("assignee")
-    GitHubUser assignee;
+	@JsonProperty("assignee")
+	GitHubUser assignee;
 
-    GitHubIssueMixin(
-            @JsonProperty("number") int number,
-            @JsonProperty("url") String url,
-            @JsonProperty("html_url") String htmlUrl,
-            @JsonProperty("closed_at") Date closedAt,
-            @JsonProperty("created_at") Date createdAt,
-            @JsonProperty("updated_at") Date updatedAt) {}
+	GitHubIssueMixin(
+			@JsonProperty("number") int number,
+			@JsonProperty("url") String url,
+			@JsonProperty("html_url") String htmlUrl,
+			@JsonProperty("closed_at") Date closedAt,
+			@JsonProperty("created_at") Date createdAt,
+			@JsonProperty("updated_at") Date updatedAt) {}
 }

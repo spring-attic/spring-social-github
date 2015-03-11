@@ -17,11 +17,9 @@ package org.springframework.social.github.api;
 
 import java.io.Serializable;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 /**
  * A GitHub repository commit.
- * 
+ *
  * @author Willie Wheeler (willie.wheeler@gmail.com)
  */
 @SuppressWarnings("serial")
@@ -37,15 +35,15 @@ public class GitHubCommit implements Serializable {
 
 	private final GitHubUser author;
 
-    public GitHubCommit(String message, String sha, String url, GitHubUser committer, GitHubUser author) {
-        this.message = message;
-        this.sha = sha;
-        this.url = url;
-        this.committer = committer;
-        this.author = author;
-    }
+	public GitHubCommit(String message, String sha, String url, GitHubUser committer, GitHubUser author) {
+		this.message = message;
+		this.sha = sha;
+		this.url = url;
+		this.committer = committer;
+		this.author = author;
+	}
 
-    /**
+	/**
 	 * @return commit message
 	 */
 	public String getMessage() { return message; }
@@ -61,8 +59,8 @@ public class GitHubCommit implements Serializable {
 	 */
 	public GitHubUser getCommitter() { return committer; }
 
-    /**
-     * @return user who wrote the patch
-     */
-    public GitHubUser getAuthor() { return author; }
+	/**
+	 * @return user who wrote the patch
+	 */
+	public GitHubUser getAuthor() { return author; }
 }

@@ -21,7 +21,7 @@ import org.springframework.social.config.xml.AbstractProviderConfigNamespaceHand
 
 /**
  * {@link NamespaceHandler} for Spring Social GitHub
- * 
+ *
  * @author Craig Walls
  */
 public class GitHubNamespaceHandler extends AbstractProviderConfigNamespaceHandler {

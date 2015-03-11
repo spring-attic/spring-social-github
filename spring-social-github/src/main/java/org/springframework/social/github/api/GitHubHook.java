@@ -18,12 +18,9 @@ package org.springframework.social.github.api;
 import java.io.Serializable;
 import java.util.Date;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 /**
  * A GitHub hook. Hooks share commits with other apps, such as Bamboo, Basecamp, e-mail and so forth.
- * 
+ *
  * @author Willie Wheeler (willie.wheeler@gmail.com)
  * @author Andy Wilkinson
  */
@@ -36,35 +33,35 @@ public class GitHubHook implements Serializable {
 
 	private final String url;
 
-    private final Date createdAt;
+	private final Date createdAt;
 
-    private final Date updatedAt;
+	private final Date updatedAt;
 
 	private boolean active;
 
-    public GitHubHook(long id, String name, String url, Date createdAt, Date updatedAt) {
-        this.id = id;
-        this.name = name;
-        this.url = url;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
-    }
+	public GitHubHook(long id, String name, String url, Date createdAt, Date updatedAt) {
+		this.id = id;
+		this.name = name;
+		this.url = url;
+		this.createdAt = createdAt;
+		this.updatedAt = updatedAt;
+	}
 
-    public long getId() { return id; }
-	
+	public long getId() { return id; }
+
 	public String getName() { return name; }
-	
+
 	public String getUrl() { return url; }
 
 	public Date getCreatedAt() { return createdAt; }
 
 	public Date getUpdatedAt() { return updatedAt; }
 
-    public boolean isActive() {
-        return active;
-    }
+	public boolean isActive() {
+		return active;
+	}
 
-    public void setActive(boolean active) {
-        this.active = active;
-    }
+	public void setActive(boolean active) {
+		this.active = active;
+	}
 }

@@ -15,10 +15,11 @@
  */
 package org.springframework.social.github.api.impl.json;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.Date;
+
 import org.springframework.social.github.api.GitHubHook;
 
-import java.util.Date;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * Annotated mixin to add annotations to {@link GitHubHook}
@@ -27,13 +28,13 @@ import java.util.Date;
  */
 abstract class GitHubHookMixin extends GitHubObjectMixin {
 
-    @JsonProperty("active")
-    boolean active;
+	@JsonProperty("active")
+	boolean active;
 
-    GitHubHookMixin(
-            @JsonProperty("id") long id,
-            @JsonProperty("name") String name,
-            @JsonProperty("url") String url,
-            @JsonProperty("created_at") Date createdAt,
-            @JsonProperty("updated_at") Date updatedAt) {}
+	GitHubHookMixin(
+			@JsonProperty("id") long id,
+			@JsonProperty("name") String name,
+			@JsonProperty("url") String url,
+			@JsonProperty("created_at") Date createdAt,
+			@JsonProperty("updated_at") Date updatedAt) {}
 }

@@ -15,12 +15,13 @@
  */
 package org.springframework.social.github.api.impl.json;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.Date;
+
 import org.springframework.social.github.api.GitHubComment;
 import org.springframework.social.github.api.GitHubUser;
 
-import java.util.Date;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * Annotated mixin to add annotations to {@link GitHubComment}
@@ -29,14 +30,14 @@ import java.util.Date;
  */
 abstract class GitHubCommentMixin extends GitHubObjectMixin {
 
-    @JsonProperty("body")
-    String body;
+	@JsonProperty("body")
+	String body;
 
-    @JsonCreator
-    GitHubCommentMixin(
-            @JsonProperty("id") long id,
-            @JsonProperty("url") String url,
-            @JsonProperty("user") GitHubUser user,
-            @JsonProperty("created_at") Date createdAt,
-            @JsonProperty("updated_at") Date updatedAt) {}
+	@JsonCreator
+	GitHubCommentMixin(
+			@JsonProperty("id") long id,
+			@JsonProperty("url") String url,
+			@JsonProperty("user") GitHubUser user,
+			@JsonProperty("created_at") Date createdAt,
+			@JsonProperty("updated_at") Date updatedAt) {}
 }

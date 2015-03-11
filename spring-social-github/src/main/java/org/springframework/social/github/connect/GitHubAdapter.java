@@ -42,7 +42,7 @@ public class GitHubAdapter implements ApiAdapter<GitHub> {
 
 	public void setConnectionValues(GitHub github, ConnectionValues values) {
 		GitHubUserProfile profile = github.userOperations().getUserProfile();
-		values.setProviderUserId(String.valueOf(profile.getId()));		
+		values.setProviderUserId(String.valueOf(profile.getId()));
 		values.setDisplayName(profile.getLogin());
 		values.setProfileUrl("https://github.com/" + profile.getLogin()); // TODO: Expose and use HTML URL
 		values.setImageUrl(profile.getAvatarUrl());
@@ -52,9 +52,9 @@ public class GitHubAdapter implements ApiAdapter<GitHub> {
 		GitHubUserProfile profile = github.userOperations().getUserProfile();
 		return new UserProfileBuilder().setName(profile.getName()).setEmail(profile.getEmail()).setUsername(profile.getLogin()).build();
 	}
-	
+
 	public void updateStatus(GitHub github, String message) {
 		// not supported
 	}
-	
+
 }

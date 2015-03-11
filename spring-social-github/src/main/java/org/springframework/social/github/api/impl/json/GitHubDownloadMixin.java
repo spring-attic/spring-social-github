@@ -15,8 +15,9 @@
  */
 package org.springframework.social.github.api.impl.json;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.social.github.api.GitHubDownload;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * Annotated mixin to add annotations to {@link GitHubDownload}
@@ -25,13 +26,13 @@ import org.springframework.social.github.api.GitHubDownload;
  */
 abstract class GitHubDownloadMixin extends GitHubObjectMixin {
 
-    GitHubDownloadMixin(
-        @JsonProperty("id") long id,
-        @JsonProperty("url") String url,
-        @JsonProperty("html_url") String htmlUrl,
-        @JsonProperty("name") String name,
-        @JsonProperty("description") String description,
-        @JsonProperty("size") long size,
-        @JsonProperty("download_count") int downloadCount,
-        @JsonProperty("content_type") String contentType) {}
+	GitHubDownloadMixin(
+		@JsonProperty("id") long id,
+		@JsonProperty("url") String url,
+		@JsonProperty("html_url") String htmlUrl,
+		@JsonProperty("name") String name,
+		@JsonProperty("description") String description,
+		@JsonProperty("size") long size,
+		@JsonProperty("download_count") int downloadCount,
+		@JsonProperty("content_type") String contentType) {}
 }
