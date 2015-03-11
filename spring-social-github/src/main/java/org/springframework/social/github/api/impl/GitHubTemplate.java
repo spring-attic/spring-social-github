@@ -25,6 +25,7 @@ import org.springframework.social.oauth2.AbstractOAuth2ApiBinding;
 import org.springframework.social.oauth2.OAuth2Version;
 import org.springframework.web.client.RestOperations;
 
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
@@ -89,6 +90,7 @@ public class GitHubTemplate extends AbstractOAuth2ApiBinding implements GitHub {
 	protected MappingJackson2HttpMessageConverter getJsonMessageConverter() {
 		MappingJackson2HttpMessageConverter converter = super.getJsonMessageConverter();
 		ObjectMapper objectMapper = new ObjectMapper();
+		objectMapper.setSerializationInclusion(Include.NON_EMPTY);
 		objectMapper.registerModule(new GitHubModule());
 		converter.setObjectMapper(objectMapper);
 		return converter;
