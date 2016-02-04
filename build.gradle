@@ -20,7 +20,7 @@ configure(allprojects) {
     targetCompatibility=1.5
 
     ext {
-        springSocialVersion = '1.1.0.BUILD-SNAPSHOT'
+        springSocialVersion = '1.1.4.RELEASE'
         jacksonVersion = '2.3.0'
         junitVersion = '4.11'
         mockitoVersion = '1.9.5'
@@ -35,6 +35,7 @@ configure(allprojects) {
     test.systemProperty("java.awt.headless", "true")
 
     repositories {
+        mavenLocal()
         maven { url "http://repo.spring.io/libs-snapshot" }
         maven { url "http://repo.spring.io/ebr-maven-external" }
     }
