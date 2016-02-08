@@ -60,4 +60,12 @@ public interface UserOperations {
 	 * @return list of users the given user is following
 	 */
 	List<GitHubUser> getFollowing(String user);
+	
+	/**
+     * Public operation to return the repos being watched by given user.
+     * 
+     * @param user GitHub user
+     * @return list of repos being watched by given user
+     */
+	List<GitHubRepo> getWatching(String user);
 }

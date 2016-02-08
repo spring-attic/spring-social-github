@@ -33,5 +33,16 @@ public class GitHubConnectionFactory extends OAuth2ConnectionFactory<GitHub> {
 	public GitHubConnectionFactory(String clientId, String clientSecret) {
 		super("github", new GitHubServiceProvider(clientId, clientSecret), new GitHubAdapter());
 	}
+	
+	/**
+	 * Creates a factory for GitHub connections.
+	 * 
+	 * @param clientId client ID
+	 * @param clientSecret client secret
+	 * @param gitHubHost path for gitHubHost
+	 */
+	public GitHubConnectionFactory(String clientId, String clientSecret, String gitHubHost) {
+		super("github", new GitHubServiceProvider(clientId, clientSecret,gitHubHost), new GitHubAdapter(gitHubHost));
+	}
 
 }

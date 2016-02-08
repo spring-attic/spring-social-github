@@ -38,6 +38,7 @@ configure(allprojects) {
         mavenLocal()
         maven { url "http://repo.spring.io/libs-snapshot" }
         maven { url "http://repo.spring.io/ebr-maven-external" }
+        mavenLocal()
     }
 
     dependencies {

@@ -24,5 +24,9 @@ public class GitHubAuthenticationService extends OAuth2AuthenticationService<Git
 	public GitHubAuthenticationService(String apiKey, String appSecret) {
 		super(new GitHubConnectionFactory(apiKey, appSecret));
 	}
+	
+	public GitHubAuthenticationService(String apiKey, String appSecret, String gitHubHost) {
+		super(new GitHubConnectionFactory(apiKey, appSecret, gitHubHost));
+	}
 
 }

@@ -30,59 +30,70 @@ import org.springframework.web.client.RestOperations;
  * <p>
  * The central class for interacting with GitHub.
  * </p>
+ * 
  * @author Craig Walls
  * @author Willie Wheeler (willie.wheeler@gmail.com)
  * @author Andy Wilkinson
  */
 public class GitHubTemplate extends AbstractOAuth2ApiBinding implements GitHub {
-	private GistOperations gistOperations;
-	private RepoOperations repoOperations;
-	private UserOperations userOperations;
-	
-	/**
-	 * No-arg constructor to support cases in which you want to call the GitHub
-	 * API without requiring authorization. This is useful for public operations,
-	 * such as getting the list of watchers for a public repository.
-	 */
-	public GitHubTemplate() {
-		super();
-		initSubApis();
-	}
-	
-	/**
-	 * Constructs a GitHubTemplate with the minimal amount of information
-	 * required to sign requests with an OAuth <code>Authorization</code>
-	 * header.
-	 * 
-	 * @param accessToken
-	 *            An access token granted to the application after OAuth
-	 *            authentication.
-	 */
-	public GitHubTemplate(String accessToken) {
-		super(accessToken);
-		initSubApis();
-	}
+    private GistOperations gistOperations;
 
-	@Override
-	protected OAuth2Version getOAuth2Version() {
-		return OAuth2Version.BEARER;
-	}
-	
-	public GistOperations gistOperations() {
-		return gistOperations;
-	}
-	
-	public RepoOperations repoOperations() {
-		return repoOperations; 
-	}
-	
-	public UserOperations userOperations() { 
-		return userOperations; 
-	}
-	
-	public RestOperations restOperations() {
-		return getRestTemplate();
-	}
+    private RepoOperations repoOperations;
+
+    private UserOperations userOperations;
+
+    /**
+     * No-arg constructor to support cases in which you want to call the GitHub API without requiring authorization.
+     * This is useful for public operations, such as getting the list of watchers for a public repository.
+     */
+    public GitHubTemplate() {
+        super();
+        initSubApis(null);
+    }
+
+    /**
+     * Constructs a GitHubTemplate with the minimal amount of information required to sign requests with an OAuth
+     * <code>Authorization</code> header.
+     * 
+     * @param accessToken An access token granted to the application after OAuth authentication.
+     */
+    public GitHubTemplate(String accessToken) {
+        super(accessToken);
+        initSubApis(null);
+    }
+
+    /**
+     * Constructs a GitHubTemplate with the minimal amount of information required to sign requests with an OAuth
+     * <code>Authorization</code> header.
+     * 
+     * @param accessToken An access token granted to the application after OAuth authentication.
+     * @param gitHubHost github host
+     */
+    public GitHubTemplate(String accessToken, String gitHubHost) {
+        super(accessToken);
+        initSubApis(gitHubHost);
+    }
+
+    @Override
+    protected OAuth2Version getOAuth2Version() {
+        return OAuth2Version.BEARER;
+    }
+
+    public GistOperations gistOperations() {
+        return gistOperations;
+    }
+
+    public RepoOperations repoOperations() {
+        return repoOperations;
+    }
+
+    public UserOperations userOperations() {
+        return userOperations;
+    }
+
+    public RestOperations restOperations() {
+        return getRestTemplate();
+    }
 
     @Override
     protected MappingJackson2HttpMessageConverter getJsonMessageConverter() {
@@ -94,11 +105,11 @@ public class GitHubTemplate extends AbstractOAuth2ApiBinding implements GitHub {
     }
 
     // internal helpers
-	
-	private void initSubApis() {
-		this.gistOperations = new GistTemplate(getRestTemplate(), isAuthorized());
-		this.repoOperations = new RepoTemplate(getRestTemplate(), isAuthorized());
-		this.userOperations = new UserTemplate(getRestTemplate(), isAuthorized());
-	}
+
+    private void initSubApis(String githubHost) {
+        this.gistOperations = new GistTemplate(getRestTemplate(), isAuthorized(), githubHost);
+        this.repoOperations = new RepoTemplate(getRestTemplate(), isAuthorized(), githubHost);
+        this.userOperations = new UserTemplate(getRestTemplate(), isAuthorized(), githubHost);
+    }
 
 }

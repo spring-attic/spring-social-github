@@ -31,6 +31,7 @@ import org.springframework.social.github.api.impl.GitHubTemplate;
 import org.springframework.social.github.connect.GitHubConnectionFactory;
 import org.springframework.social.github.security.GitHubAuthenticationService;
 import org.springframework.social.security.provider.SocialAuthenticationService;
+import org.springframework.util.StringUtils;
 
 /**
  * Implementation of {@link AbstractConnectionFactoryBeanDefinitionParser} that creates a {@link GitHubConnectionFactory}.
@@ -50,6 +51,9 @@ class GitHubConfigBeanDefinitionParser extends AbstractProviderConfigBeanDefinit
 	@Override
 	protected BeanDefinition getConnectionFactoryBeanDefinition(String appId, String appSecret, Map<String, Object> allAttributes) {
 		BeanDefinitionBuilder builder = BeanDefinitionBuilder.genericBeanDefinition(GitHubConnectionFactory.class).addConstructorArgValue(appId).addConstructorArgValue(appSecret);
+		if(StringUtils.hasText((String)allAttributes.get("app-host"))) {
+		    builder.addConstructorArgValue((String)allAttributes.get("app-host"));
+		}
 		return builder.getBeanDefinition();
 	}
 
