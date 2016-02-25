@@ -21,6 +21,7 @@ import java.util.List;
  * Interface defining the operations for working with GitHub users.
  * 
  * @author Willie Wheeler (willie.wheeler@gmail.com)
+ * @author Michał Łoza (michal@mloza.pl)
  */
 public interface UserOperations {
 	
@@ -44,6 +45,20 @@ public interface UserOperations {
 	 * @return the URL to the user's GitHub profile.
 	 */
 	String getProfileUrl();
+
+	/**
+	 * Retrieve current user repository list
+	 *
+	 * @return list of current user repositories
+	 */
+	List<GitHubRepo> getRepositories();
+
+	/**
+	 * Retrieve given user repository list
+	 *
+	 * @return list of given user repositories
+	 */
+	List<GitHubRepo> getRepositories(String user);
 
 	/**
 	 * Retrieve current user organizations list (also private organizations)

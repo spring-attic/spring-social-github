@@ -17,10 +17,7 @@ package org.springframework.social.github.api.impl;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
-import org.springframework.social.github.api.GistOperations;
-import org.springframework.social.github.api.GitHub;
-import org.springframework.social.github.api.RepoOperations;
-import org.springframework.social.github.api.UserOperations;
+import org.springframework.social.github.api.*;
 import org.springframework.social.github.api.impl.json.GitHubModule;
 import org.springframework.social.oauth2.AbstractOAuth2ApiBinding;
 import org.springframework.social.oauth2.OAuth2Version;
@@ -33,12 +30,14 @@ import org.springframework.web.client.RestOperations;
  * @author Craig Walls
  * @author Willie Wheeler (willie.wheeler@gmail.com)
  * @author Andy Wilkinson
+ * @author Michał Łoza (michal@mloza.pl)
  */
 public class GitHubTemplate extends AbstractOAuth2ApiBinding implements GitHub {
 	private GistOperations gistOperations;
 	private RepoOperations repoOperations;
 	private UserOperations userOperations;
-	
+	private OrganizationOperations organizationOperations;
+
 	/**
 	 * No-arg constructor to support cases in which you want to call the GitHub
 	 * API without requiring authorization. This is useful for public operations,
@@ -84,6 +83,10 @@ public class GitHubTemplate extends AbstractOAuth2ApiBinding implements GitHub {
 		return getRestTemplate();
 	}
 
+	public OrganizationOperations organizationOperations() {
+		return organizationOperations;
+	}
+
     @Override
     protected MappingJackson2HttpMessageConverter getJsonMessageConverter() {
         MappingJackson2HttpMessageConverter converter = super.getJsonMessageConverter();
@@ -99,6 +102,7 @@ public class GitHubTemplate extends AbstractOAuth2ApiBinding implements GitHub {
 		this.gistOperations = new GistTemplate(getRestTemplate(), isAuthorized());
 		this.repoOperations = new RepoTemplate(getRestTemplate(), isAuthorized());
 		this.userOperations = new UserTemplate(getRestTemplate(), isAuthorized());
+		this.organizationOperations = new OrganizationTemplate(getRestTemplate(), isAuthorized());
 	}
 
 }

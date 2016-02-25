@@ -24,6 +24,7 @@ import org.junit.Test;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.MediaType;
 import org.springframework.social.github.api.GitHubOrganization;
+import org.springframework.social.github.api.GitHubRepo;
 import org.springframework.social.github.api.GitHubUserProfile;
 
 import java.util.List;
@@ -85,6 +86,54 @@ public class UserTemplateTest extends AbstractGitHubApiTest {
 	}
 
 	@Test
+	public void getRepositories() {
+		responseHeaders.setContentType(MediaType.APPLICATION_JSON);
+		mockServer.expect(requestTo("https://api.github.com/user/repos"))
+				.andExpect(method(GET))
+				.andRespond(withSuccess(jsonResource("user-repos"), MediaType.APPLICATION_JSON));
+
+		List<GitHubRepo> repos = gitHub.userOperations().getRepositories();
+		validateRepos(repos);
+	}
+
+	@Test
+	public void getUserRepositories() {
+		responseHeaders.setContentType(MediaType.APPLICATION_JSON);
+		mockServer.expect(requestTo("https://api.github.com/users/mloza/repos"))
+				.andExpect(method(GET))
+				.andRespond(withSuccess(jsonResource("user-repos"), MediaType.APPLICATION_JSON));
+
+		List<GitHubRepo> repos = gitHub.userOperations().getRepositories("mloza");
+		validateRepos(repos);
+	}
+
+	private void validateRepos(List<GitHubRepo> repos) {
+		assertEquals(2, repos.size());
+
+		GitHubRepo repo = repos.get(0);
+		assertEquals(52549339L, repo.getId());
+		assertEquals("testRepository1", repo.getName());
+		assertEquals("TestingRepository", repo.getDescription());
+		assertEquals("https://api.github.com/repos/EndlessInfinity/testRepository1", repo.getUrl());
+		assertEquals("https://github.com/EndlessInfinity/testRepository1", repo.getHtmlUrl());
+		assertEquals("https://github.com/EndlessInfinity/testRepository1.git", repo.getCloneUrl());
+		assertEquals("git://github.com/EndlessInfinity/testRepository1.git", repo.getGitUrl());
+		assertEquals("git@github.com:EndlessInfinity/testRepository1.git", repo.getSshUrl());
+		assertEquals("https://github.com/EndlessInfinity/testRepository1", repo.getSvnUrl());
+
+		repo = repos.get(1);
+		assertEquals(52549359L, repo.getId());
+		assertEquals("testRepository2", repo.getName());
+		assertEquals("Testing repository 2", repo.getDescription());
+		assertEquals("https://api.github.com/repos/EndlessInfinity/testRepository2", repo.getUrl());
+		assertEquals("https://github.com/EndlessInfinity/testRepository2", repo.getHtmlUrl());
+		assertEquals("https://github.com/EndlessInfinity/testRepository2.git", repo.getCloneUrl());
+		assertEquals("git://github.com/EndlessInfinity/testRepository2.git", repo.getGitUrl());
+		assertEquals("git@github.com:EndlessInfinity/testRepository2.git", repo.getSshUrl());
+		assertEquals("https://github.com/EndlessInfinity/testRepository2", repo.getSvnUrl());
+	}
+
+	@Test
 	public void getOrganizations() {
 		responseHeaders.setContentType(MediaType.APPLICATION_JSON);
 		mockServer.expect(requestTo("https://api.github.com/user/orgs"))
@@ -92,12 +141,7 @@ public class UserTemplateTest extends AbstractGitHubApiTest {
 				.andRespond(withSuccess(jsonResource("user-orgs"), MediaType.APPLICATION_JSON));
 
 		List<GitHubOrganization> organizations = gitHub.userOperations().getOrganizations();
-		assertEquals(2, organizations.size());
-
-		assertEquals("EndlessInfinity", organizations.get(0).getLogin());
-		assertEquals(17481604L, organizations.get(0).getId());
-		assertEquals("EndlessInfinity2", organizations.get(1).getLogin());
-		assertEquals(17481605L, organizations.get(1).getId());
+		validateOrganizations(organizations);
 	}
 
 	@Test
@@ -108,6 +152,10 @@ public class UserTemplateTest extends AbstractGitHubApiTest {
 				.andRespond(withSuccess(jsonResource("user-orgs"), MediaType.APPLICATION_JSON));
 
 		List<GitHubOrganization> organizations = gitHub.userOperations().getOrganizations("mloza");
+		validateOrganizations(organizations);
+	}
+
+	private void validateOrganizations(List<GitHubOrganization> organizations) {
 		assertEquals(2, organizations.size());
 
 		assertEquals("EndlessInfinity", organizations.get(0).getLogin());
@@ -115,5 +163,4 @@ public class UserTemplateTest extends AbstractGitHubApiTest {
 		assertEquals("EndlessInfinity2", organizations.get(1).getLogin());
 		assertEquals(17481605L, organizations.get(1).getId());
 	}
-
 }

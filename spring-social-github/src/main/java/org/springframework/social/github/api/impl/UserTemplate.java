@@ -24,10 +24,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-import org.springframework.social.github.api.GitHubOrganization;
-import org.springframework.social.github.api.GitHubUser;
-import org.springframework.social.github.api.GitHubUserProfile;
-import org.springframework.social.github.api.UserOperations;
+import org.springframework.social.github.api.*;
 import org.springframework.web.client.RestTemplate;
 
 /**
@@ -50,6 +47,14 @@ public class UserTemplate extends AbstractGitHubOperations implements UserOperat
 	public UserTemplate(RestTemplate restTemplate, boolean isAuthorizedForUser) {
 		super(isAuthorizedForUser);
 		this.restTemplate = restTemplate;
+	}
+
+	public List<GitHubRepo> getRepositories() {
+		return asList(restTemplate.getForObject(buildUri("/user/repos"), GitHubRepo[].class));
+	}
+
+	public List<GitHubRepo> getRepositories(String user) {
+		return asList(restTemplate.getForObject(buildUserUri("/repos"), GitHubRepo[].class, user));
 	}
 
 	public List<GitHubOrganization> getOrganizations() {
