@@ -23,12 +23,16 @@ import static org.springframework.test.web.client.response.MockRestResponseCreat
 import org.junit.Test;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.MediaType;
+import org.springframework.social.github.api.GitHubOrganization;
 import org.springframework.social.github.api.GitHubUserProfile;
+
+import java.util.List;
 
 /**
  * @author Craig Walls
  * @author Willie Wheeler (willie.wheeler@gmail.com)
  * @author Andy Wilkinson
+ * @author Michał Łoza (michal@mloza.pl)
  */
 public class UserTemplateTest extends AbstractGitHubApiTest {
 	
@@ -78,6 +82,38 @@ public class UserTemplateTest extends AbstractGitHubApiTest {
 			.andExpect(method(GET))
 			.andRespond(withSuccess(jsonResource("user-following"), MediaType.APPLICATION_JSON));
 		assertEquals(17, gitHub.userOperations().getFollowing("williewheeler").size());
+	}
+
+	@Test
+	public void getOrganizations() {
+		responseHeaders.setContentType(MediaType.APPLICATION_JSON);
+		mockServer.expect(requestTo("https://api.github.com/user/orgs"))
+				.andExpect(method(GET))
+				.andRespond(withSuccess(jsonResource("user-orgs"), MediaType.APPLICATION_JSON));
+
+		List<GitHubOrganization> organizations = gitHub.userOperations().getOrganizations();
+		assertEquals(2, organizations.size());
+
+		assertEquals("EndlessInfinity", organizations.get(0).getLogin());
+		assertEquals(17481604L, organizations.get(0).getId());
+		assertEquals("EndlessInfinity2", organizations.get(1).getLogin());
+		assertEquals(17481605L, organizations.get(1).getId());
+	}
+
+	@Test
+	public void getGivenUserOrganizations() {
+		responseHeaders.setContentType(MediaType.APPLICATION_JSON);
+		mockServer.expect(requestTo("https://api.github.com/users/mloza/orgs"))
+				.andExpect(method(GET))
+				.andRespond(withSuccess(jsonResource("user-orgs"), MediaType.APPLICATION_JSON));
+
+		List<GitHubOrganization> organizations = gitHub.userOperations().getOrganizations("mloza");
+		assertEquals(2, organizations.size());
+
+		assertEquals("EndlessInfinity", organizations.get(0).getLogin());
+		assertEquals(17481604L, organizations.get(0).getId());
+		assertEquals("EndlessInfinity2", organizations.get(1).getLogin());
+		assertEquals(17481605L, organizations.get(1).getId());
 	}
 
 }

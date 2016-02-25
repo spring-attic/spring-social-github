@@ -44,7 +44,21 @@ public interface UserOperations {
 	 * @return the URL to the user's GitHub profile.
 	 */
 	String getProfileUrl();
-	
+
+	/**
+	 * Retrieve current user organizations list (also private organizations)
+	 *
+	 * @return list of current user organizations
+	 */
+	List<GitHubOrganization> getOrganizations();
+
+	/**
+	 * Retrieve given user organizations list (only public organizations)
+	 *
+	 * @return list of given user organizations
+	 */
+	List<GitHubOrganization> getOrganizations(String user);
+
 	/**
 	 * Public operation to return a given user's followers.
 	 * 
