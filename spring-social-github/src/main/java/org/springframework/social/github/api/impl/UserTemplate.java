@@ -23,8 +23,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
-import java.util.Map;
 
+import org.springframework.social.github.api.GitHubRepo;
 import org.springframework.social.github.api.GitHubUser;
 import org.springframework.social.github.api.GitHubUserProfile;
 import org.springframework.social.github.api.UserOperations;
@@ -71,7 +71,10 @@ public class UserTemplate extends AbstractGitHubOperations implements UserOperat
 		return "https://github.com/" + getUserProfile().getLogin();
 	}
 
-
+	@Override
+	public List<GitHubRepo> getRepos(String user) {
+		return asList(restTemplate.getForObject(buildUserUri("/repos"), GitHubRepo[].class, user));
+	}
 
 	private String buildUserUri(String path) {
 		return buildUri("users/{user}" + path);
