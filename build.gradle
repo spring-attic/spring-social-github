@@ -21,11 +21,11 @@ configure(allprojects) {
 
     ext {
         springSocialVersion = '1.1.4.RELEASE'
-        jacksonVersion = '2.3.0'
-        junitVersion = '4.11'
-        mockitoVersion = '1.9.5'
-        servletApiVersion = '3.0.1'
-        springVersion = '4.0.2.RELEASE'
+        jacksonVersion = '2.6.5'
+        junitVersion = '4.12'
+        mockitoVersion = '1.10.19'
+        servletApiVersion = '3.1.0'
+        springVersion = '4.2.5.RELEASE'
     }
 
     [compileJava, compileTestJava]*.options*.compilerArgs = ['-Xlint:none']

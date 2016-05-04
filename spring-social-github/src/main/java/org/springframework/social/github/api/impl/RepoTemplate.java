@@ -19,13 +19,7 @@ import static java.util.Arrays.asList;
 
 import java.util.List;
 
-import org.springframework.social.github.api.GitHubCommit;
-import org.springframework.social.github.api.GitHubDownload;
-import org.springframework.social.github.api.GitHubHook;
-import org.springframework.social.github.api.GitHubIssue;
-import org.springframework.social.github.api.GitHubRepo;
-import org.springframework.social.github.api.GitHubUser;
-import org.springframework.social.github.api.RepoOperations;
+import org.springframework.social.github.api.*;
 import org.springframework.web.client.RestTemplate;
 
 /**
@@ -52,7 +46,12 @@ public class RepoTemplate extends AbstractGitHubOperations implements RepoOperat
 	public GitHubRepo getRepo(String user, String repo) {
 		return restTemplate.getForObject(buildRepoUri(""), GitHubRepo.class, user, repo);
 	}
-	
+
+	@Override
+	public List<GitHubBranch> getBranches(String user, String repo) {
+		return asList(restTemplate.getForObject(buildRepoUri("/branches"), GitHubBranch[].class, user, repo));
+	}
+
 	public List<GitHubUser> getCollaborators(String user, String repo) {
 		return asList(restTemplate.getForObject(buildRepoUri("/collaborators"), GitHubUser[].class, user, repo));
 	}
