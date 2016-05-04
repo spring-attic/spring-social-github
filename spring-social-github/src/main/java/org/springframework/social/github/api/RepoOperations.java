@@ -32,7 +32,16 @@ public interface RepoOperations {
 	 * @return repo
 	 */
 	GitHubRepo getRepo(String user, String repo);
-	
+
+	/**
+	 * Public operation to return a list of branches for the given repository.
+	 *
+	 * @param user GitHub user
+	 * @param repo GitHub repository
+	 * @return list of collaborators
+	 */
+	List<GitHubBranch> getBranches(String user, String repo);
+
 	/**
 	 * Public operation to return a list of collaborators for the given repository.
 	 * 

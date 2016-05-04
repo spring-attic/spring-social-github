@@ -15,7 +15,6 @@
  */
 package org.springframework.social.github.api.impl.json;
 
-import com.fasterxml.jackson.databind.Module;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import org.springframework.social.github.api.*;
 
@@ -40,6 +39,7 @@ public class GitHubModule extends SimpleModule {
         context.setMixInAnnotations(GitHubHook.class, GitHubHookMixin.class);
         context.setMixInAnnotations(GitHubIssue.class, GitHubIssueMixin.class);
         context.setMixInAnnotations(GitHubRepo.class, GitHubRepoMixin.class);
+        context.setMixInAnnotations(GitHubBranch.class, GitHubBranchMixin.class);
         context.setMixInAnnotations(GitHubUser.class, GitHubUserMixin.class);
         context.setMixInAnnotations(GitHubUserProfile.class, GitHubUserProfileMixin.class);
     }
