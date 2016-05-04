@@ -4,6 +4,8 @@
 .DS_Store
 build
 **/build
+target
+**/target
 **/src/test/java/exploration
 .gradle
 spring-social-core/src/test/java/exploration
