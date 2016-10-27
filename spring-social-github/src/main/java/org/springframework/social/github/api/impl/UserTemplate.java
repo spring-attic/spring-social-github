@@ -57,7 +57,10 @@ public class UserTemplate extends AbstractGitHubOperations implements UserOperat
 		String email = user.get("email") != null ? String.valueOf(user.get("email")) : null;
 		Date createdDate = toDate(String.valueOf(user.get("created_at")), dateFormat);
 		String gravatarId = (String) user.get("gravatar_id");
-		String profileImageUrl = gravatarId != null ? "https://secure.gravatar.com/avatar/" + gravatarId : null;
+		String profileImageUrl = (gravatarId != null && !gravatarId.equals("")) ? "https://secure.gravatar.com/avatar/" + gravatarId : null;
+		if (profileImageUrl == null) {
+			profileImageUrl = user.get("avatar_url") != null ? String.valueOf(user.get("avatar_url")) : null;
+		}
 		return new GitHubUserProfile(gitHubId, username, name, location, company, blog, email, profileImageUrl, createdDate);
 	}
 
