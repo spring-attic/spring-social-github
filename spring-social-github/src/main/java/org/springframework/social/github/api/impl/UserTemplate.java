@@ -15,7 +15,7 @@
  */
 package org.springframework.social.github.api.impl;
 
-import static java.util.Arrays.*;
+import static java.util.Arrays.asList;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -23,11 +23,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
-import java.util.Map;
 
-import org.springframework.social.github.api.GitHubUser;
-import org.springframework.social.github.api.GitHubUserProfile;
-import org.springframework.social.github.api.UserOperations;
+import org.springframework.social.github.api.*;
 import org.springframework.web.client.RestTemplate;
 
 /**
@@ -37,6 +34,7 @@ import org.springframework.web.client.RestTemplate;
  * 
  * @author Willie Wheeler (willie.wheeler@gmail.com)
  * @author Andy Wilkinson
+ * @author Michał Łoza (michal@mloza.pl)
  */
 public class UserTemplate extends AbstractGitHubOperations implements UserOperations {
 
@@ -49,6 +47,22 @@ public class UserTemplate extends AbstractGitHubOperations implements UserOperat
 	public UserTemplate(RestTemplate restTemplate, boolean isAuthorizedForUser) {
 		super(isAuthorizedForUser);
 		this.restTemplate = restTemplate;
+	}
+
+	public List<GitHubRepo> getRepositories() {
+		return asList(restTemplate.getForObject(buildUri("/user/repos"), GitHubRepo[].class));
+	}
+
+	public List<GitHubRepo> getRepositories(String user) {
+		return asList(restTemplate.getForObject(buildUserUri("/repos"), GitHubRepo[].class, user));
+	}
+
+	public List<GitHubOrganization> getOrganizations() {
+		return asList(restTemplate.getForObject(buildUri("/user/orgs"), GitHubOrganization[].class));
+	}
+
+	public List<GitHubOrganization> getOrganizations(String user) {
+		return asList(restTemplate.getForObject(buildUserUri("/orgs"), GitHubOrganization[].class, user));
 	}
 
 	public List<GitHubUser> getFollowers(String user) {
