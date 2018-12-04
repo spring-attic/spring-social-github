@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  lib-publisher:
+    build:
+      dockerfile: docker/Dockerfile
+      context: ../
+      args:
+        MAVEN_USER: ${MAVEN_USER}
+        MAVEN_PASSWORD: ${MAVEN_PASSWORD}
+    image: copperleaf/spring-social-github:${GIT_COMMIT:-dev}
+    environment:
+      - MAVEN_USER=${MAVEN_USER}
+      - MAVEN_PASSWORD=${MAVEN_PASSWORD}
+      - MAVEN_REPO=${MAVEN_REPO:-libs-snapshop-local}
+      - PACKAGE_VERSION=${PACKAGE_VERSION}

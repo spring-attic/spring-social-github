@@ -8,13 +8,15 @@ buildscript {
     }
 }
 
+
 configure(allprojects) {
     apply plugin: 'java'
     apply plugin: 'eclipse'
     apply plugin: 'idea'
     apply plugin: 'javadocHotfix'
+    apply plugin: 'maven-publish'
 
-    group = 'org.springframework.social'
+    group = 'com.copperleaf'
 
     sourceCompatibility=1.5
     targetCompatibility=1.5
@@ -256,3 +258,27 @@ task updateRootDocs << {
 }
 
 build.dependsOn('updateRootDocs')
+
+apply plugin: 'maven-publish'
+
+version = System.getenv("PACKAGE_VERSION") ?: "0.0.1-snapshot"
+
+project.ext {
+    artifactoryRepo = System.getenv("MAVEN_REPO") ?: "libs-snapshot-local"
+}
+
+publishing.repositories {
+    maven {
+        credentials {
+            username System.getenv("MAVEN_USER") ?: "$mavenUser"
+            password System.getenv("MAVEN_PASSWORD") ?: "$mavenPassword"
+        }
+        url "https://copperleaf.jfrog.io/copperleaf/${artifactoryRepo}/"
+    }
+}
+
+publishing.publications {
+    myPublication(MavenPublication) {
+        artifact source: distZip, extension: "zip"
+    }
+}
