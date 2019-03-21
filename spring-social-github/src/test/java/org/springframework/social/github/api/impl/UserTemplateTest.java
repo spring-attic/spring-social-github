@@ -41,7 +41,7 @@ public class UserTemplateTest extends AbstractGitHubApiTest {
 		assertEquals("habuma", profile.getLogin());
 		assertEquals("Craig Walls", profile.getName());
 		assertEquals("SpringSource", profile.getCompany());
-		assertEquals("http://blog.springsource.com/author/cwalls/", profile.getBlog());
+		assertEquals("https://spring.io/team/cwalls/", profile.getBlog());
 		assertEquals("cwalls at vmware.com", profile.getEmail());
 		assertEquals(167926, profile.getId());
 	}

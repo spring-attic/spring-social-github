@@ -10,7 +10,7 @@
     ],
     "active": true,
     "config": {
-      "url": "http://example.com",
+      "url": "https://example.com",
       "content_type": "json"
     },
     "id": 1
