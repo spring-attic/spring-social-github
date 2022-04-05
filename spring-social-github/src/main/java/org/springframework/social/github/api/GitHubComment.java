@@ -18,63 +18,60 @@ package org.springframework.social.github.api;
 import java.io.Serializable;
 import java.util.Date;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 /**
  * A GitHub comment.
- * 
+ *
  * @author Willie Wheeler (willie.wheeler@gmail.com)
  * @author Andy Wilkinson
  */
 @SuppressWarnings("serial")
 public class GitHubComment implements Serializable {
 
-    private final long id;
+	private final long id;
 
-    private final String url;
+	private final String url;
 
-    private final GitHubUser user;
+	private final GitHubUser user;
 
-    private final Date createdAt;
+	private final Date createdAt;
 
-    private final Date updatedAt;
+	private final Date updatedAt;
 
-    private volatile String body;
+	private volatile String body;
 
-    public GitHubComment(long id, String url, GitHubUser user, Date createdAt, Date updatedAt) {
-        this.id = id;
-        this.url = url;
-        this.user = user;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
-    }
+	public GitHubComment(long id, String url, GitHubUser user, Date createdAt, Date updatedAt) {
+		this.id = id;
+		this.url = url;
+		this.user = user;
+		this.createdAt = createdAt;
+		this.updatedAt = updatedAt;
+	}
 
-    public long getId() {
-        return id;
-    }
+	public long getId() {
+		return id;
+	}
 
-    public String getUrl() {
-        return url;
-    }
+	public String getUrl() {
+		return url;
+	}
 
-    public GitHubUser getUser() {
-        return user;
-    }
+	public GitHubUser getUser() {
+		return user;
+	}
 
-    public Date getCreatedAt() {
-        return createdAt;
-    }
+	public Date getCreatedAt() {
+		return createdAt;
+	}
 
-    public Date getUpdatedAt() {
-        return updatedAt;
-    }
+	public Date getUpdatedAt() {
+		return updatedAt;
+	}
 
-    public String getBody() {
-        return body;
-    }
+	public String getBody() {
+		return body;
+	}
 
-    public void setBody(String body) {
-        this.body = body;
-    }
+	public void setBody(String body) {
+		this.body = body;
+	}
 }

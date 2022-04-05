@@ -27,11 +27,11 @@ public class GitHubUserProfile implements Serializable {
 
 	private final long id;
 
-    private final String login;
+	private final String login;
 
-    private final String avatarUrl;
+	private final String avatarUrl;
 
-    private final Date createdAt;
+	private final Date createdAt;
 
 	private String name;
 
@@ -43,66 +43,66 @@ public class GitHubUserProfile implements Serializable {
 
 	private String email;
 
-    public GitHubUserProfile(long id, String login, String avatarUrl, Date createdAt) {
-        this.id = id;
-        this.login = login;
-        this.avatarUrl = avatarUrl;
-        this.createdAt = createdAt;
-    }
+	public GitHubUserProfile(long id, String login, String avatarUrl, Date createdAt) {
+		this.id = id;
+		this.login = login;
+		this.avatarUrl = avatarUrl;
+		this.createdAt = createdAt;
+	}
 
-    public long getId() {
-        return id;
-    }
+	public long getId() {
+		return id;
+	}
 
-    public String getLogin() {
-        return login;
-    }
+	public String getLogin() {
+		return login;
+	}
 
-    public String getAvatarUrl() {
-        return avatarUrl;
-    }
+	public String getAvatarUrl() {
+		return avatarUrl;
+	}
 
-    public Date getCreatedAt() {
-        return createdAt;
-    }
+	public Date getCreatedAt() {
+		return createdAt;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public String getLocation() {
-        return location;
-    }
+	public String getLocation() {
+		return location;
+	}
 
-    public void setLocation(String location) {
-        this.location = location;
-    }
+	public void setLocation(String location) {
+		this.location = location;
+	}
 
-    public String getCompany() {
-        return company;
-    }
+	public String getCompany() {
+		return company;
+	}
 
-    public void setCompany(String company) {
-        this.company = company;
-    }
+	public void setCompany(String company) {
+		this.company = company;
+	}
 
-    public String getBlog() {
-        return blog;
-    }
+	public String getBlog() {
+		return blog;
+	}
 
-    public void setBlog(String blog) {
-        this.blog = blog;
-    }
+	public void setBlog(String blog) {
+		this.blog = blog;
+	}
 
-    public String getEmail() {
-        return email;
-    }
+	public String getEmail() {
+		return email;
+	}
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+	public void setEmail(String email) {
+		this.email = email;
+	}
 }

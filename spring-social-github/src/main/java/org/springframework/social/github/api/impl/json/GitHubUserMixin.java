@@ -15,8 +15,9 @@
  */
 package org.springframework.social.github.api.impl.json;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.social.github.api.GitHubUser;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * Annotated mixin to add annotations to {@link GitHubUser}
@@ -25,16 +26,16 @@ import org.springframework.social.github.api.GitHubUser;
  */
 abstract class GitHubUserMixin extends GitHubObjectMixin {
 
-    String name;
+	String name;
 
-    String email;
+	String email;
 
-    String bio;
+	String bio;
 
-    GitHubUserMixin(
-            @JsonProperty("id") long id,
-            @JsonProperty("url") String url,
-            @JsonProperty("login") String login,
-            @JsonProperty("avatar_url") String avatarUrl,
-            @JsonProperty("gravatar_id") String gravatarId) {}
+	GitHubUserMixin(
+			@JsonProperty("id") long id,
+			@JsonProperty("url") String url,
+			@JsonProperty("login") String login,
+			@JsonProperty("avatar_url") String avatarUrl,
+			@JsonProperty("gravatar_id") String gravatarId) {}
 }

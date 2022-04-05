@@ -16,14 +16,10 @@
 package org.springframework.social.github.api;
 
 import java.io.Serializable;
-import java.util.Date;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * A GitHub download.
- * 
+ *
  * @author Willie Wheeler (willie.wheeler@gmail.com)
  * @author Andy Wilkinson
  */
@@ -46,19 +42,19 @@ public class GitHubDownload implements Serializable {
 
 	private final String contentType;
 
-    public GitHubDownload(long id, String url, String htmlUrl, String name, String description, long size,
-            int downloadCount, String contentType) {
-        this.id = id;
-        this.url = url;
-        this.htmlUrl = htmlUrl;
-        this.name = name;
-        this.description = description;
-        this.size = size;
-        this.downloadCount = downloadCount;
-        this.contentType = contentType;
-    }
+	public GitHubDownload(long id, String url, String htmlUrl, String name, String description, long size,
+			int downloadCount, String contentType) {
+		this.id = id;
+		this.url = url;
+		this.htmlUrl = htmlUrl;
+		this.name = name;
+		this.description = description;
+		this.size = size;
+		this.downloadCount = downloadCount;
+		this.contentType = contentType;
+	}
 
-    public long getId() { return id; }
+	public long getId() { return id; }
 
 	public String getUrl() { return url; }
 

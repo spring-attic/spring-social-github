@@ -17,12 +17,9 @@ package org.springframework.social.github.api;
 
 import java.io.Serializable;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 /**
  * A GitHub repo.
- * 
+ *
  * @author Willie Wheeler (willie.wheeler@gmail.com)
  * @author Andy Wilkinson
  */
@@ -43,23 +40,23 @@ public class GitHubRepo implements Serializable {
 
 	private final String svnUrl;
 
-    public GitHubRepo(long id, String url, String htmlUrl, String cloneUrl, String gitUrl, String sshUrl,
-            String svnUrl) {
-        this.id = id;
-        this.url = url;
-        this.htmlUrl = htmlUrl;
-        this.cloneUrl = cloneUrl;
-        this.gitUrl = gitUrl;
-        this.sshUrl = sshUrl;
-        this.svnUrl = svnUrl;
-    }
+	public GitHubRepo(long id, String url, String htmlUrl, String cloneUrl, String gitUrl, String sshUrl,
+			String svnUrl) {
+		this.id = id;
+		this.url = url;
+		this.htmlUrl = htmlUrl;
+		this.cloneUrl = cloneUrl;
+		this.gitUrl = gitUrl;
+		this.sshUrl = sshUrl;
+		this.svnUrl = svnUrl;
+	}
 
-    private String name;
+	private String name;
 
-    private String description;
-	
+	private String description;
+
 	public long getId() { return id; }
-	
+
 	public String getUrl() { return url; }
 
 	public String getHtmlUrl() { return htmlUrl; }
@@ -72,12 +69,12 @@ public class GitHubRepo implements Serializable {
 
 	public String getSvnUrl() { return svnUrl; }
 
-    public String getName() { return name; }
+	public String getName() { return name; }
 
-    public void setName(String name) { this.name = name; }
+	public void setName(String name) { this.name = name; }
 
-    public String getDescription() { return description; }
+	public String getDescription() { return description; }
 
-    public void setDescription(String description) { this.description = description; }
-	
+	public void setDescription(String description) { this.description = description; }
+
 }

@@ -41,12 +41,12 @@ class GitHubConfigBeanDefinitionParser extends AbstractProviderConfigBeanDefinit
 	public GitHubConfigBeanDefinitionParser() {
 		super(GitHubConnectionFactory.class, GitHubApiHelper.class);
 	}
-	
+
 	@Override
 	protected Class<? extends SocialAuthenticationService<?>> getAuthenticationServiceClass() {
 		return GitHubAuthenticationService.class;
 	}
-	
+
 	@Override
 	protected BeanDefinition getConnectionFactoryBeanDefinition(String appId, String appSecret, Map<String, Object> allAttributes) {
 		BeanDefinitionBuilder builder = BeanDefinitionBuilder.genericBeanDefinition(GitHubConnectionFactory.class).addConstructorArgValue(appId).addConstructorArgValue(appSecret);
@@ -61,14 +61,14 @@ class GitHubConfigBeanDefinitionParser extends AbstractProviderConfigBeanDefinit
 
 		private GitHubApiHelper(UsersConnectionRepository usersConnectionRepository, UserIdSource userIdSource) {
 			this.usersConnectionRepository = usersConnectionRepository;
-			this.userIdSource = userIdSource;		
+			this.userIdSource = userIdSource;
 		}
 
 		public GitHub getApi() {
 			if (logger.isDebugEnabled()) {
 				logger.debug("Getting API binding instance for GitHub");
 			}
-			
+
 			Connection<GitHub> connection = usersConnectionRepository.createConnectionRepository(userIdSource.getUserId()).findPrimaryConnection(GitHub.class);
 			if (logger.isDebugEnabled() && connection == null) {
 				logger.debug("No current connection; Returning default GitHubTemplate instance.");
@@ -79,5 +79,5 @@ class GitHubConfigBeanDefinitionParser extends AbstractProviderConfigBeanDefinit
 		private final static Log logger = LogFactory.getLog(GitHubApiHelper.class);
 
 	}
-	
+
 }

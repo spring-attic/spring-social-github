@@ -32,11 +32,11 @@ public class GitHubIssue {
 
 	private final String htmlUrl;
 
-    private final Date closedAt;
+	private final Date closedAt;
 
-    private final Date createdAt;
+	private final Date createdAt;
 
-    private final Date updatedAt;
+	private final Date updatedAt;
 
 	private String state;
 
@@ -46,16 +46,16 @@ public class GitHubIssue {
 
 	private GitHubUser assignee;
 
-    public GitHubIssue(int number, String url, String htmlUrl, Date closedAt, Date createdAt, Date updatedAt) {
-        this.number = number;
-        this.url = url;
-        this.htmlUrl = htmlUrl;
-        this.closedAt = closedAt;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
-    }
+	public GitHubIssue(int number, String url, String htmlUrl, Date closedAt, Date createdAt, Date updatedAt) {
+		this.number = number;
+		this.url = url;
+		this.htmlUrl = htmlUrl;
+		this.closedAt = closedAt;
+		this.createdAt = createdAt;
+		this.updatedAt = updatedAt;
+	}
 
-    public int getNumber() {
+	public int getNumber() {
 		return number;
 	}
 
@@ -63,17 +63,17 @@ public class GitHubIssue {
 		return url;
 	}
 
-    public Date getClosedAt() {
-        return closedAt;
-    }
+	public Date getClosedAt() {
+		return closedAt;
+	}
 
-    public Date getCreatedAt() {
-        return createdAt;
-    }
+	public Date getCreatedAt() {
+		return createdAt;
+	}
 
-    public Date getUpdatedAt() {
-        return updatedAt;
-    }
+	public Date getUpdatedAt() {
+		return updatedAt;
+	}
 
 	public String getHtmlUrl() {
 		return htmlUrl;

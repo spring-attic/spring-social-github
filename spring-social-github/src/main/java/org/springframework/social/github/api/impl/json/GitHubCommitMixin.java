@@ -15,9 +15,10 @@
  */
 package org.springframework.social.github.api.impl.json;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.social.github.api.GitHubCommit;
 import org.springframework.social.github.api.GitHubUser;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * Annotated mixin to add annotations to {@link GitHubCommit}
@@ -26,10 +27,10 @@ import org.springframework.social.github.api.GitHubUser;
  */
 abstract class GitHubCommitMixin extends GitHubObjectMixin {
 
-    GitHubCommitMixin(
-            @JsonProperty("message") String message,
-            @JsonProperty("sha") String sha,
-            @JsonProperty("url") String url,
-            @JsonProperty("committer") GitHubUser committer,
-            @JsonProperty("author") GitHubUser author) {}
+	GitHubCommitMixin(
+			@JsonProperty("message") String message,
+			@JsonProperty("sha") String sha,
+			@JsonProperty("url") String url,
+			@JsonProperty("committer") GitHubUser committer,
+			@JsonProperty("author") GitHubUser author) {}
 }

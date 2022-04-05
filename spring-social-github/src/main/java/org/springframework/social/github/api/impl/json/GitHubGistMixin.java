@@ -15,13 +15,14 @@
  */
 package org.springframework.social.github.api.impl.json;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.Date;
+import java.util.Map;
+
 import org.springframework.social.github.api.GitHubFile;
 import org.springframework.social.github.api.GitHubGist;
 import org.springframework.social.github.api.GitHubUser;
 
-import java.util.Date;
-import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * Annotated mixin to add annotations to {@link GitHubGist}
@@ -30,21 +31,21 @@ import java.util.Map;
  */
 abstract class GitHubGistMixin extends GitHubObjectMixin {
 
-    @JsonProperty("files")
-    Map<String, GitHubFile> files;
+	@JsonProperty("files")
+	Map<String, GitHubFile> files;
 
-    @JsonProperty("description")
-    String description;
+	@JsonProperty("description")
+	String description;
 
-    GitHubGistMixin(
-            @JsonProperty("id") String id,
-            @JsonProperty("url") String url,
-            @JsonProperty("public") boolean publicGist,
-            @JsonProperty("user") GitHubUser user,
-            @JsonProperty("comments") int comments,
-            @JsonProperty("html_url") String htmlUrl,
-            @JsonProperty("git_pull_url") String gitPullUrl,
-            @JsonProperty("git_push_url") String gitPushUrl,
-            @JsonProperty("created_at") Date createdAt,
-            @JsonProperty("updated_at") Date updatedAt) {}
+	GitHubGistMixin(
+			@JsonProperty("id") String id,
+			@JsonProperty("url") String url,
+			@JsonProperty("public") boolean publicGist,
+			@JsonProperty("user") GitHubUser user,
+			@JsonProperty("comments") int comments,
+			@JsonProperty("html_url") String htmlUrl,
+			@JsonProperty("git_pull_url") String gitPullUrl,
+			@JsonProperty("git_push_url") String gitPushUrl,
+			@JsonProperty("created_at") Date createdAt,
+			@JsonProperty("updated_at") Date updatedAt) {}
 }

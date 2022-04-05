@@ -17,46 +17,43 @@ package org.springframework.social.github.api;
 
 import java.io.Serializable;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 /**
  * A GitHub file.
- * 
+ *
  * @author Willie Wheeler (willie.wheeler@gmail.com)
  * @author Andy Wilkinson
  */
 @SuppressWarnings("serial")
 public class GitHubFile implements Serializable {
 
-    private final String type;
+	private final String type;
 
-    private final String language;
+	private final String language;
 
-    private final String rawUrl;
+	private final String rawUrl;
 
-    private final long size;
+	private final long size;
 
-    private String filename;
+	private String filename;
 
-    private String content;
+	private String content;
 
-    public GitHubFile(String type, String language, String rawUrl, long size) {
-        this.type = type;
-        this.language = language;
-        this.rawUrl = rawUrl;
-        this.size = size;
-    }
+	public GitHubFile(String type, String language, String rawUrl, long size) {
+		this.type = type;
+		this.language = language;
+		this.rawUrl = rawUrl;
+		this.size = size;
+	}
 
-    public String getType() { return type; }
+	public String getType() { return type; }
 
-    public String getLanguage() { return language; }
+	public String getLanguage() { return language; }
 
-    public String getRawUrl() { return rawUrl; }
+	public String getRawUrl() { return rawUrl; }
 
-    public long getSize() { return size; }
+	public long getSize() { return size; }
 
-    public String getFilename() { return filename; }
+	public String getFilename() { return filename; }
 
 	public void setFilename(String filename) { this.filename = filename; }
 
