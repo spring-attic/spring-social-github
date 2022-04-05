@@ -23,6 +23,7 @@ import org.springframework.social.github.api.*;
  * Jackson module for setting up mixin annotations on GitHub model types.
  *
  * @author Andy Wilkinson
+ * @author Michał Łoza
  */
 public class GitHubModule extends SimpleModule {
 
@@ -42,5 +43,6 @@ public class GitHubModule extends SimpleModule {
         context.setMixInAnnotations(GitHubRepo.class, GitHubRepoMixin.class);
         context.setMixInAnnotations(GitHubUser.class, GitHubUserMixin.class);
         context.setMixInAnnotations(GitHubUserProfile.class, GitHubUserProfileMixin.class);
+        context.setMixInAnnotations(GitHubOrganization.class, GitHubOrganizationMixin.class);
     }
 }

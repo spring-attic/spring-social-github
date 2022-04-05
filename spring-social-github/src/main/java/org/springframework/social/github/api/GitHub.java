@@ -29,6 +29,7 @@ import org.springframework.web.client.RestOperations;
  * 
  * @author Craig Walls
  * @author Willie Wheeler (willie.wheeler@gmail.com)
+ * @author Michał Łoza (michal@mloza.pl)
  */
 public interface GitHub extends ApiBinding {
 	
@@ -52,6 +53,13 @@ public interface GitHub extends ApiBinding {
 	 * @return user operations
 	 */
 	UserOperations userOperations();
+
+	/**
+	 * Returns the portion of the GitHub API containing the organization operations.
+	 *
+	 * @return organization operations
+	 */
+	OrganizationOperations organizationOperations();
 
 	/**
 	 * Returns the underlying {@link RestOperations} object allowing for consumption of GitHub endpoints that may not be otherwise covered by the API binding.
